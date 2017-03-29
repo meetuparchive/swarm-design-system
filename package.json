@@ -1,11 +1,37 @@
 {
-  "name": "@meetup/swarm-design-system",
-  "version": "0.0.1",
-  "description": "Swarm Design System, by Meetup",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "MIT"
+	"name": "@meetup/swarm-design-system",
+	"version": "0.0.1",
+	"description": "Swarm Design System, by Meetup",
+	"directories": {
+		"doc": "TODO/",
+		"dist": "TODO2/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/meetup/swarm-sasstools.git"
+	},
+	"author": "adamd@meetup.com, richard@meetup.com, mikep@meetup.com",
+	"license": {
+		"type": "MIT",
+		"url": "https://github.com/meetup/swarm-sasstools/blob/master/LICENSE"
+	},
+	"devDependencies": {
+		"react": "15.4.2",
+		"react-dom": "15.4.2",
+		"metalsmith": "^2.3.0",
+		"metalsmith-markdown": "0.2.1",
+		"metalsmith-layouts": "1.8.0",
+		"metalsmith-permalinks": "0.5.0",
+		"metalsmith-sitemap": "1.2.0",
+		"metalsmith-collections": "0.9.0",
+		"metalsmith-sense-sass": "2.1.0",
+		"metalsmith-react-templates": "6.0.2"
+	},
+	"bugs": {
+		"url": "https://github.com/meetup/swarm-design-system/issues"
+	},
+	"dependencies": {
+		"babel-cli": "^6.24.0",
+		"babel-preset-node6": "^11.0.0"
+	}
 }
