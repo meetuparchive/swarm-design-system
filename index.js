@@ -1,7 +1,6 @@
 import MetalSmith from 'metalsmith';
-import markdown from 'metalsmith-markdown';
+import markdown from 'metalsmith-markdown-remarkable';
 import layouts from 'metalsmith-layouts';
-import permalinks from 'metalsmith-permalinks';
 
 const METADATA = {
 	head: {
@@ -11,17 +10,16 @@ const METADATA = {
 	}
 }
 
+// TODO: add highlter function to remarkable via plugin option
+
 MetalSmith(__dirname)
 	.metadata(METADATA)
 	.source('./content')
 	.destination('./build')
 	.clean(true)
-	.use(markdown({
-		smartypants: true,
-		gfm: true,
-		tables: true,
+	.use(markdown('full', {
+		typographer: true
 	}))
-	.use(permalinks())
 	.use(layouts({
 		directory: './templates/',
 		engine: 'handlebars',
