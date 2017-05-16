@@ -2,11 +2,13 @@ Swarm Design System
 --------------------
 Main documentation for the Swarm Design System by Meetup.
 
-## Editing content
+**Pardon our mess, this is still a work in progress**
+
+### Editing content
 Content is stored as markdown in `src/content`.
 
 
-## Build tasks
+### Build tasks
 
 | Command            | Description                       |
 | ------------------ | --------------------------------- |
