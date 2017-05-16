@@ -2,9 +2,15 @@
 <html>
 	<head>
 		<title>{{ head.title }}</title>
-		<script type="text/javascript" src="/script.js"></script>
 	</head>
-	<body style="padding: 20vh 40vw;">
+	<body style="padding: 20vh 20vw;">
 		<pre>{{{ contents }}}</pre>
+
+		<script id="__bs_script__">
+			document.write(
+				"<script async src='http://HOST:8181/browser-sync/browser-sync-client.js?v=2.18.11'><\/script>"
+					.replace("HOST", location.hostname)
+			);
+		</script>
 	</body>
 </html>

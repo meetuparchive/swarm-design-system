@@ -2,4 +2,29 @@
 layout: layout.hbs
 ---
 
-# Hello world
+# Oh, hello
+
+I didn't see you there.
+
+
+## Tables supported
+
+| Dog        | Type       |
+| ---------- | ---------- |
+| Oreo       | Doggo      |
+| Bo         | Pupper     |
+
+## Github flavored markdown
+
+This is `code`.
+
+```
+const lol = 'omg';
+```
+
+- how
+- about
+- a
+- list
+
+> and a quote

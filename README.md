@@ -1,4 +1,3 @@
 placeholder for meetup swarm design system
 
-Build docs:
-`make build`
+`make serve` - builds docs and starts browsersync (watches for changes)
