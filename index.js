@@ -1,6 +1,6 @@
 import MetalSmith from 'metalsmith';
 import markdown from 'metalsmith-markdown';
-import inPlace from 'metalsmith-in-place';
+import layouts from 'metalsmith-layouts';
 import permalinks from 'metalsmith-permalinks';
 
 const METADATA = {
@@ -22,9 +22,9 @@ MetalSmith(__dirname)
 		tables: true,
 	}))
 	.use(permalinks())
-	.use(inPlace({
-		pattern: './templates/**/*',
-		rename: true,
+	.use(layouts({
+		directory: './templates/',
+		engine: 'handlebars',
 	}))
 	.build((err, files) => {
 		if (err) { throw err; }
