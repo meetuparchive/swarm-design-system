@@ -1,4 +1,9 @@
-placeholder for meetup swarm design system
+Swarm Design System
+--------------------
+Main documentation for the Swarm Design System by Meetup.
+
+## Editing content
+Content is stored as markdown in `src/content`.
 
 
 ## Build tasks
