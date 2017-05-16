@@ -3,10 +3,11 @@ Swarm Design System
 Main documentation for the Swarm Design System by Meetup.
 
 --- 
+<div style="text-align: center;">
 ![under construction](http://rs1187.pbsrc.com/albums/z398/djcubstud/CUBSTUD%20GIFS/Underconstruction-Worker-3.gif~c200)
 
 **Pardon our mess, this is still a work in progress**
-
+</div>
 ---
 
 ### Editing content
