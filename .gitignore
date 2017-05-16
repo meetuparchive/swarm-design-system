@@ -1,4 +1,5 @@
 .swp
 .*.swp
+*.log
 npm_modules/
 node_modules/
