@@ -27,6 +27,7 @@
 		"url": "https://github.com/meetup/swarm-design-system/issues"
 	},
 	"dependencies": {
+		"babel": "^6.23.0",
 		"babel-cli": "^6.24.0",
 		"babel-preset-node6": "^11.0.0"
 	}
