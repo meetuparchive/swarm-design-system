@@ -1,5 +1,6 @@
 import MetalSmith from 'metalsmith';
 import markdown from 'metalsmith-markdown-remarkable';
+import collect from 'metalsmith-auto-collections';
 import layouts from 'metalsmith-layouts';
 
 const PATH_SRC = '../../content';
@@ -24,6 +25,9 @@ const metalsmithBuild = MetalSmith(__dirname)
 	.destination(PATH_DEST)
 	.clean(true)
 	.use(markdown('full', {}))
+	.use(collect({
+		pattern: [`${PATH_SRC.content}**/*.md`]
+	}))
 	.use(layouts({
 		directory: PATH_TEMPLATES,
 		engine: 'handlebars',

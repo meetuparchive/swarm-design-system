@@ -27,6 +27,7 @@
 		"babel": "^6.23.0",
 		"babel-cli": "^6.24.0",
 		"babel-preset-node6": "^11.0.0",
+		"metalsmith-auto-collections": "^0.1.1",
 		"metalsmith-browser-sync": "^1.1.1"
 	}
 }
