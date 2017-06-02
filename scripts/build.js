@@ -1,5 +1,7 @@
-const metalsmithBuild = require('./_base').metalsmithBuild;
-const handleBuild = require('./_base').handleBuild;
+import {
+	metalsmithBuild,
+	handleBuild
+} from './_base';
 
 metalsmithBuild
 	.build(handleBuild);

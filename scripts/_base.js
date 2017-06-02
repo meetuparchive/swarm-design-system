@@ -1,14 +1,10 @@
-const MetalSmith = require('metalsmith');
-const markdown = require('metalsmith-markdown-remarkable');
-const layouts = require('metalsmith-layouts');
+import MetalSmith from 'metalsmith';
+import markdown from 'metalsmith-markdown-remarkable';
+import layouts from 'metalsmith-layouts';
 
 const PATH_SRC = '../src/content';
 const PATH_DEST = '../build';
 const PATH_TEMPLATES = '../src/templates';
-
-const handleBuild = (err, files) => {
-	if (err) { throw err; }
-};
 
 const METADATA = {
 	head: {
@@ -18,7 +14,11 @@ const METADATA = {
 	}
 }
 
-const metalsmithBuild = MetalSmith(__dirname)
+export const handleBuild = (err, files) => {
+	if (err) { throw err; }
+};
+
+export const metalsmithBuild = MetalSmith(__dirname)
 	.metadata(METADATA)
 	.source(PATH_SRC)
 	.destination(PATH_DEST)
@@ -28,6 +28,3 @@ const metalsmithBuild = MetalSmith(__dirname)
 		directory: PATH_TEMPLATES,
 		engine: 'handlebars',
 	}));
-
-exports.handleBuild = handleBuild;
-exports.metalsmithBuild = metalsmithBuild;

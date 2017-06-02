@@ -14,6 +14,14 @@ I didn't see you there...
 | Bo         | Pupper       |
 | Nana       | Dino         |
 
+## Lol, html
+
+```
+<div style="border: 3px solid lime; background: cornsilk;">
+	<p>delicious <code>cornsilk</code> and <em>lime</em></p>
+</div>
+```
+
 ## Github flavored markdown
 
 This is `code`.

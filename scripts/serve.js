@@ -1,6 +1,8 @@
-const browserSync = require('metalsmith-browser-sync');
-const metalsmithBuild = require('./_base').metalsmithBuild;
-const handleBuild = require('./_base').handleBuild;
+import browserSync from 'metalsmith-browser-sync';
+import {
+	metalsmithBuild,
+	handleBuild
+} from './_base';
 
 metalsmithBuild
 	.use(browserSync({ // uses root-relative paths
