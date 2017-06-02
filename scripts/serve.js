@@ -1,10 +1,11 @@
-import metalSmithBuild, { handleBuild } from './_base';
-import browserSync from 'metalsmith-browser-sync';
+const browserSync = require('metalsmith-browser-sync');
+const metalsmithBuild = require('./_base').metalsmithBuild;
+const handleBuild = require('./_base').handleBuild;
 
-metalSmithBuild
+metalsmithBuild
 	.use(browserSync({ // uses root-relative paths
 		server: './build',
-		files: [                        // --- WATCH ---
+		files: [                         // --- WATCH ---
 			'./src/content/**/*.md',     // markdown content
 			'./src/templates/**/*.*',    // layout templates
 			'./src/script/site/**/*.*',  // site script

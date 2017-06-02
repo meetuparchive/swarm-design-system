@@ -8,10 +8,11 @@ I didn't see you there...
 
 ## Tables supported
 
-| Dog        | Type       |
-| ---------- | ---------- |
-| Oreo       | Doggo      |
-| Bo         | Pupper     |
+| Dog        | Type         |
+| ---------- | ------------ |
+| Oreo       | Doggo        |
+| Bo         | Pupper       |
+| Nana       | Dino         |
 
 ## Github flavored markdown
 

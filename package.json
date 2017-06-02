@@ -5,6 +5,10 @@
 	"directories": {
 		"doc": "build/"
 	},
+	"scripts": {
+		"build": "node scripts/build.js",
+		"serve": "node scripts/serve.js"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/meetup/swarm-design-system.git"

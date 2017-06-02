@@ -1,12 +1,12 @@
-import MetalSmith from 'metalsmith';
-import markdown from 'metalsmith-markdown-remarkable';
-import layouts from 'metalsmith-layouts';
+const MetalSmith = require('metalsmith');
+const markdown = require('metalsmith-markdown-remarkable');
+const layouts = require('metalsmith-layouts');
 
-const PATH_SRC = '../../content';
-const PATH_DEST = '../../../build';
-const PATH_TEMPLATES = '../../templates';
+const PATH_SRC = '../src/content';
+const PATH_DEST = '../build';
+const PATH_TEMPLATES = '../src/templates';
 
-export const handleBuild = (err, files) => {
+const handleBuild = (err, files) => {
 	if (err) { throw err; }
 };
 
@@ -29,4 +29,5 @@ const metalsmithBuild = MetalSmith(__dirname)
 		engine: 'handlebars',
 	}));
 
-export default metalsmithBuild;
+exports.handleBuild = handleBuild;
+exports.metalsmithBuild = metalsmithBuild;
