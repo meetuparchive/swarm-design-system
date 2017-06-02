@@ -23,7 +23,9 @@ export const metalsmithBuild = MetalSmith(__dirname)
 	.source(PATH_SRC)
 	.destination(PATH_DEST)
 	.clean(true)
-	.use(markdown('full', {}))
+	.use(markdown('full', {
+		html: true
+	}))
 	.use(layouts({
 		directory: PATH_TEMPLATES,
 		engine: 'handlebars',
