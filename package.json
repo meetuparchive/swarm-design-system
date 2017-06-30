@@ -20,7 +20,6 @@
 		"metalsmith": "^2.3.0",
 		"metalsmith-layouts": "^1.4.1",
 		"metalsmith-markdown-remarkable": "0.1.1",
-		"node-sass": "^4.5.3",
 		"swarm-sasstools": "^1.7.34"
 	},
 	"bugs": {
@@ -30,6 +29,7 @@
 		"babel": "^6.23.0",
 		"babel-cli": "^6.24.0",
 		"babel-preset-node6": "^11.0.0",
-		"metalsmith-browser-sync": "^1.1.1"
+		"metalsmith-browser-sync": "^1.1.1",
+		"metalsmith-sass": "^1.4.0"
 	}
 }
