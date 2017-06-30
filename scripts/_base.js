@@ -1,6 +1,7 @@
 import MetalSmith from 'metalsmith';
 import markdown from 'metalsmith-markdown-remarkable';
 import layouts from 'metalsmith-layouts';
+import renderSass from './sass';
 
 const PATH_SRC = '../src/content';
 const PATH_DEST = '../build';
@@ -16,6 +17,7 @@ const METADATA = {
 
 export const handleBuild = (err, files) => {
 	if (err) { throw err; }
+	renderSass();
 };
 
 export const metalsmithBuild = MetalSmith(__dirname)

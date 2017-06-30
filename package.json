@@ -16,9 +16,12 @@
 	},
 	"devDependencies": {
 		"handlebars": "^4.0.5",
+		"meetup-swatches": "^3.2.5",
 		"metalsmith": "^2.3.0",
 		"metalsmith-layouts": "^1.4.1",
-		"metalsmith-markdown-remarkable": "0.1.1"
+		"metalsmith-markdown-remarkable": "0.1.1",
+		"node-sass": "^4.5.3",
+		"swarm-sasstools": "^1.7.34"
 	},
 	"bugs": {
 		"url": "https://github.com/meetup/swarm-design-system/issues"

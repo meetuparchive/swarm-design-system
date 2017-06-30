@@ -1,0 +1,35 @@
+//
+// SASS BASE FILE
+// include any additional scss from `src/scss/` as sass partials
+//
+
+//
+// color library
+//
+@import "../../node_modules/meetup-swatches/sass/colors.scss";
+
+// //
+// // swarm-sasstools utils
+// //
+// @import "swarm-sasstools-utils";
+
+// //
+// // styles from swarm-sasstools and meetup-web-components
+// //
+// @import "sds-styles";
+
+/*
+	DOCS STYLES GO HERE
+*/
+
+// Just for test purposes
+body {
+	background: $C_contentBG;
+	color: $C_textPrimary;
+}
+
+a {
+	color: $C_link;
+	outline: 1px purple;
+}
+
