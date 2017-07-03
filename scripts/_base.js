@@ -3,13 +3,9 @@ import markdown from 'metalsmith-markdown-remarkable';
 import collect from 'metalsmith-auto-collections';
 import layouts from 'metalsmith-layouts';
 
-const PATH_SRC = '../../content';
-const PATH_DEST = '../../../build';
-const PATH_TEMPLATES = '../../templates';
-
-export const handleBuild = (err, files) => {
-	if (err) { throw err; }
-};
+const PATH_SRC = '../src/content';
+const PATH_DEST = '../build';
+const PATH_TEMPLATES = '../src/templates';
 
 const METADATA = {
 	head: {
@@ -19,18 +15,19 @@ const METADATA = {
 	}
 }
 
-const metalsmithBuild = MetalSmith(__dirname)
+export const handleBuild = (err, files) => {
+	if (err) { throw err; }
+};
+
+export const metalsmithBuild = MetalSmith(__dirname)
 	.metadata(METADATA)
 	.source(PATH_SRC)
 	.destination(PATH_DEST)
 	.clean(true)
-	.use(markdown('full', {}))
-	.use(collect({
-		pattern: [`${PATH_SRC.content}**/*.md`]
+	.use(markdown('full', {
+		html: true
 	}))
 	.use(layouts({
 		directory: PATH_TEMPLATES,
 		engine: 'handlebars',
 	}));
-
-export default metalsmithBuild;

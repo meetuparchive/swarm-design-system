@@ -11,7 +11,8 @@ Main documentation for the Swarm Design System by Meetup.
 ---
 
 ### Editing content
-Content is stored as markdown in `src/content`.
+Content is stored as markdown in `src/content`. For a full markdown reference, 
+see [this guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
 
 ### Build tasks
