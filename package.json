@@ -5,6 +5,10 @@
 	"directories": {
 		"doc": "build/"
 	},
+	"scripts":{
+		"build": "make build",
+		"serve": "make serve"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/meetup/swarm-design-system.git"

@@ -17,7 +17,7 @@ see [this guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatshee
 
 ### Build tasks
 
-| Command            | Description                       |
-| ------------------ | --------------------------------- |
-| `make build`       | builds static site to `./build`   |
-| `make serve`       | builds static site and opens a live reload server via browsersync
+| Command                | Description                       |
+| ---------------------- | --------------------------------- |
+| `yarn run build`       | builds static site to `./build`   |
+| `yarn run serve`       | builds static site and opens a live reload server via browsersync
