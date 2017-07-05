@@ -1,5 +1,6 @@
 import MetalSmith from 'metalsmith';
 import markdown from 'metalsmith-markdown-remarkable';
+import collect from 'metalsmith-auto-collections';
 import layouts from 'metalsmith-layouts';
 import sass from 'metalsmith-sass';
 
