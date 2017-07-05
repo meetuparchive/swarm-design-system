@@ -19,21 +19,19 @@
 		"url": "https://github.com/meetup/swarm-design-system/blob/master/LICENSE"
 	},
 	"devDependencies": {
+		"babel": "^6.23.0",
+		"babel-cli": "^6.24.0",
+		"babel-preset-node6": "^11.0.0",
 		"handlebars": "^4.0.5",
 		"meetup-swatches": "^3.2.5",
 		"metalsmith": "^2.3.0",
+		"metalsmith-browser-sync": "^1.1.1",
 		"metalsmith-layouts": "^1.4.1",
 		"metalsmith-markdown-remarkable": "0.1.1",
+		"metalsmith-sass": "^1.4.0",
 		"swarm-sasstools": "^1.7.34"
 	},
 	"bugs": {
 		"url": "https://github.com/meetup/swarm-design-system/issues"
-	},
-	"dependencies": {
-		"babel": "^6.23.0",
-		"babel-cli": "^6.24.0",
-		"babel-preset-node6": "^11.0.0",
-		"metalsmith-browser-sync": "^1.1.1",
-		"metalsmith-sass": "^1.4.0"
 	}
 }
