@@ -1,0 +1,21 @@
+/**
+* _swarm-sasstools-utils.scss
+* -------------------
+*
+* Only adding utils from sasstools as needed.
+* Some utils require Bourbon, and it would be
+* nice to limit dependencies in this project.
+*
+*/
+
+//
+// vars
+//
+@import "../../node_modules/swarm-sasstools/scss/utils/vars/breakpoint";
+@import "../../node_modules/swarm-sasstools/scss/utils/vars/color";
+@import "../../node_modules/swarm-sasstools/scss/utils/vars/color-mappings";
+@import "../../node_modules/swarm-sasstools/scss/utils/vars/layout";
+@import "../../node_modules/swarm-sasstools/scss/utils/vars/prefix";
+@import "../../node_modules/swarm-sasstools/scss/utils/vars/root-class";
+@import "../../node_modules/swarm-sasstools/scss/utils/vars/scale";
+@import "../../node_modules/swarm-sasstools/scss/utils/vars/type";
