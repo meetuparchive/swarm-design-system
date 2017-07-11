@@ -12,11 +12,11 @@
 			<ul class="list">
 				{{#if this.collection}}
 					{{#each collections as |value key|}}
-						{{#each this}} {{!-- as |childValue childKey| --}}
+						{{#each this}}
 							{{#if_eq key ../../collection}}
 								<li class="list-item">
 									<div class="chunk">
-										<a href="/{{path}}">{{title}} is cool</a>
+										<a href="/{{path}}">{{title}}</a>
 									</div>
 								</li>
 							{{/if_eq}}
@@ -31,6 +31,14 @@
 				"<script async src='http://HOST:8181/browser-sync/browser-sync-client.js?v=2.18.11'><\/script>"
 					.replace("HOST", location.hostname)
 			);
+		</script>
+		<script>
+			const hamburger = document.querySelector('.js_hamburger');
+			const mainNav = document.querySelector('.js_mainNav');
+			console.log(hamburger);
+			hamburger.addEventListener('click', (e) => {
+				mainNav.classList.toggle('display--none');
+			});
 		</script>
 	</body>
 </html>
