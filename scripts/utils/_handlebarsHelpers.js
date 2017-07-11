@@ -33,6 +33,10 @@ const handlebarsHelpers = {
 			return opts.fn(this);
 		else
 			return opts.inverse(this);
+	},
+
+	arrToStr: function(arr) {
+		return arr.toString();
 	}
 }
 

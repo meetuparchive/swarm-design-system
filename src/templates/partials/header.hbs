@@ -1,4 +1,3 @@
-{{!-- {{debug collections}} --}}
 <div class="stripe">
 	<div class="section">
 		<div class="flex flex--alignCenter">
@@ -16,7 +15,7 @@
 				<div class="chunk">
 					<ul class="tabs">
 						{{#each collections}}
-							<li class="tabs-tab align--center"><a href="/{{this.0.path}}">{{@key}}</a></li>
+							<li class="tabs-tab align--center {{#if_eq @key (arrToStr ../collection)}}tabs-tab--selected{{/if_eq}}"><a href="/{{this.0.path}}">{{@key}}</a></li>
 						{{/each}}
 					</ul>
 				</div>
