@@ -2,10 +2,29 @@
 <html>
 	<head>
 		<title>{{ head.title }}</title>
-		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="/css/main.css" />
 	</head>
-	<body style="padding: 20vh 20vw;">
-		<pre>{{{ contents }}}</pre>
+	<body>
+		{{> header}}
+
+		<div class="bounds">
+			<pre>{{{ contents }}}</pre>
+			<ul class="list">
+				{{#if this.collection}}
+					{{#each collections as |value key|}}
+						{{#each this}} {{!-- as |childValue childKey| --}}
+							{{#if_eq key ../../collection}}
+								<li class="list-item">
+									<div class="chunk">
+										<a href="/{{path}}">{{title}}</a>
+									</div>
+								</li>
+							{{/if_eq}}
+						{{/each}}
+					{{/each}}
+				{{/if}}
+			</ul>
+		</div>
 
 		<script id="__bs_script__">
 			document.write(
