@@ -33,3 +33,9 @@ a {
 	outline: 1px purple;
 }
 
+._docs__atMedium_span--auto {
+	// @include atMediaUp(medium) {
+	// 	width: auto;
+	// }
+}
+
