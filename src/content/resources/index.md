@@ -1,5 +1,5 @@
 ---
-layout: layout.hbs
+layout: layout_noSubnav.hbs
 collection: Resources
 title: Resources
 ---

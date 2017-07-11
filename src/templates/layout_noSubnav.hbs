@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ head.title }}</title>
+		<link rel="stylesheet" href="/css/main.css" />
+	</head>
+	<body>
+		{{> header}}
+
+		<div class="bounds">
+			<pre>{{{ contents }}}</pre>
+			<p>I don't render a sidebar because I don't deserve one</p>
+		</div>
+
+		<script id="__bs_script__">
+			document.write(
+				"<script async src='http://HOST:8181/browser-sync/browser-sync-client.js?v=2.18.11'><\/script>"
+					.replace("HOST", location.hostname)
+			);
+		</script>
+	</body>
+</html>
