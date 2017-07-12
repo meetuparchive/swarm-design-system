@@ -9,21 +9,7 @@
 
 		<div class="bounds">
 			<pre>{{{ contents }}}</pre>
-			<ul class="list">
-				{{#if this.collection}}
-					{{#each collections as |value key|}}
-						{{#each this}}
-							{{#if_eq key ../../collection}}
-								<li class="list-item">
-									<div class="chunk">
-										<a href="/{{path}}">{{title}}</a>
-									</div>
-								</li>
-							{{/if_eq}}
-						{{/each}}
-					{{/each}}
-				{{/if}}
-			</ul>
+			<p>I don't render a sidebar because I don't deserve one</p>
 		</div>
 
 		<script id="__bs_script__">

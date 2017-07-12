@@ -33,3 +33,15 @@ a {
 	outline: 1px purple;
 }
 
+.__docs_atMedium_margin--left {
+	@include atMediaUp(medium) {
+		margin-left: $space !important;
+	}
+}
+
+._docs__atMedium_span--auto {
+	@include atMediaUp(medium) {
+		width: auto !important;
+	}
+}
+

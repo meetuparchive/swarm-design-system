@@ -1,0 +1,39 @@
+<div class="stripe">
+	<div class="section">
+		<div class="flex flex--wrap flex--column atMedium_flex--row flex--alignCenter flex--spaceBetween">
+
+			<div class="flex-item flex-item--shrink flex--spaceBetween span--100 _docs__atMedium_span--auto">
+				<div class="flex flex--alignCenter">
+					<div class="flex-item flex-item--shrink display--block atMedium_display--none">
+						<div class="chunk js_hamburger"><span>☰</span></div>
+					</div>
+					<div class="flex-item">
+						<div class="flex flex--alignCenter atMedium_flex--rowReverse">
+							<div class="flex-item">
+								<div class="chunk">
+									<h1 class="text--pageTitle">
+										<a href="/">S<span class="display--none atMedium_display--inline">warm</span> D<span class="display--none atMedium_display--inline">esign</span> S<span class="display--none atMedium_display--inline">ystem</span></a>
+									</h1>
+								</div>
+							</div>
+							<div class="flex-item flex-item--shrink">
+								<div class="chunk"><a href="/"><span>logo</span></a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<nav class="js_mainNav flex-item flex-item--shrink flush--left display--none atMedium_display--block span--100 _docs__atMedium_span--auto">
+				<div class="chunk">
+					<ul class="tabs flex flex--column atMedium_flex--row flex--noGutters">
+						{{#each collections}}
+							<li class="flex-item tabs-tab margin--none __docs_atMedium_margin--left {{#if_eq @key (arrToStr ../collection)}}tabs-tab--selected{{/if_eq}}"><a href="/{{this.0.path}}">{{@key}}</a></li>
+						{{/each}}
+					</ul>
+				</div>
+			</nav>
+
+		</div>
+	</div>
+</div>
