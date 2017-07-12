@@ -4,12 +4,23 @@
 		<title>{{ head.title }}</title>
 		<link rel="stylesheet" href="/css/main.css" />
 	</head>
-	<body>
+	<body class="__docs_detailPage">
 		{{> header}}
 
-		<div class="bounds">
-			<pre>{{{ contents }}}</pre>
-			<p>I don't render a sidebar because I don't deserve one</p>
+		<div class="section border--none">
+			<div class="bounds">
+				<div class="section border--none">
+
+					<div class="chunk">
+						<h2 class="text--pageTitle">{{arrToStr collection}}</h2>
+					</div>
+
+					<div class="runningText __docs_bounds--runningText">
+						{{{ contents }}}
+					</div>
+
+				</div>
+			</div>
 		</div>
 
 		<script id="__bs_script__">

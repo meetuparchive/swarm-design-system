@@ -36,6 +36,7 @@ const handlebarsHelpers = {
 	},
 
 	arrToStr: function(arr) {
+		// console.log(arr, arr.toString());
 		return arr.toString();
 	}
 }
