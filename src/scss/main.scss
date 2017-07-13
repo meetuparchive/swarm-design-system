@@ -22,8 +22,15 @@
 	DOCS STYLES GO HERE
 */
 
+//
+// Doc-specific
+//
 .__docs_detailPage {
 	background: $C_collectionBG;
+}
+
+.__docs_specLabel {
+	width: $block-2;
 }
 
 .__docs_bounds--runningText {
@@ -38,6 +45,20 @@
 	}
 }
 
+.__docs_colorList {
+	margin: 0 -#{$space-double};
+}
+
+.__docs_iframe {
+	border: none;
+	display: block;
+	outline: none;
+	width: 100%;
+}
+
+//
+// Misc styles
+//
 .__docs_atMedium_margin--left {
 	@include atMediaUp(medium) {
 		margin-left: $space !important;
@@ -54,3 +75,9 @@
 	}
 }
 
+.__docs_flush--horizontal {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}

@@ -24,6 +24,10 @@
 					<div class="section border--none">
 						<div class="runningText bounds __docs_bounds--runningText">
 							{{{ contents }}}
+
+							{{#if_eq subLayout 'typography'}}
+								{{> typeSpec}}
+							{{/if_eq}}
 						</div>
 					</div>
 				</div>

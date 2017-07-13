@@ -23,8 +23,23 @@
 				<div class="card">
 					<div class="section border--none">
 						<div class="runningText bounds __docs_bounds--runningText">
+
 							{{{ contents }}}
+
+							{{#if_eq subLayout 'typography'}}
+								{{> typeSpec}}
+							{{/if_eq}}
+
+							{{#if_eq subLayout 'icons'}}
+								{{> iconIFrame}}
+							{{/if_eq}}
+
 						</div>
+
+						{{#if_eq subLayout 'color'}}
+							{{> colorSpec}}
+						{{/if_eq}}
+
 					</div>
 				</div>
 			</div>

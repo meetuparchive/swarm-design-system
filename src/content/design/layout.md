@@ -1,5 +1,5 @@
 ---
-layout: layout.hbs
+layout: layout_subnav.hbs
 collection: Design
 title: Layout
 order: 7

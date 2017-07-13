@@ -1,5 +1,5 @@
 ---
-layout: layout.hbs
+layout: layout_subnav.hbs
 title: Purpose
 collection: Brand
 order: 2

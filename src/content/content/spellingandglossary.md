@@ -1,5 +1,5 @@
 ---
-layout: layout.hbs
+layout: layout_subnav.hbs
 collection: Content
 title: Spelling + glossary of terms
 order: 7
