@@ -36,6 +36,5 @@
 	},
 	"bugs": {
 		"url": "https://github.com/meetup/swarm-design-system/issues"
-	},
-	"dependencies": {}
+	}
 }
