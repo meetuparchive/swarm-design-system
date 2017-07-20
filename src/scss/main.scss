@@ -22,21 +22,51 @@
 	DOCS STYLES GO HERE
 */
 
-// Just for test purposes
-body {
-	background: honeydew;
-	color: $C_textPrimary;
+//
+// Doc-specific
+//
+.__docs_detailPage {
+	background: $C_collectionBG;
 }
 
-a {
-	color: $C_link;
-	outline: 1px purple;
+.__docs_specLabel {
+	width: $block-2;
 }
 
+.__docs_bounds--runningText {
+	max-width: 40em;
+
+	img {
+		max-width: 100%;
+		@include atMediaUp(huge) {
+			max-width: calc(100% + #{$space-double*2});
+			margin-left: -#{$space-double};
+		}
+	}
+}
+
+.__docs_colorList {
+	margin: 0 -#{$space-double};
+}
+
+.__docs_iframe {
+	border: none;
+	display: block;
+	outline: none;
+	width: 100%;
+}
+
+//
+// Misc styles
+//
 .__docs_atMedium_margin--left {
 	@include atMediaUp(medium) {
 		margin-left: $space !important;
 	}
+}
+
+.__docs_height--full {
+	height: 100%;
 }
 
 ._docs__atMedium_span--auto {
@@ -45,3 +75,9 @@ a {
 	}
 }
 
+.__docs_flush--horizontal {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}

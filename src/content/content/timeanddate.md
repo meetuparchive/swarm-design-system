@@ -1,5 +1,5 @@
 ---
-layout: layout.hbs
+layout: layout_subnav.hbs
 collection: Content
 title: Time and date
 order: 6

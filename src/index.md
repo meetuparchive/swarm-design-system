@@ -1,5 +1,5 @@
 ---
-layout: layout.hbs
+layout: layout_noSubnav.hbs
 ---
 
 # Hello world

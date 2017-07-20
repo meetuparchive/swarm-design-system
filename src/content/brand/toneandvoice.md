@@ -1,5 +1,5 @@
 ---
-layout: layout.hbs
+layout: layout_subnav.hbs
 title: Tone and voice
 collection: Brand
 order: 1
