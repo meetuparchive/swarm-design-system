@@ -9,7 +9,15 @@
 								<li>
 									<div class="chunk">
 										<a href="/{{path}}">{{title}}</a>
+
+										{{#if subSections}}
+											<div class="padding--left">
+												{{#csvToSubnav subSections}}{{/csvToSubnav}}
+											</div>
+										{{/if}}
+
 									</div>
+
 								</li>
 							{{/if_eq}}
 						{{/each}}

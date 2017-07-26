@@ -9,12 +9,6 @@ const collectionsConfig = {
 		sortBy: 'order'
 	},
 	Components: {},
-	Usability: {
-		sortBy: 'order'
-	},
-	Platforms: {
-		sortBy: 'order'
-	},
 	Resources: {}
 };
 
