@@ -2,8 +2,16 @@
 <html>
 	<head>
 		<title>{{ head.title }}</title>
+
+		<!-- font -->
+		<link rel="stylesheet" href="//a248.e.akamai.net/secure.meetupstatic.com/s/fonts/402715706936963211631/graphik.css" />
+
+		<!-- styles -->
 		<link rel="stylesheet" href="/css/main.css" />
+
 	</head>
 	<body class="__docs_detailPage">
-		{{> nav navStyle=navStyle}}
-		<div class="display--none">{{> iconSprite}}</div>
+		<div class="__docs_childWrapper"><div class="flex flex--column">
+			<div class="flex-item flex-item--shrink">{{> nav navStyle=navStyle}}</div>
+			<div class="display--none">{{> iconSprite}}</div>
+		<!-- closing tags for `.flex` and `.__docs_childWrapper` live in `footer.hbs` -->

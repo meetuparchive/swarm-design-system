@@ -1,45 +1,62 @@
 {{> header}}
-<div class="flex flex--noGutters flex--column atMedium_flex--row">
-	<div class="flex-item flex-item--1">
-		<div class="stripe stripe--collection __docs_height--full"><div class="section border--none">
-			<ul>
-					{{#each collections as |value key|}}
-						{{#each this}}
-							{{#if_eq key ../../collection}}
-								<li>
-									<div class="chunk">
-										<a href="/{{path}}">{{title}}</a>
+<div class="flex-item">
+	<div class="bounds __docs_bounds--superWide">
+		<div class="flex flex--noGutters flex--column atMedium_flex--row">
+			<div class="flex-item flex-item--1">
+				<div class="stripe stripe--collection __docs_height--full"><div class="section border--none">
+					<div class="chunk">
+						<h3 class="text--sectionTitle">{{collection}}</h3>
+					</div>
+					<ul>
+							{{#each collections as |value key|}}
+								{{#each this}}
+									{{#if_eq key ../../collection}}
+										<li>
+											<div class="chunk">
+												<a href="/{{path}}">{{title}}</a>
+
+												{{#if subSections}}
+													<div class="padding--left border--left margin--top">
+														{{#csvToSubnav subSections}}{{/csvToSubnav}}
+													</div>
+												{{/if}}
+
+											</div>
+
+										</li>
+									{{/if_eq}}
+								{{/each}}
+							{{/each}}
+					</ul>
+				</div></div>
+			</div>
+			<div class="flex-item flex-item--3">
+				<div class="stripe stripe--collection __docs_height--full">
+					<div class="section section--hasSeparator border--none">
+						<div class="chunk">
+							<div class="card __docs_contentContainer __docs_contentContainer--carded">
+								<div class="section border--none">
+									<div class="runningText bounds __docs_bounds--runningText">
+
+										{{{ contents }}}
+
+										{{#if_eq subLayout 'typography'}}
+											{{> typeSpec}}
+										{{/if_eq}}
+
+										{{#if_eq subLayout 'icons'}}
+											{{> iconIFrame}}
+										{{/if_eq}}
+
 									</div>
-								</li>
-							{{/if_eq}}
-						{{/each}}
-					{{/each}}
-			</ul>
-		</div></div>
-	</div>
-	<div class="flex-item flex-item--3">
-		<div class="stripe stripe--collection __docs_height--full">
-			<div class="section border--none">
-				<div class="card">
-					<div class="section border--none">
-						<div class="runningText bounds __docs_bounds--runningText">
 
-							{{{ contents }}}
+									{{#if_eq subLayout 'color'}}
+										{{> colorSpec}}
+									{{/if_eq}}
 
-							{{#if_eq subLayout 'typography'}}
-								{{> typeSpec}}
-							{{/if_eq}}
-
-							{{#if_eq subLayout 'icons'}}
-								{{> iconIFrame}}
-							{{/if_eq}}
-
+								</div>
+							</div>
 						</div>
-
-						{{#if_eq subLayout 'color'}}
-							{{> colorSpec}}
-						{{/if_eq}}
-
 					</div>
 				</div>
 			</div>

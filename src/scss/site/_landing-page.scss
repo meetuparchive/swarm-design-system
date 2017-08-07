@@ -1,0 +1,59 @@
+//
+// Landing page styles
+//
+.__docs_landingHeader {
+	padding-bottom: $block-5;
+	padding-top: $block-2;
+}
+
+.__docs_text--displayHero {
+	font-size: calc(#{$font-size-display1} + 3vw);
+	line-height: $line-height-largeText;
+	margin-bottom: calc(#{$space} + 1vw);
+}
+
+.__docs_overviewCards {
+	margin-top: -#{$block-4};
+
+	.card {
+		@extend %shadow;
+		border-radius: $largeRadius;
+		border-width: 0;
+	}
+}
+
+.__docs_whoFor .gridList-item {
+	box-shadow: none;
+	border-top: 1px solid $C_border;
+
+	@include atMediaUp(medium) {
+		border-top: 0;
+
+		&:nth-child(2) {
+			box-shadow: -1px 1px 0px $C_border;
+		}
+
+		&:nth-child(3) {
+				box-shadow: inset -1px 1px 0px $C_border;
+		}
+
+	}
+
+	&:first-child {
+		border-top: 0;
+
+		@include atMediaUp(medium) {
+			border-top: 0;
+		}
+
+	}
+}
+
+.__docs_landingCardIllo {
+	background-color: $C_collectionBG;
+	border-radius: $largeRadius $largeRadius 0 0;
+	height: $block-3;
+	margin: -#{$space} -#{$space} 0 -#{$space};
+}
+
+

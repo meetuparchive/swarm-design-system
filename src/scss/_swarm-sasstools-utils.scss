@@ -9,6 +9,12 @@
 */
 
 //
+// ugh, fine...
+// Bourbon still a dep for some sasstools stuff
+//
+@import "../../node_modules/bourbon/app/assets/stylesheets/_bourbon.scss";
+
+//
 // vars
 //
 @import "../../node_modules/swarm-sasstools/scss/utils/vars/breakpoint";
@@ -21,6 +27,31 @@
 @import "../../node_modules/swarm-sasstools/scss/utils/vars/type";
 
 //
-// helpers
+// helpers with dependencies
 //
+@import "../../node_modules/swarm-sasstools/scss/utils/helpers/pcv-modifier";
+@import "../../node_modules/swarm-sasstools/scss/utils/helpers/selector";
+@import "../../node_modules/swarm-sasstools/scss/utils/helpers/a11y";
+@import "../../node_modules/swarm-sasstools/scss/utils/helpers/i18n";
+@import "../../node_modules/swarm-sasstools/scss/utils/helpers/browser";
 @import "../../node_modules/swarm-sasstools/scss/utils/helpers/breakpoint";
+@import "../../node_modules/swarm-sasstools/scss/utils/helpers/position";
+
+//
+// helpers (depends on above)
+//
+@import "../../node_modules/swarm-sasstools/scss/utils/helpers/align";
+@import "../../node_modules/swarm-sasstools/scss/utils/helpers/background";
+@import "../../node_modules/swarm-sasstools/scss/utils/helpers/border";
+@import "../../node_modules/swarm-sasstools/scss/utils/helpers/button";
+@import "../../node_modules/swarm-sasstools/scss/utils/helpers/color";
+@import "../../node_modules/swarm-sasstools/scss/utils/helpers/display";
+@import "../../node_modules/swarm-sasstools/scss/utils/helpers/flexbox";
+@import "../../node_modules/swarm-sasstools/scss/utils/helpers/float";
+@import "../../node_modules/swarm-sasstools/scss/utils/helpers/forms";
+@import "../../node_modules/swarm-sasstools/scss/utils/helpers/lists";
+@import "../../node_modules/swarm-sasstools/scss/utils/helpers/type";
+@import "../../node_modules/swarm-sasstools/scss/utils/helpers/responsiveVarContext";
+@import "../../node_modules/swarm-sasstools/scss/utils/helpers/shadow";
+@import "../../node_modules/swarm-sasstools/scss/utils/helpers/shape";
+@import "../../node_modules/swarm-sasstools/scss/utils/helpers/width";
