@@ -2,7 +2,8 @@ import MetalSmith from 'metalsmith';
 import Handlebars from 'handlebars';
 import collections from 'metalsmith-collections';
 import collectionsConfig from './_collectionsConfig';
-import handlebarsHelpers from './utils/_handlebarsHelpers';
+import handlebarsHelpers from './utils/handlebarsHelpers';
+import logFiles from './utils/metalsmith-plugins/scrap';
 import permalinks from 'metalsmith-permalinks';
 import markdown from 'metalsmith-markdown-remarkable';
 import layouts from 'metalsmith-layouts';
@@ -45,7 +46,9 @@ export const metalsmithBuild = MetalSmith(__dirname)
 	.use(markdown('full', {
 		html: true
 	}))
+	.use(logFiles('BEFORE collections'))
 	.use(collections(collectionsConfig))
+	.use(logFiles('AFTER collections'))
 	.use(permalinks({
 		pattern: ':collection/:title',
 		relative: true
