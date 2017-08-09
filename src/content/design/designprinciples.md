@@ -5,4 +5,6 @@ title: Design principles
 order: 1
 ---
 
-# Hello world - Design principles
+# Design principles
+
+To be provided by Farah
