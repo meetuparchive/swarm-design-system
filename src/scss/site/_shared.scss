@@ -1,0 +1,42 @@
+//
+// Misc styles
+//
+.__docs_childWrapper{
+	background-color: $C_collectionBG;
+	min-height: 100vh;
+}
+
+.__docs_bounds--superWide {
+	max-width: 1500px;
+}
+
+.__docs_atMedium_margin--left {
+	@include atMediaUp(medium) {
+		margin-left: $space !important;
+	}
+}
+
+.__docs_height--full {
+	height: 100%;
+}
+
+._docs__atMedium_span--auto {
+	@include atMediaUp(medium) {
+		width: auto !important;
+	}
+}
+
+.__docs_flush--horizontal {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+.__docs_flexMarginAlign--bottom {
+	margin-top: auto;
+}
+
+.__docs_flexMarginAlign--left {
+	margin-left: auto;
+}
