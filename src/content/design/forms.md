@@ -9,7 +9,9 @@ order: 10
 Forms are provided for users to add or edit information. The design system provides a variety of input types to allow users to submit data quickly using a familiar interface. By default, form inputs have variations that indicate thier status (e.g.: error, disabled, focused, hovered, etc).
 
 ## General guidelines
-* Forms should support a summary of errors
+* Break large complex forms into smaller simpler patterns
+* Form inputs should be tap-friendly
+* When possible, forms should support a summary of errors instead of a generic (and unhelpful) error message
 * Required form elements should be clearly marked (or implicitly understood)
 * Don't override user agent styling too much
 * When grouping sets of inputs (e.g.: lists of checkbox or radio options), make sure to provide a clear label that set of inputs
