@@ -3,11 +3,11 @@ layout: layout_subnav.hbs
 collection: Design
 title: Layout
 order: 7
+subSections: Stripe, Bounds, Section, Flex, Chunk, Spacing, Sizing
 ---
 
 # Layout
 
-## Overview
 `meetup-web-components` has a set of responsive layout components to design and build with. As well as handling general layout concerns (e.g.: creating columns, separating regions of the page, etc), layout components create consistent spacing between content.
 
 Designers are encouraged to experiement with layout to suit a whatever content they’re designing for - these components and concepts are simply a baseline. Our layout components are designed to make it simple for engineers to quickly put together a responsive page layout with consistent spacing.
@@ -142,8 +142,8 @@ https://animaapp.github.io/
 **Event home: Comments**
 ![Event home: Comments](http://via.placeholder.com/800x600 "Event home: Comments")
 
-**Event home "basic info**
-![Event home "basic info](http://via.placeholder.com/800x600 "Event home "basic info")
+**Event home basic info**
+![Event home basic info](http://via.placeholder.com/800x600 "Event home basic info")
 
 **Event home 2-column layout**
 ![Event home 2-column layout](http://via.placeholder.com/800x600 "Event home 2-column layout")
@@ -174,8 +174,8 @@ _Chunk_ is not simply used for adding bottom space. _Chunk_ is a element used fo
 
 ## Chunk examples
 
-**Event home "basic info"**
-![Event home "basic info"](http://via.placeholder.com/800x600 "Event home "basic info"")
+**Event home basic info**
+![Event home basic info](http://via.placeholder.com/800x600 "Event home basic info")
 
 **Event home: Comments**
 ![Event home: Comments](http://via.placeholder.com/800x600 "Event home: Comments")
