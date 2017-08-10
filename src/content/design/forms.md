@@ -28,17 +28,17 @@ Text inputs allow users to interact with or input text data. Typically appear in
 * [NumberInput](https://meetup.github.io/meetup-web-components/?selectedKind=NumberInput&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) (Numeric values): For an input that expects a number.
 
 ### Best practices
-* Labels should be provided for each input. If a visible label doesn't make sense, at least supply a label that is read aloud to screen readers.
-	- _Do/don't example goes here_
+Labels should be provided for each input. If a visible label doesn't make sense, at least supply a label that is read aloud to screen readers.
+![Labeled input example](/assets/contentImages/dosAndDonts/forms/forms_labelInputs.png "Labeled input example")
 
-* Labels should be stacked on top of inputs. This layout is better for readability and clarity.
-	- _Do/don't example goes here_
+Labels should be stacked on top of inputs. This layout is better for readability and clarity.
+![Stacked label example](/assets/contentImages/dosAndDonts/forms/forms_labelInputsAbove.png "Stacked label example")
 
-* Placeholder text should not be used as a label. Placeholder text is best used to let people know how they might use the input (e.g.: 'Search members') or to show an example of what kind of text the input expects (e.g.: 'The Seattle Design Systems Meetup')
-	- _Do/don't example goes here_
+Placeholder text should not be used as a label. Placeholder text is best used to let people know how they might use the input (e.g.: 'Search members') or to show an example of what kind of text the input expects (e.g.: 'The Seattle Design Systems Meetup')
+![Don't use placeholder as label example](/assets/contentImages/dosAndDonts/forms/forms_noPlaceholderAsLabel.png "Don't use placeholder as label example")
 
-* Avoid segmenting inputs for single values (phone numbers, for example, should be a single field)
-	- _Do/don't example goes here_
+Avoid segmenting inputs for single values (phone numbers, for example, should be a single field)
+![Don't split inputs example](/assets/contentImages/dosAndDonts/forms/forms_noSplitInputs.png "Don't split inputs example")
 
 For more information about text inputs, check out the [TextInput](https://meetup.github.io/meetup-web-components/?selectedKind=TextInput&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel), [Textarea](https://meetup.github.io/meetup-web-components/?selectedKind=Textarea&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel), and [NumberInput](https://meetup.github.io/meetup-web-components/?selectedKind=NumberInput&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) examples in [meetup-web-components](https://github.com/meetup/meetup-web-components/).
 
@@ -51,7 +51,7 @@ If [Checkbox](https://meetup.github.io/meetup-web-components/?selectedKind=Check
 ### Best practices
 * Each checkbox should work independently of any other checkboxes in the form, and toggling a checkbox should only affect _that_ checkbox's status unless you're designing an interface for a user to make a batch selection (e.g.: select all members).
 * Avoid styling checkbox elements to look like native mobile app switches. This treathmen should be avoided for two reasons: 1. Native apps often saves the user's input instantly, and most of our flows on the web don't save the a user's input until a form is submitted; 2. The "switch" metaphor makes more sense for touch-only interfaces
-	- _Do/don't example goes here_
+	- _Do/don't example from event create goes here - "people can bring friends not on meetup" as switch vs as checkbox_
 
 For more information about date and time pickers, check out the [Checkbox](https://meetup.github.io/meetup-web-components/?selectedKind=Checkbox&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) example in [meetup-web-components](https://github.com/meetup/meetup-web-components/).
 
@@ -62,11 +62,11 @@ Radio buttons allow the selection of a single option from a set. If multiple sel
 
 ### Best practices
 * For a large number of items, use a [Select input](https://meetup.github.io/meetup-web-components/?selectedKind=SelectInput&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) instead
-	- _Do/don't example goes here_
+	- _Do/don't example goes here - picking a category as radios vs as select_
 * Avoid using a [Radio input]() for a single field
-	- _Do/don't example goes here_
+	- _Do/don't example from event create goes here - "people can bring friends not on meetup" as switch vs as checkbox_
 * If a user is allowed to select none of the options, provide an option for the user to select none. This is necessary because once a Radio button is toggled on, it cannot be toggled off without the user making a new selection.
-	- _Do/don't example goes here_
+	- _Do/don't example goes here - _
 
 ---------------------------------------
 
@@ -75,9 +75,13 @@ Select inputs allow the selection of a single option from a set, and are useful 
 
 ### Best practices
 * If a default value doesn't make sense, use an empty placeholder option.
-	- _Do/don't example goes here_
-* For small sets of options, consider using a set of [Radio inputs]() or [Checkbox inputs](https://meetup.github.io/meetup-web-components/?selectedKind=Checkbox&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel)
-	- _Do/don't example goes here_
+	- _Do/don't example from event create goes here - no attendee limit w/o a none option vs with a none option_
+* For small sets of options, consider using a set of [Radio inputs]() instead
+	- _Do/don't example goes here - Mailing list options as select vs mailing list options as radios_
+		Mailing list
+		Allow all members to send messages
+		Allow all members to send messages, but Organizers approve messages first
+		Turn mailing list off
 
 ---------------------------------------
 
@@ -88,6 +92,6 @@ Date and time pickers are provided as a shortcut for users to select a date or a
 * When using default values, pick a default that make sense in the given context
 	- _Do/don't example goes here - event create with "Today" vs 2 weeks from now_
 * Don't use a custom date-picking or time-picking interface on mobile web. Instead, let the user retain access to their device's native date or time control.
-	- _Do/don't example goes here_
+	- _Do/don't example goes here - custom calendar popping up vs iOS date picker popping up_
 
 For more information about date and time pickers, check out the [DateTimePicker](https://meetup.github.io/meetup-web-components/?selectedKind=DateTimePicker&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel)

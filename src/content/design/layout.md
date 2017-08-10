@@ -184,5 +184,10 @@ _Chunk_ is not simply used for adding bottom space. _Chunk_ is a element used fo
 **Event home: Description**
 ![Event home: Description](http://via.placeholder.com/800x600 "Event home: Description")
 
+---------------------------------------
 
+# Spacing
 
+---------------------------------------
+
+# Sizing
