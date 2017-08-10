@@ -35,6 +35,36 @@ const handlebarsHelpers = {
 			return opts.inverse(this);
 	},
 
+	unless_eq: function(a, b, opts) {
+		if(a !== b)
+			return opts.fn(this);
+		else
+			return opts.inverse(this);
+	},
+
+	log: function(content) {
+		console.log(content);
+	},
+
+	csvToSubnav: function(context) {
+		var arr = context.split(', ');
+
+		return ('<ul>') + arr.map(function(item, i) {
+			if (typeof item !== 'string') {
+				item = options.fn(item);
+			}
+
+			var itemHash = item.replace(/\s+/g, '-').toLowerCase();
+			var liClassNames = 'text--secondary text--small';
+
+			if (i !== 0) {
+				liClassNames += ' padding--top';
+			}
+
+			return '<li class="' + liClassNames + '"><a href=#"' + itemHash + '" title="' + item + '">' + item + '</a></li>';
+		}).join('\n') + '</ul>';
+	},
+
 	arrToStr: function(arr) {
 		// console.log(arr, arr.toString());
 		return arr.toString();

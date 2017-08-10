@@ -1,7 +1,8 @@
 ---
 layout: layout_subnav.hbs
-collection: Platforms
-title: Android
+collection: Design
+title: Android app
+order: 18
 ---
 
 # Hello world - Android

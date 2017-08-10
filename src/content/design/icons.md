@@ -12,4 +12,4 @@ Icons help us clearly communicate to users when text isn’t enough. Our icon se
 Engineers can the [swarm-icons](https://github.com/meetup/swarm-icons) package to build with the latest colors.
 Designers have access to these icons in the Sketch Swarm Design system, which can be downloaded through Abstract.
 
-<iframe src="https://meetup.github.io/swarm-icons/" />
+<iframe src="https://meetup.github.io/swarm-icons/" class="__docs_iframe"></iframe>

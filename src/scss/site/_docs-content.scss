@@ -1,0 +1,53 @@
+//
+// Doc-specific
+//
+.__docs_contentContainer {
+
+	table {
+		width: 100%;
+	}
+
+}
+
+.__docs_contentContainer--carded {
+	@extend %shadow;
+	border: none;
+	border-radius: $largeRadius;
+}
+
+.__docs_detailPage {
+	background: $C_collectionBG;
+}
+
+.__docs_specLabel {
+	width: $block-2;
+}
+
+.__docs_bounds--runningText {
+	max-width: 40em;
+
+	> h1 {
+		@extend %text--pageTitle;
+		margin-bottom: $space-2;
+	}
+
+	img {
+		max-width: 100%;
+		@include atMediaUp(huge) {
+			max-width: calc(100% + #{$space-double*2});
+			margin-left: -#{$space-double};
+		}
+	}
+
+}
+
+.__docs_colorList {
+	margin: 0 -#{$space-double};
+}
+
+.__docs_iframe {
+	border: none;
+	display: block;
+	outline: none;
+	width: 100%;
+}

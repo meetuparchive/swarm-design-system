@@ -1,7 +1,8 @@
 ---
 layout: layout_subnav.hbs
-collection: Platforms
-title: iOS
+collection: Design
+title: iOS app
+order: 19
 ---
 
 # Hello world - iOS

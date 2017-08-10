@@ -1,7 +1,8 @@
 ---
 layout: layout_subnav.hbs
-collection: Platforms
-title: Web
+collection: Design
+title: Web app
+order: 17
 ---
 
 # Hello world - Web
