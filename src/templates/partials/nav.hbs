@@ -29,7 +29,7 @@
 
 			<nav class="js_mainNav flex-item flex-item--shrink flush--left display--none atMedium_display--block span--100 _docs__atMedium_span--auto">
 				<div class="chunk">
-					<ul class="tabs flex flex--column atMedium_flex--row flex--noGutters">
+					<ul class="tabs tabs--noBorder flex flex--column atMedium_flex--row flex--noGutters">
 						{{#each collections}}
 							{{#unless_eq @key 'Resources'}}
 								<li class="flex-item tabs-tab margin--none __docs_atMedium_margin--left {{#if_eq @key (arrToStr ../collection)}}tabs-tab--selected{{/if_eq}}"><a href="/{{this.0.path}}">{{@key}}</a></li>

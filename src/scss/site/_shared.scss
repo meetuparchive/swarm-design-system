@@ -4,6 +4,10 @@
 .__docs_childWrapper{
 	background-color: $C_collectionBG;
 	min-height: 100vh;
+
+	> .flex--column {
+		min-height: 100vh;
+	}
 }
 
 .__docs_bounds--superWide {
