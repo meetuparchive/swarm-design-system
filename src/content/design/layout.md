@@ -6,7 +6,6 @@ order: 7
 ---
 
 # Layout
-[Chunk](#chunk)
 
 ## Overview
 `meetup-web-components` has a set of responsive layout components to design and build with. As well as handling general layout concerns (e.g.: creating columns, separating regions of the page, etc), layout components create consistent spacing between content.
