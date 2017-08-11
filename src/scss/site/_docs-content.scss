@@ -108,6 +108,7 @@
 .__docs_iframe {
 	border: none;
 	display: block;
+	margin-left: -#{$space};
 	outline: none;
-	width: 100%;
+	width: calc(100% + #{$space*2});
 }

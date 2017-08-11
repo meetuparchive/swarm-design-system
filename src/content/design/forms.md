@@ -49,24 +49,28 @@ Checkboxes are used to indicate if something is true or false or to indicate sel
 If [Checkbox](https://meetup.github.io/meetup-web-components/?selectedKind=Checkbox&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) doesn't suit your needs, also check out [TogglePills](https://meetup.github.io/meetup-web-components/?selectedKind=TogglePill&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) or feel free to design your own toggle referencing the [withToggleControl component](https://meetup.github.io/meetup-web-components/?selectedKind=withToggleControl&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) (e.g.: the 'like' action on comments uses `withToggleControl`).
 
 ### Best practices
-* Each checkbox should work independently of any other checkboxes in the form, and toggling a checkbox should only affect _that_ checkbox's status unless you're designing an interface for a user to make a batch selection (e.g.: select all members).
-* Avoid styling checkbox elements to look like native mobile app switches. This treathmen should be avoided for two reasons: 1. Native apps often saves the user's input instantly, and most of our flows on the web don't save the a user's input until a form is submitted; 2. The "switch" metaphor makes more sense for touch-only interfaces
-	- _Do/don't example from event create goes here - "people can bring friends not on meetup" as switch vs as checkbox_
+Each checkbox should work independently of any other checkboxes in the form, and toggling a checkbox should only affect _that_ checkbox's status unless you're designing an interface for a user to make a batch selection (e.g.: select all members).
+
+Avoid styling checkbox elements to look like native mobile app switches. This treathmen should be avoided for two reasons: 1. Native apps often saves the user's input instantly, and most of our flows on the web don't save the a user's input until a form is submitted; 2. The "switch" metaphor makes more sense for touch-only interfaces
+![Don't use fake toggle switches](/assets/contentImages/dosAndDonts/forms/forms_noSwitchToggles.png "Don't use fake toggle switches")
 
 For more information about date and time pickers, check out the [Checkbox](https://meetup.github.io/meetup-web-components/?selectedKind=Checkbox&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) example in [meetup-web-components](https://github.com/meetup/meetup-web-components/).
 
 ---------------------------------------
 
-## Radio buttons (DOES NOT YET EXIST)
+## Radio buttons
 Radio buttons allow the selection of a single option from a set. If multiple selection is needed, use a [Checkbox](https://meetup.github.io/meetup-web-components/?selectedKind=Checkbox&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel).
 
 ### Best practices
-* For a large number of items, use a [Select input](https://meetup.github.io/meetup-web-components/?selectedKind=SelectInput&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) instead
-	- _Do/don't example goes here - picking a category as radios vs as select_
-* Avoid using a [Radio input]() for a single field
-	- _Do/don't example from event create goes here - "people can bring friends not on meetup" as switch vs as checkbox_
-* If a user is allowed to select none of the options, provide an option for the user to select none. This is necessary because once a Radio button is toggled on, it cannot be toggled off without the user making a new selection.
-	- _Do/don't example goes here - _
+
+For a large number of items, use a [Select input](https://meetup.github.io/meetup-web-components/?selectedKind=SelectInput&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) instead
+![Use dropdown select input for many options](/assets/contentImages/dosAndDonts/forms/forms_noSwitchToggles.png "Use dropdown select input for many options")
+
+Don't use a [Radio input]() for a single field. Radio buttons are for groups
+![Radios must be in groups](/assets/contentImages/dosAndDonts/forms/forms_noSwitchToggles.png "Radios must be in groups")
+
+If a user is allowed to select none of the options, provide an option for the user to select none. This is necessary because once a Radio button is toggled on, it cannot be toggled off without the user making a new selection.
+![Provide a null option in radio groups when appropriate](/assets/contentImages/dosAndDonts/forms/forms_provideNullRadioOption.png "Provide a null option in radio groups when appropriate")
 
 ---------------------------------------
 
@@ -74,14 +78,11 @@ Radio buttons allow the selection of a single option from a set. If multiple sel
 Select inputs allow the selection of a single option from a set, and are useful for saving space in the UI.
 
 ### Best practices
-* If a default value doesn't make sense, use an empty placeholder option.
-	- _Do/don't example from event create goes here - no attendee limit w/o a none option vs with a none option_
-* For small sets of options, consider using a set of [Radio inputs]() instead
-	- _Do/don't example goes here - Mailing list options as select vs mailing list options as radios_
-		Mailing list
-		Allow all members to send messages
-		Allow all members to send messages, but Organizers approve messages first
-		Turn mailing list off
+If a default value doesn't make sense, use an empty placeholder option.
+![Use a placeholder option for selects that can be null](/assets/contentImages/dosAndDonts/forms/forms_useEmptyPlaceholder.png "Use a placeholder option for selects that can be null")
+
+For small sets of options, consider using a set of [Radio inputs]() instead. It lets the user see more content at once
+![Use set of radio buttons for few options](/assets/contentImages/dosAndDonts/forms/forms_useRadiosForFew.png "Use set of radio buttons for few options")
 
 ---------------------------------------
 
@@ -89,9 +90,9 @@ Select inputs allow the selection of a single option from a set, and are useful 
 Date and time pickers are provided as a shortcut for users to select a date or a time instead of having to type one in manually. When designing with a date or time picker, refer to our [time and date content guidelines](/content/timeanddate.html).
 
 ### Best practices:
-* When using default values, pick a default that make sense in the given context
-	- _Do/don't example goes here - event create with "Today" vs 2 weeks from now_
-* Don't use a custom date-picking or time-picking interface on mobile web. Instead, let the user retain access to their device's native date or time control.
-	- _Do/don't example goes here - custom calendar popping up vs iOS date picker popping up_
+When using default values, pick a default that make sense in the given context. For example, it wouldn't make sense to default the date to "Today" in the event create flow
+
+Don't use a custom date-picking or time-picking interface on mobile web. Instead, let the user retain access to their device's native date or time control.
+![Use native date pickers](/assets/contentImages/dosAndDonts/forms/forms_useNativeDatePicker.png "Use native date pickers")
 
 For more information about date and time pickers, check out the [DateTimePicker](https://meetup.github.io/meetup-web-components/?selectedKind=DateTimePicker&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel)
