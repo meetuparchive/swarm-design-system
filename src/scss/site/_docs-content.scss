@@ -16,6 +16,13 @@
 		border-radius: $defaultRadius;
 		color: $C_blue;
 		padding: 2px 4px;
+
+		code, pre {
+			background-color: transparent;
+			border-width: 0;
+			padding: 0;
+		}
+
 	}
 
 	//

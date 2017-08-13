@@ -13,10 +13,10 @@ subSections: Stripe, Bounds, Section, Flex, Chunk, Spacing, Sizing
 Designers are encouraged to experiement with layout to suit a whatever content they’re designing for - these components and concepts are simply a baseline. Our layout components are designed to make it simple for engineers to quickly put together a responsive page layout with consistent spacing.
 
 **Layout components, exploded view**
-![Layout components, exploded view](http://via.placeholder.com/800x600 "Layout components, exploded view")
+![Layout components, exploded view](/assets/contentImages/layoutDocs/components/LayoutComponentsBlueprint_colored_v3_All(3D).png "Layout components, exploded view")
 
 **Page layed out using layout components**
-![Page layed out using layout components](http://via.placeholder.com/800x600 "Page layed out using layout components")
+![Page layed out using layout components](/assets/contentImages/layoutDocs/components/LayoutComponentsBlueprint_colored_v3_All(flat--plain).png "Page layed out using layout components")
 
 ---------------------------------------
 
@@ -28,30 +28,30 @@ A _Stripe_ divides the page visually using a top border and a background color, 
 Every view has at least one _Stripe_ not including the global navigation header and footer - which are also Stripes.
 
 **Stripe, in isolation**
-![Stripe, in isolation](http://via.placeholder.com/800x600 "Stripe, in isolation")
+![Stripe, in isolation](/assets/contentImages/layoutDocs/components/Stripe-isolated.png "Stripe, in isolation")
 
 **Two Stripes dividing a page vertically**
-![Two Stripes dividing a page vertically](http://via.placeholder.com/800x600 "Two Stripes dividing a page vertically")
+![Two Stripes dividing a page vertically](/assets/contentImages/layoutDocs/components/Stripe(horiz).png "Two Stripes dividing a page vertically")
 
 **Two Stripes dividing a page horizontally**
-![Two Stripes dividing a page horizontally](http://via.placeholder.com/800x600 "Two Stripes dividing a page horizontally")
+![Two Stripes dividing a page horizontally](/assets/contentImages/layoutDocs/components/Stripe(vert).png "Two Stripes dividing a page horizontally")
 
 
 ## Horizontal stripe examples:
 
 **Event home**
-![Event home](http://via.placeholder.com/800x600 "Event home")
+![Event home](/assets/contentImages/layoutDocs/productExamples/Stripe-Events.png "Event home")
 
 **Group home (v0 of redesign)**
-![Group home (v0 of redesign)](http://via.placeholder.com/800x600 "Group home (v0 of redesign)")
+![Group home (v0 of redesign)](/assets/contentImages/layoutDocs/productExamples/Stripe-Groups.png "Group home (v0 of redesign)")
 
 ## Vertical stripe examples:
 
 **Messages**
-![Messages](http://via.placeholder.com/800x600 "Messages")
+![Messages](/assets/contentImages/layoutDocs/productExamples/Stripe-Messages.png "Messages")
 
 **Photo detail**
-![Photo detail](http://via.placeholder.com/800x600 "Photo detail")
+![Photo detail](/assets/contentImages/layoutDocs/productExamples/Stripe-PhotoDetail.png "Photo detail")
 
 ---------------------------------------
 
@@ -64,21 +64,21 @@ _Bounds_ is commonly a direct child of _Stripe_
 By default, _Bounds_ have a maximum width of 1100px. There is a narrow variant of _Bounds_ that is only 840px
 
 **Bounds, in isolation**
-![Bounds, in isolation](http://via.placeholder.com/800x600 "Bounds, in isolation")
+![Bounds, in isolation](/assets/contentImages/layoutDocs/components/Bounds-isolated.png "Bounds, in isolation")
 
 **Two Bounds nested in two Stripes**
-![Two Bounds nested in two Stripes](http://via.placeholder.com/800x600 "Two Bounds nested in two Stripes")
+![Two Bounds nested in two Stripes](/assets/contentImages/layoutDocs/components/Bounds-adjacent.png "Two Bounds nested in two Stripes")
 
 ## Bounds examples
 
 **Event home**
-![Event home](http://via.placeholder.com/800x600 "Event home")
+![Event home](/assets/contentImages/layoutDocs/productExamples/Bounds-EventHome.png "Event home")
 
 **Group home (v0 of redesign)**
-![Group home (v0 of redesign)](http://via.placeholder.com/800x600 "Group home (v0 of redesign)")
+![Group home (v0 of redesign)](/assets/contentImages/layoutDocs/productExamples/Bounds-GroupHome.png "Group home (v0 of redesign)")
 
 **Attendees**
-![Attendees](http://via.placeholder.com/800x600 "Attendees")
+![Attendees](/assets/contentImages/layoutDocs/productExamples/Bounds-Attendees.png "Attendees")
 
 ---------------------------------------
 
@@ -91,22 +91,22 @@ _Section_ separates content visually using whitespace and an optional bottom bor
 Sections contain double spacing at the top, and a single space at the bottom. This is because a _Section_ typically contain Chunks, which also have a sinlge space at the bottom.
 
 **Section (default), in isolation**
-![Section (default), in isolation](http://via.placeholder.com/800x600 "Section (default), in isolation")
+![Section (default), in isolation](/assets/contentImages/layoutDocs/components/Section-isolated.png "Section (default), in isolation")
 
 **Section with bottom separator, in isolation**
-![Section with bottom separator, in isolation](http://via.placeholder.com/800x600 "Section with bottom separator, in isolation")
+![Section with bottom separator, in isolation](/assets/contentImages/layoutDocs/components/Section--withSeparator-isolated.png "Section with bottom separator, in isolation")
 
 **Sections dividing page content**
-![Sections dividing page content](http://via.placeholder.com/800x600 "Sections dividing page content")
+![Sections dividing page content](/assets/contentImages/layoutDocs/components/SectionsDividingPageContent.png "Sections dividing page content")
 
 
 ## Section examples
 
 **Event home**
-![Event home](http://via.placeholder.com/800x600 "Event home")
+![Event home](/assets/contentImages/layoutDocs/productExamples/Section-EventHome.png "Event home")
 
 **Group home (v0 of redesign)**
-![Group home (v0 of redesign)](http://via.placeholder.com/800x600 "Group home (v0 of redesign)")
+![Group home (v0 of redesign)](/assets/contentImages/layoutDocs/productExamples/Section-GroupHomeOld.png "Group home (v0 of redesign)")
 
 ---------------------------------------
 
@@ -123,36 +123,36 @@ The closest you can get to using flexbox-style layout in Sketch is using the Aut
 https://animaapp.github.io/
 
 **Flex with FlexItems being used to lay out a component**
-![Flex with FlexItems being used to lay out a component](http://via.placeholder.com/800x600 "Flex with FlexItems being used to lay out a component")
+![Flex with FlexItems being used to lay out a component](/assets/contentImages/layoutDocs/components/Flex_with_FlexItems-isolated.png "Flex with FlexItems being used to lay out a component")
 
 **Flex can re-order flex items to adapt designs for larger viewports**
-![Flex can re-order flex items to adapt designs for larger viewports](http://via.placeholder.com/800x600 "Flex can re-order flex items to adapt designs for larger viewports")
+![Flex can re-order flex items to adapt designs for larger viewports](/assets/contentImages/layoutDocs/components/Flex-rwdLayoutExample--simple.png "Flex can re-order flex items to adapt designs for larger viewports")
 
 **Flex can re-order flex items to adapt designs for larger viewports**
-![Flex can re-order flex items to adapt designs for larger viewports](http://via.placeholder.com/800x600 "Flex can re-order flex items to adapt designs for larger viewports")
+![Flex can re-order flex items to adapt designs for larger viewports](/assets/contentImages/layoutDocs/components/Flex(macro).png "Flex can re-order flex items to adapt designs for larger viewports")
 
 **Flex and Flex item laying out a row in a list**
-![Flex and Flex item laying out a row in a list](http://via.placeholder.com/800x600 "Flex and Flex item laying out a row in a list")
+![Flex and Flex item laying out a row in a list](/assets/contentImages/layoutDocs/components/Flex(micro).png "Flex and Flex item laying out a row in a list")
 
 ## Flex examples
 
 **Event home: Page header**
-![Event home: Page header](http://via.placeholder.com/800x600 "Event home: Page header")
+![Event home: Page header](/assets/contentImages/layoutDocs/productExamples/Flex-EventHomePageHead.png "Event home: Page header")
 
 **Event home: Comments**
-![Event home: Comments](http://via.placeholder.com/800x600 "Event home: Comments")
+![Event home: Comments](/assets/contentImages/layoutDocs/productExamples/Flex-CommentList.png "Event home: Comments")
 
 **Event home basic info**
-![Event home basic info](http://via.placeholder.com/800x600 "Event home basic info")
+![Event home basic info](/assets/contentImages/layoutDocs/productExamples/Flex-EventInfo.png "Event home basic info")
 
 **Event home 2-column layout**
-![Event home 2-column layout](http://via.placeholder.com/800x600 "Event home 2-column layout")
+![Event home 2-column layout](/assets/contentImages/layoutDocs/productExamples/Flex-EventHome.png "Event home 2-column layout")
 
 **Photo detail**
-![Event home 2-column layout](http://via.placeholder.com/800x600 "Event home 2-column layout")
+![Event home 2-column layout](/assets/contentImages/layoutDocs/productExamples/Flex-PhotoDetail.png "Event home 2-column layout")
 
 **Attendees**
-![Event home 2-column layout](http://via.placeholder.com/800x600 "Event home 2-column layout")
+![Attendees](/assets/contentImages/layoutDocs/productExamples/Flex-Attendees.png "Attendees")
 
 
 ---------------------------------------
@@ -167,26 +167,38 @@ _Chunk_ is usually a child of _Section_. _Chunk_ rarely contains other _Chunks_,
 _Chunk_ is not simply used for adding bottom space. _Chunk_ is a element used for visually grouping related content. If you need arbitrary spacing, see swarm-sasstools.
 
 **Chunk, in isolation**
-![Chunk, in isolation](http://via.placeholder.com/800x600 "Chunk, in isolation")
+![Chunk, in isolation](/assets/contentImages/layoutDocs/components/Chunk-isolated.png "Chunk, in isolation")
 
 **Chunks dividing smaller bits of content**
-![Chunks dividing smaller bits of content](http://via.placeholder.com/800x600 "Chunks dividing smaller bits of content")
+![Chunks dividing smaller bits of content](/assets/contentImages/layoutDocs/components/ChunkExample.png "Chunks dividing smaller bits of content")
 
 ## Chunk examples
 
 **Event home basic info**
-![Event home basic info](http://via.placeholder.com/800x600 "Event home basic info")
+![Event home basic info](/assets/contentImages/layoutDocs/productExamples/ChunkBasicInfo.png "Event home basic info")
 
 **Event home: Comments**
-![Event home: Comments](http://via.placeholder.com/800x600 "Event home: Comments")
+![Event home: Comments](/assets/contentImages/layoutDocs/productExamples/ChunkCommentList.png "Event home: Comments")
 
 **Event home: Description**
-![Event home: Description](http://via.placeholder.com/800x600 "Event home: Description")
+![Event home: Description](/assets/contentImages/layoutDocs/productExamples/ChunkDescription.png "Event home: Description")
 
 ---------------------------------------
 
 # Spacing
 
+**Viewport width** | **SpaceHalf** | **Space** | **SpaceDouble**
+------------------ | ------------- | --------- | ---------------
+Small              | 8             | 16        | 32
+Medium             | 9             | 18        | 36
+Large              | 10            | 20        | 40
+
 ---------------------------------------
 
-# Sizing
+# Media sizes
+
+**xxsmall** | **xsmall** | **small** | **medium** | **large** | **xlarge** | **xxlarge**
+----------- | ---------- | --------- | ---------- | --------- | ---------- | -----------
+12          | 18         | 24        | 36         | 48        | 72         | 120
+
+
