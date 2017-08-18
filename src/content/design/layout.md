@@ -158,7 +158,7 @@ https://animaapp.github.io/
 ---------------------------------------
 
 # Chunk
-[Chunk](https://meetup.github.io/meetup-web-components/?selectedKind=Chunk&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) is the smallest unit used to separate content.
+[Chunk](https://meetup.github.io/meetup-web-components/?selectedKind=Chunk&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) is the smallest unit used to separate discreen "chunks" of content.
 
 While larger components like _Stripe_ and _Section_ divide larger collections of related content, _Chunk_ provides separation for smaller blocks of related content using whitespace.
 
