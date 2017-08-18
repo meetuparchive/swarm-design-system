@@ -108,14 +108,39 @@
 
 }
 
-.__docs_colorList {
-	margin: 0 -#{$space-double};
-}
-
 .__docs_iframe {
 	border: none;
 	display: block;
 	margin-left: -#{$space};
 	outline: none;
 	width: calc(100% + #{$space*2});
+}
+
+//
+// Brand asset page
+//
+.__docs_brandAssetThumb {
+	background: $C_black;
+	height: $block-4;
+	margin: -#{$space} -#{$space} $space -#{$space};
+
+	img {
+		max-width: none;
+		width: 100%;
+		margin-left: 0;
+	}
+}
+
+.__docs_brandAssetThumb--category {
+	height: auto;
+
+	img {
+		margin-left: 0;
+		max-width: none;
+	}
+
+}
+
+.__docs_brandAssetCard {
+	height: 100%;
 }
