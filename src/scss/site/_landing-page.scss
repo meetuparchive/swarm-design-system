@@ -1,19 +1,20 @@
 //
 // Landing page styles
 //
+$cardOverlap: 15vh;
+
 .__docs_landingHeader {
-	padding-bottom: $block-5;
-	padding-top: $block-2;
+	padding-bottom: $cardOverlap;
 }
 
 .__docs_text--displayHero {
-	font-size: calc(#{$font-size-display1} + 3vw);
+	font-size: calc(#{$font-size-display1} + 2vw);
 	line-height: $line-height-largeText;
-	margin-bottom: calc(#{$space} + 1vw);
+	margin-bottom: calc(#{$space} + .5vw);
 }
 
 .__docs_overviewCards {
-	margin-top: -#{$block-4};
+	margin-top: -#{$cardOverlap};
 
 	.card {
 		@extend %shadow;
@@ -51,9 +52,26 @@
 
 .__docs_landingCardIllo {
 	background-color: $C_collectionBG;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 	border-radius: $largeRadius $largeRadius 0 0;
 	height: $block-3;
 	margin: -#{$space} -#{$space} 0 -#{$space};
 }
 
+.__docs_landingCardIllo--branding {
+	background-image: url('../assets/landingPgIllos/FPO_SDSlandingPageIllos-01.png');
+}
 
+.__docs_landingCardIllo--content {
+	background-image: url('../assets/landingPgIllos/FPO_SDSlandingPageIllos-02.png');
+}
+
+.__docs_landingCardIllo--design {
+	background-image: url('../assets/landingPgIllos/FPO_SDSlandingPageIllos-04.png');
+}
+
+.__docs_landingCardIllo--components {
+	background-image: url('../assets/landingPgIllos/FPO_SDSlandingPageIllos-03.png');
+}

@@ -9,6 +9,14 @@
 		<!-- styles -->
 		<link rel="stylesheet" href="/css/main.css" />
 
+		<!-- iframe resize hack -->
+		<script>
+			function resizeIframe(obj) {
+				console.log(obj.contentWindow.document.body.scrollHeight);
+				obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+			}
+		</script>
+
 	</head>
 	<body class="__docs_detailPage">
 		<div class="__docs_childWrapper"><div class="flex flex--column">
