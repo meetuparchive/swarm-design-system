@@ -4,19 +4,14 @@
 //
 
 //
-// color library
+// sasstools CSS reset
 //
-@import "../../node_modules/meetup-swatches/sass/colors.scss";
+@import "~swarm-sasstools/scss/reset/all";
 
 //
-// swarm-sasstools utils
+// meetup-web-components
 //
-@import "swarm-sasstools-utils";
-
-//
-// styles from swarm-sasstools and meetup-web-components
-//
-@import "sds-styles";
+@import "~meetup-web-components/assets/scss/components/all";
 
 //
 // Docs site styles
@@ -24,3 +19,9 @@
 @import "site/shared";
 @import "site/docs-content";
 @import "site/landing-page";
+
+//
+// modifier classes
+// (must come last for cascade benefit)
+//
+@import "~swarm-sasstools/scss/modifierClasses/all";
