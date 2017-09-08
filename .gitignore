@@ -4,3 +4,5 @@
 build/
 npm_modules/
 node_modules/
+.cache/
+public/
