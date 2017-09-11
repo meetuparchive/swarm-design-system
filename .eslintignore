@@ -1,0 +1,10 @@
+build/
+coverage/
+flow-typed/
+infrastructure/
+node_modules/
+src/assets/
+src/util/newrelicBrowser.js
+svg/
+training/
+*.log

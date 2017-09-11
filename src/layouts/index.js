@@ -3,11 +3,7 @@ import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
-// import './index.css'
-
 import '../../scss/main.scss';
-
-// const baseCSSHref = require('file-loader?name=[name].[hash:7].css!require-loader!css-loader!sass-loader!../../assets/scss/main.scss');
 
 const Header = () => (
 	<div
