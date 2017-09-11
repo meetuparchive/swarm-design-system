@@ -1,5 +1,7 @@
 import React from 'react';
-import Link from "gatsby-link"
+import Link from 'gatsby-link';
+
+import cx from 'classnames';
 
 import Bounds from 'meetup-web-components/lib/layout/Bounds';
 import Card from 'meetup-web-components/lib/layout/Card';
@@ -17,6 +19,8 @@ class DocsPage extends React.PureComponent {
 			...other
 		} = this.props;
 
+
+
 		const docsContent = data.markdownRemark;
 		const docsArr = data.allMarkdownRemark.edges;
 
@@ -27,61 +31,87 @@ class DocsPage extends React.PureComponent {
 			return acc;
 		}, Object.create(null));
 
-		console.log(docCategories);
+		const CategoryLinks = (props) => {
+			const linkArray = props.category;
+
+			return (
+				<ul>
+					{
+						linkArray.map((link, i) => {
+							return (
+								<li
+									className={cx(
+										{['text--bold']: pathContext.slug == link.node.fields.slug}
+									)}
+								>
+									<Link to={link.node.fields.slug}>{link.node.frontmatter.title}</Link>
+								</li>
+							)
+						})
+					}
+				</ul>
+			);
+		};
 
 		return (
-			<FlexItem>
-				<Bounds className='__docs_bounds--superWide'>
+			<Bounds className='__docs_bounds--superWide'>
 
-					<Flex
-						noGutters
-						direction='column'
-						switchDirection='medium'
-					>
+				<Flex
+					noGutters
+					direction='column'
+					switchDirection='medium'
+				>
 
-						<FlexItem growFactor={1}>
-							<Stripe
-								collection
-								className='__docs_height--full'
+					<FlexItem growFactor={1}>
+						<Stripe
+							collection
+							className='__docs_height--full'
+						>
+							<Section>
+								{
+									Object.keys(docCategories).map((category, index) => {
+										return(
+											category == pathContext.topLevelDir &&
+												<div>
+													<Chunk>
+														<h3 className="text--sectionTitle">{category}</h3>
+													</Chunk>
+													<Chunk>
+														<CategoryLinks category={docCategories[category]} />
+													</Chunk>
+												</div>
+										)
+									})
+								}
+							</Section>
+						</Stripe>
+					</FlexItem>
+
+					<FlexItem growFactor={3}>
+						<Stripe
+							collection
+							className='__docs_height--full'
+						>
+							<Section
+								hasSeparator
+								className='border--none'
 							>
-								<Section>
-									<Chunk>
-										<h3 className="text--sectionTitle">Section name goes here</h3>
-									</Chunk>
-									<Chunk>
-										<ul>
-										</ul>
-									</Chunk>
-								</Section>
-							</Stripe>
-						</FlexItem>
+								<Chunk>
+									<Card className='__docs_contentContainer __docs_contentContainer--carded'>
+										<Section>
+											<Bounds className='runningText __docs_bounds--runningText'>
+												<div dangerouslySetInnerHTML={{ __html: docsContent.html }} />
+											</Bounds>
+										</Section>
+									</Card>
+								</Chunk>
+							</Section>
+						</Stripe>
+					</FlexItem>
 
-						<FlexItem growFactor={3}>
-							<Stripe
-								collection
-								className='__docs_height--full'
-							>
-								<Section
-									hasSeparator
-									className='border--none'
-								>
-									<Chunk>
-										<Card className='__docs_contentContainer __docs_contentContainer--carded'>
-											<Section>
-												<Bounds className='runningText __docs_bounds--runningText'>
-													<div dangerouslySetInnerHTML={{ __html: docsContent.html }} />
-												</Bounds>
-											</Section>
-										</Card>
-									</Chunk>
-								</Section>
-							</Stripe>
-						</FlexItem>
+				</Flex>
 
-					</Flex>
-
-				</Bounds>
-			</FlexItem>
+			</Bounds>
 		)
 	}
 }

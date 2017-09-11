@@ -26,7 +26,7 @@ class IndexPage extends React.PureComponent {
 }
 
 export const query = graphql`
-	query IndexQuery {
+	query indexQuery {
 		allMarkdownRemark {
 			totalCount
 			edges {
