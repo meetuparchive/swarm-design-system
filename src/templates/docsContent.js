@@ -15,8 +15,7 @@ class DocsPage extends React.PureComponent {
 	render() {
 		const {
 			data,
-			pathContext,
-			...other
+			pathContext
 		} = this.props;
 
 
@@ -44,9 +43,11 @@ class DocsPage extends React.PureComponent {
 										{['text--bold']: pathContext.slug == link.node.fields.slug}
 									)}
 								>
-									<Link to={link.node.fields.slug}>{link.node.frontmatter.title}</Link>
+									<Chunk>
+										<Link to={link.node.fields.slug}>{link.node.frontmatter.title}</Link>
+									</Chunk>
 								</li>
-							)
+							);
 						})
 					}
 				</ul>
@@ -80,7 +81,7 @@ class DocsPage extends React.PureComponent {
 														<CategoryLinks category={docCategories[category]} />
 													</Chunk>
 												</div>
-										)
+										);
 									})
 								}
 							</Section>
@@ -100,7 +101,7 @@ class DocsPage extends React.PureComponent {
 									<Card className='__docs_contentContainer __docs_contentContainer--carded'>
 										<Section>
 											<Bounds className='runningText __docs_bounds--runningText'>
-												<div dangerouslySetInnerHTML={{ __html: docsContent.html }} />
+												<div className='contentContainer' dangerouslySetInnerHTML={{ __html: docsContent.html }} />
 											</Bounds>
 										</Section>
 									</Card>
@@ -112,7 +113,7 @@ class DocsPage extends React.PureComponent {
 				</Flex>
 
 			</Bounds>
-		)
+		);
 	}
 }
 
