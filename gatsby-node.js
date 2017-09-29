@@ -1,37 +1,38 @@
-const path = require(`path`)
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const path = require('path');
+const { createFilePath } = require('gatsby-source-filesystem');
+const { toTitleCase } = require('./src/utils/toTitleCase.js');
 
 const getSlugParents = (slug) => {
 	const slugParentString = slug.substring(1, slug.length-1);
 	return slugParentString.split('/');
-}
+};
 
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 	const { createNodeField } = boundActionCreators;
 
-	if (node.internal.type === `MarkdownRemark`) {
-		const slug = createFilePath({ node, getNode, basePath: `pages` });
+	if (node.internal.type === 'MarkdownRemark') {
+		const slug = createFilePath({ node, getNode, basePath: 'pages' });
 		const slugParentsArr = getSlugParents(slug);
 
 		createNodeField({
 			node,
-			name: `slug`,
+			name: 'slug',
 			value: slug,
 		});
 
 		createNodeField({
 			node,
-			name: `topLevelDir`,
-			value: slugParentsArr[0],
+			name: 'topLevelDir',
+			value: toTitleCase(slugParentsArr[0]),
 		});
 
 		createNodeField({
 			node,
-			name: `subDir`,
-			value: slugParentsArr.length > 2 ? slugParentsArr[1] : '',
+			name: 'subDir',
+			value: toTitleCase(slugParentsArr.length > 2 ? slugParentsArr[1] : ''),
 		});
 	}
-}
+};
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
 	const { createPage } = boundActionCreators;
@@ -52,9 +53,13 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 		}`
 	).then(result => {
 			result.data.allMarkdownRemark.edges.map(({ node }) => {
+				const layoutPath = (
+					node.fields.slug.match(/^\/resources/) || node.fields.slug.match(/^\/components/)
+				) ? './src/templates/docsContent_noSubnav.js' : './src/templates/docsContent.js';
+
 				createPage({
 					path: node.fields.slug,
-					component: path.resolve(`./src/templates/docsContent.js`),
+					component: path.resolve(layoutPath),
 					context: {
 						// Data passed to context is available in page queries as GraphQL variables.
 						slug: node.fields.slug,
@@ -64,6 +69,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 				});
 			});
 			resolve();
-		})
-	})
-}
+		});
+	});
+};

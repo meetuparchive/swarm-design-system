@@ -6,6 +6,7 @@
 	padding-bottom: $space-double;
 
 	table {
+		@extend .stripedTable;
 		margin-bottom: $space-2;
 		width: 100%;
 	}

@@ -1,16 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 
 import Flex from 'meetup-web-components/lib/layout/Flex';
 import FlexItem from 'meetup-web-components/lib/layout/FlexItem';
-import Section from 'meetup-web-components/lib/layout/Section';
-import Stripe from 'meetup-web-components/lib/layout/Stripe';
 
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 
+import '../../static/assets/graphik.css';
 import '../../scss/main.scss';
 
 class TemplateWrapper extends React.PureComponent {
@@ -18,8 +16,7 @@ class TemplateWrapper extends React.PureComponent {
 		const {
 			children,
 			data,
-			location,
-			...other
+			location
 		} = this.props;
 
 		const docsArr = data.allMarkdownRemark.edges;
@@ -36,8 +33,7 @@ class TemplateWrapper extends React.PureComponent {
 				<Helmet
 					title="Gatsby Default Starter"
 					meta={[
-						{ name: 'description', content: 'Sample' },
-						{ name: 'keywords', content: 'sample, something' },
+						{ name: 'description', content: 'Guidelines and documentation about designing products at Meetup HQ' }
 					]}
 				/>
 
@@ -56,14 +52,14 @@ class TemplateWrapper extends React.PureComponent {
 				</Flex>
 
 			</div>
-		)
+		);
 	}
 
 };
 
 TemplateWrapper.propTypes = {
 	children: PropTypes.func,
-}
+};
 
 export const query = graphql`
 	query siteQuery {
@@ -81,4 +77,4 @@ export const query = graphql`
 	}
 `;
 
-export default TemplateWrapper
+export default TemplateWrapper;

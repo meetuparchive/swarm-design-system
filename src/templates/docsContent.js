@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 
 import cx from 'classnames';
+import iFrameResize from '../utils/iframe-resize';
 
 import Bounds from 'meetup-web-components/lib/layout/Bounds';
 import Card from 'meetup-web-components/lib/layout/Card';
@@ -12,13 +13,41 @@ import Section from 'meetup-web-components/lib/layout/Section';
 import Stripe from 'meetup-web-components/lib/layout/Stripe';
 
 class DocsPage extends React.PureComponent {
+	constructor(props) {
+		super(props);
+
+		this.getSubtopicLinks = this.getSubtopicLinks.bind(this);
+	}
+
+	componentDidMount() {
+		iFrameResize(
+			{log: true},
+			document.querySelectorAll('.__docs_iframe') // React.findDOMNode(this.refs.iframe));
+		);
+	};
+
+	/**
+	 * @returns {Array} array of subtopic links
+	 * @param {Object} category
+	 *
+	 * :TODO: Add real notes about this thing
+	 */
+	getSubtopicLinks(category) {
+		const subtopicLinks = category.reduce((acc, curr) => {
+			acc[curr.node.fields.subDir] = acc[curr.node.fields.subDir] || [];
+			acc[curr.node.fields.subDir].push(curr);
+
+			return acc;
+		}, Object.create(null));
+
+		return subtopicLinks;
+	}
+
 	render() {
 		const {
 			data,
 			pathContext
 		} = this.props;
-
-
 
 		const docsContent = data.markdownRemark;
 		const docsArr = data.allMarkdownRemark.edges;
@@ -30,6 +59,33 @@ class DocsPage extends React.PureComponent {
 			return acc;
 		}, Object.create(null));
 
+		const fullTopics = () => {
+			let newObj, subtopicLinks;
+
+			docsArr.reduce((acc, curr) => {
+				acc[curr.node.fields.topLevelDir] = acc[curr.node.fields.topLevelDir] || [];
+				acc[curr.node.fields.topLevelDir].push(curr);
+
+				if(curr.node.fields.topLevelDir) {
+					subtopicLinks = this.getSubtopicLinks(acc[curr.node.fields.topLevelDir]);
+					// console.log('-------------acc[curr.node.fields.topLevelDir]-------------');
+					// console.log(acc[curr.node.fields.topLevelDir]);
+				}
+
+				newObj = acc;
+				return newObj; // :TODO: just return `acc`. Only using a new var for debug purposes
+			}, Object.create(null));
+
+			console.log('---------subtopicLinks---------');
+			console.log(subtopicLinks);
+
+			console.log('---------newObj---------');
+			console.log(newObj);
+			return newObj;
+		};
+
+		fullTopics();
+
 		const CategoryLinks = (props) => {
 			const linkArray = props.category;
 
@@ -38,15 +94,15 @@ class DocsPage extends React.PureComponent {
 					{
 						linkArray.map((link, i) => {
 							return (
-								<li
-									className={cx(
-										{['text--bold']: pathContext.slug == link.node.fields.slug}
-									)}
-								>
-									<Chunk>
-										<Link to={link.node.fields.slug}>{link.node.frontmatter.title}</Link>
-									</Chunk>
-								</li>
+									<li
+										className={cx(
+											{['text--bold']: pathContext.slug == link.node.fields.slug}
+										)}
+									>
+										<Chunk>
+											<Link to={link.node.fields.slug}>{link.node.frontmatter.title}</Link>
+										</Chunk>
+									</li>
 							);
 						})
 					}
@@ -71,6 +127,7 @@ class DocsPage extends React.PureComponent {
 							<Section>
 								{
 									Object.keys(docCategories).map((category, index) => {
+										// this.getSubtopicLinks(docCategories[category]);
 										return(
 											category == pathContext.topLevelDir &&
 												<div>
@@ -125,7 +182,7 @@ export const query = graphql`
 				title
 			}
 		}
-		allMarkdownRemark {
+		allMarkdownRemark(sort: { fields: [frontmatter___order], order: ASC }) {
 			edges {
 				node {
 					frontmatter {

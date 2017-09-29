@@ -37,10 +37,18 @@
 	padding-right: 0 !important;
 }
 
-.__docs_flexMarginAlign--bottom {
-	margin-top: auto;
+.__docs_logoWrapper {
+	margin-left: auto;
+	margin-right: initial;
+
+	@include atMediaUp(medium) {
+		margin-left: initial;
+		margin-right: auto;
+	}
 }
 
-.__docs_flexMarginAlign--left {
-	margin-left: auto;
+// :TODO: consider adding these to swarm-sasstools for all directions
+
+.__docs_flexMarginAlign--bottom {
+	margin-top: auto;
 }

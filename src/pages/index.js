@@ -158,7 +158,7 @@ const IndexPage = () => (
 							<Chunk className='align--center atLarge_align--left'>
 								<h2 className="text--sectionTitle">What does success look like?</h2>
 							</Chunk>
-							<div className="runningText bounds __docs_bounds--runningText">
+							<div className="runningText __docs_bounds--runningText">
 								<Chunk>
 									<p>We create a visual language and content style guide that utilizes classic principles of good design with the ease of modern user interfaces, creating a consistent system for designers, writers, and engineers to actually use. Our design system records solutions to common design and development tasks to help us ship faster while avoiding bugs, technical debt.</p>
 									<p><span className="text--bold">Bottom line:</span> Our value is realized when products ship features using part of our design system.</p>
