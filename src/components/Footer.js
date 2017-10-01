@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 
 import Chunk from 'meetup-web-components/lib/layout/Chunk';
@@ -31,7 +31,7 @@ const Footer = () => (
 								<a href='mailto:designsystems@meetup.com' className='link'>Submit feedback</a>
 							</Chunk>,
 							<Chunk>
-								<a href="/resources" className='link'>Design system resources</a>
+								<Link to="/resources" className='link'>Design system resources</Link>
 							</Chunk>
 						]}
 					/>

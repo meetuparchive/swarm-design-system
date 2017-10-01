@@ -1,8 +1,10 @@
 import React from 'react';
 import Link from 'gatsby-link';
 
+import Parser from 'html-react-parser';
+
 import cx from 'classnames';
-import iFrameResize from '../utils/iframe-resize';
+import IFrameEmbed from '../components/IFrameEmbed';
 
 import Bounds from 'meetup-web-components/lib/layout/Bounds';
 import Card from 'meetup-web-components/lib/layout/Card';
@@ -18,13 +20,6 @@ class DocsPage extends React.PureComponent {
 
 		this.getSubtopicLinks = this.getSubtopicLinks.bind(this);
 	}
-
-	componentDidMount() {
-		iFrameResize(
-			{log: true},
-			document.querySelectorAll('.__docs_iframe') // React.findDOMNode(this.refs.iframe));
-		);
-	};
 
 	/**
 	 * @returns {Array} array of subtopic links
@@ -59,32 +54,43 @@ class DocsPage extends React.PureComponent {
 			return acc;
 		}, Object.create(null));
 
-		const fullTopics = () => {
-			let newObj, subtopicLinks;
+		// const fullTopics = () => {
+		// 	let newObj, subtopicLinks;
 
-			docsArr.reduce((acc, curr) => {
-				acc[curr.node.fields.topLevelDir] = acc[curr.node.fields.topLevelDir] || [];
-				acc[curr.node.fields.topLevelDir].push(curr);
+		// 	docsArr.reduce((acc, curr) => {
+		// 		acc[curr.node.fields.topLevelDir] = acc[curr.node.fields.topLevelDir] || [];
+		// 		acc[curr.node.fields.topLevelDir].push(curr);
 
-				if(curr.node.fields.topLevelDir) {
-					subtopicLinks = this.getSubtopicLinks(acc[curr.node.fields.topLevelDir]);
-					// console.log('-------------acc[curr.node.fields.topLevelDir]-------------');
-					// console.log(acc[curr.node.fields.topLevelDir]);
+		// 		if(curr.node.fields.topLevelDir) {
+		// 			subtopicLinks = this.getSubtopicLinks(acc[curr.node.fields.topLevelDir]);
+		// 			// console.log('-------------acc[curr.node.fields.topLevelDir]-------------');
+		// 			// console.log(acc[curr.node.fields.topLevelDir]);
+		// 		}
+
+		// 		newObj = acc;
+		// 		return newObj; // :TODO: just return `acc`. Only using a new var for debug purposes
+		// 	}, Object.create(null));
+
+		// 	console.log('---------subtopicLinks---------');
+		// 	console.log(subtopicLinks);
+
+		// 	console.log('---------newObj---------');
+		// 	console.log(newObj);
+		// 	return newObj;
+		// };
+
+		// fullTopics();
+
+		const parserOptions = {
+			replace: (domNode) => {
+				if (domNode.name === 'iframe') {
+					return (
+						<IFrameEmbed id={domNode.attribs.id && domNode.attribs.id} src={domNode.attribs.src} />
+					);
+
 				}
-
-				newObj = acc;
-				return newObj; // :TODO: just return `acc`. Only using a new var for debug purposes
-			}, Object.create(null));
-
-			console.log('---------subtopicLinks---------');
-			console.log(subtopicLinks);
-
-			console.log('---------newObj---------');
-			console.log(newObj);
-			return newObj;
+			}
 		};
-
-		fullTopics();
 
 		const CategoryLinks = (props) => {
 			const linkArray = props.category;
@@ -158,7 +164,9 @@ class DocsPage extends React.PureComponent {
 									<Card className='__docs_contentContainer __docs_contentContainer--carded'>
 										<Section>
 											<Bounds className='runningText __docs_bounds--runningText'>
-												<div className='contentContainer' dangerouslySetInnerHTML={{ __html: docsContent.html }} />
+												<div className='contentContainer'> {/* dangerouslySetInnerHTML={{ __html: docsContent.html }} */}
+													{ Parser(docsContent.html, parserOptions) }
+												</div>
 											</Bounds>
 										</Section>
 									</Card>
