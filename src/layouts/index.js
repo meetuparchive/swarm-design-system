@@ -12,6 +12,28 @@ import '../../static/assets/graphik.css';
 import '../../scss/main.scss';
 
 class TemplateWrapper extends React.PureComponent {
+	constructor(props) {
+		super(props);
+
+		this.getSubtopicLinks = this.getSubtopicLinks.bind(this);
+	}
+
+	/**
+	 * @returns {Object} an object that describes the content of the category
+	 * @param {Object} category - the top-level category to get subtopic links for
+	 *
+	 */
+	getSubtopicLinks(category) {
+		const subtopicLinks = category.reduce((acc, curr) => {
+			acc[curr.node.fields.subDir] = acc[curr.node.fields.subDir] || [];
+			acc[curr.node.fields.subDir].push(curr);
+
+			return acc;
+		}, Object.create(null));
+
+		return subtopicLinks;
+	}
+
 	render() {
 		const {
 			children,
@@ -20,12 +42,22 @@ class TemplateWrapper extends React.PureComponent {
 		} = this.props;
 
 		const docsArr = data.allMarkdownRemark.edges;
-
 		const docCategories = docsArr.reduce((acc, curr) => {
-			acc[curr.node.fields.topLevelDir] = acc[curr.node.fields.topLevelDir] || [];
-			acc[curr.node.fields.topLevelDir].push(curr);
+			let newObj;
 
-			return acc;
+			docsArr.reduce((acc, curr) => {
+				acc[curr.node.fields.topLevelDir] = acc[curr.node.fields.topLevelDir] || [];
+				acc[curr.node.fields.topLevelDir].push(curr);
+
+				newObj = acc;
+				return newObj;
+			}, Object.create(null));
+
+			Object.keys(newObj).forEach((category, index) => {
+				newObj[category] = this.getSubtopicLinks(newObj[category]);
+			});
+
+			return newObj;
 		}, Object.create(null));
 
 		return(
@@ -63,7 +95,7 @@ TemplateWrapper.propTypes = {
 
 export const query = graphql`
 	query siteQuery {
-		allMarkdownRemark {
+		allMarkdownRemark(sort: { fields: [frontmatter___order], order: ASC }) {
 			edges {
 				node {
 					fields {

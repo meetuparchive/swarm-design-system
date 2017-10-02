@@ -22,10 +22,9 @@ class DocsPage extends React.PureComponent {
 	}
 
 	/**
-	 * @returns {Array} array of subtopic links
-	 * @param {Object} category
+	 * @returns {Object} an object that describes the content of the category
+	 * @param {Object} category - the top-level category to get subtopic links for
 	 *
-	 * :TODO: Add real notes about this thing
 	 */
 	getSubtopicLinks(category) {
 		const subtopicLinks = category.reduce((acc, curr) => {
@@ -46,40 +45,23 @@ class DocsPage extends React.PureComponent {
 
 		const docsContent = data.markdownRemark;
 		const docsArr = data.allMarkdownRemark.edges;
-
 		const docCategories = docsArr.reduce((acc, curr) => {
-			acc[curr.node.fields.topLevelDir] = acc[curr.node.fields.topLevelDir] || [];
-			acc[curr.node.fields.topLevelDir].push(curr);
+			let newObj;
 
-			return acc;
+			docsArr.reduce((acc, curr) => {
+				acc[curr.node.fields.topLevelDir] = acc[curr.node.fields.topLevelDir] || [];
+				acc[curr.node.fields.topLevelDir].push(curr);
+
+				newObj = acc;
+				return newObj;
+			}, Object.create(null));
+
+			Object.keys(newObj).forEach((category, index) => {
+				newObj[category] = this.getSubtopicLinks(newObj[category]);
+			});
+
+			return newObj;
 		}, Object.create(null));
-
-		// const fullTopics = () => {
-		// 	let newObj, subtopicLinks;
-
-		// 	docsArr.reduce((acc, curr) => {
-		// 		acc[curr.node.fields.topLevelDir] = acc[curr.node.fields.topLevelDir] || [];
-		// 		acc[curr.node.fields.topLevelDir].push(curr);
-
-		// 		if(curr.node.fields.topLevelDir) {
-		// 			subtopicLinks = this.getSubtopicLinks(acc[curr.node.fields.topLevelDir]);
-		// 			// console.log('-------------acc[curr.node.fields.topLevelDir]-------------');
-		// 			// console.log(acc[curr.node.fields.topLevelDir]);
-		// 		}
-
-		// 		newObj = acc;
-		// 		return newObj; // :TODO: just return `acc`. Only using a new var for debug purposes
-		// 	}, Object.create(null));
-
-		// 	console.log('---------subtopicLinks---------');
-		// 	console.log(subtopicLinks);
-
-		// 	console.log('---------newObj---------');
-		// 	console.log(newObj);
-		// 	return newObj;
-		// };
-
-		// fullTopics();
 
 		const parserOptions = {
 			replace: (domNode) => {
@@ -93,13 +75,12 @@ class DocsPage extends React.PureComponent {
 		};
 
 		const CategoryLinks = (props) => {
-			const linkArray = props.category;
-
 			return (
 				<ul>
 					{
-						linkArray.map((link, i) => {
-							return (
+						Object.keys(props.category).map((category, i) => {
+							const linkList = props.category[category].map((link, i) => {
+								return(
 									<li
 										className={cx(
 											{['text--bold']: pathContext.slug == link.node.fields.slug}
@@ -109,6 +90,16 @@ class DocsPage extends React.PureComponent {
 											<Link to={link.node.fields.slug}>{link.node.frontmatter.title}</Link>
 										</Chunk>
 									</li>
+								);
+							});
+
+							return(
+								<li>
+									{category &&
+										<h3 className="text--bold text--secondary margin--bottom margin--top">{category}</h3>
+									}
+									<ul>{linkList}</ul>
+								</li>
 							);
 						})
 					}
@@ -133,7 +124,6 @@ class DocsPage extends React.PureComponent {
 							<Section>
 								{
 									Object.keys(docCategories).map((category, index) => {
-										// this.getSubtopicLinks(docCategories[category]);
 										return(
 											category == pathContext.topLevelDir &&
 												<div>
@@ -164,7 +154,7 @@ class DocsPage extends React.PureComponent {
 									<Card className='__docs_contentContainer __docs_contentContainer--carded'>
 										<Section>
 											<Bounds className='runningText __docs_bounds--runningText'>
-												<div className='contentContainer'> {/* dangerouslySetInnerHTML={{ __html: docsContent.html }} */}
+												<div className='contentContainer'>
 													{ Parser(docsContent.html, parserOptions) }
 												</div>
 											</Bounds>

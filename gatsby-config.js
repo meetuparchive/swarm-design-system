@@ -3,6 +3,7 @@ const path = require('path');
 module.exports = {
 	siteMetadata: {
 		title: 'Gatsby Default Starter',
+		sampleData: 'sample day tuh'
 	},
 	plugins: [
 		'gatsby-plugin-sass',
