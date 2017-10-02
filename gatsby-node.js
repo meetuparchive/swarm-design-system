@@ -55,7 +55,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 			result.data.allMarkdownRemark.edges.map(({ node }) => {
 				const layoutPath = (
 					node.fields.slug.match(/^\/resources/) || node.fields.slug.match(/^\/components/)
-				) ? './src/templates/docsContent_noSubnav.js' : './src/templates/docsContent.js';
+				) ? './src/templates/docsContent_noSubnav.jsx' : './src/templates/docsContent.jsx';
 
 				createPage({
 					path: node.fields.slug,

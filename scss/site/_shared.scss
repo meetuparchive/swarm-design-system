@@ -1,6 +1,10 @@
 //
 // Misc styles
 //
+body {
+	background-color: $C_collectionBG;
+}
+
 .__docs_childWrapper{
 	background-color: $C_collectionBG;
 	min-height: 100vh;
