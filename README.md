@@ -17,7 +17,7 @@ see [this guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatshee
 
 ### Build tasks
 
-| Command                | Description                       |
-| ---------------------- | --------------------------------- |
-| `yarn run build`       | builds static site to `./build`   |
-| `yarn run serve`       | builds static site and opens a live reload server via browsersync
+| Command                | Description                                       |
+| ---------------------- | ------------------------------------------------- |
+| `yarn run build`       | Gatsby will perform an optimized production build for your site generating static HTML and per-route JavaScript code bundles.  |
+| `yarn run develop`     | Gatsby will start a hot-reloading development environment accessible at localhost:8000                                     |
