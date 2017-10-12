@@ -2,7 +2,10 @@
 layout: layout_subnav.hbs
 collection: Content
 title: Subject lines
-order: 10
+order: 7
 ---
 
-# Hello world - Subject lines
+# Subject lines
+Goal: Help people understand Meetup’s style for subject lines across both product and marketing emails
+
+Content TBD

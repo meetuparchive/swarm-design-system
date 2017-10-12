@@ -14,7 +14,13 @@ All of the metrics in Swarm Design System are based in our typography and our ty
 <iframe src="https://meetup.github.io/swarm-sasstools/examples/typeSpec.html" id="typeSpec" frameborder="0" class="__docs_iframe"></iframe>
 
 ---------------------------------------
+## Family
 
+Graphik is our primary typeface. It has a variety of weights, adapting to different environments while keeping the voice of Meetup consistent. At the same time, it’s bold and strong to complement our script logo and bold color pallette.
+
+![Graphik type spec](/assets/contentImages/graphik_sample.png "Graphik type spec")
+
+---------------------------------------
 ## Weights
 
 <!-- If changes need to be made to the rendered example, submit a PR in swarm-sasstools -->

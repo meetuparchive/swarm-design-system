@@ -2,7 +2,8 @@
 layout: layout_subnav.hbs
 collection: Design
 title: Imagery
-order: 5
+order: 4
 ---
 
-# Hello world - Imagery
+# Imagery
+Content TBD

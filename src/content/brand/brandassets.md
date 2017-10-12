@@ -493,12 +493,3 @@ When listing all categories, put them in the order they appear below.
 		</div>
 	</div>
 </div>
-
----------------------------------------
-
-## Videos
-
----------------------------------------
-
-## Typeface?
-Link to private Drive folder?

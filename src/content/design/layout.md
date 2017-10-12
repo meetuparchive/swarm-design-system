@@ -2,15 +2,14 @@
 layout: layout_subnav.hbs
 collection: Design
 title: Layout
-order: 7
-subSections: Stripe, Bounds, Section, Flex, Chunk, Spacing, Sizing
+order: 5
 ---
 
 # Layout
 
-`meetup-web-components` has a set of responsive layout components to design and build with. As well as handling general layout concerns (e.g.: creating columns, separating regions of the page, etc), layout components create consistent spacing between content.
+We have a set of responsive layout components to design and build with. On top of handling general layout concerns (e.g. creating columns, separating regions of the page, etc.), layout components create consistent spacing between content.
 
-Designers are encouraged to experiement with layout to suit a whatever content they’re designing for - these components and concepts are simply a baseline. Our layout components are designed to make it simple for engineers to quickly put together a responsive page layout with consistent spacing.
+Designers are encouraged to experiment with layouts to suit whatever content they’re designing for—these components and concepts are simply a baseline. Our layout components are designed to make it simple for engineers to quickly put together a responsive page layout with consistent spacing.
 
 **Layout components, exploded view**
 ![Layout components, exploded view](/assets/contentImages/layoutDocs/components/LayoutComponentsBlueprint_colored_v3_All(3D).png "Layout components, exploded view")
@@ -57,11 +56,11 @@ Every view has at least one _Stripe_ not including the global navigation header 
 
 # Bounds
 
-[Bounds](https://meetup.github.io/meetup-web-components/?selectedKind=Bounds&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) is used to maintain a comfortable width for content by providing a maximum width and centering content on larger viewports.
+[Bounds](https://meetup.github.io/meetup-web-components/?selectedKind=Bounds&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) are used to maintain a comfortable width for content by providing a maximum width and centering content on larger viewports.
 
-_Bounds_ is commonly a direct child of _Stripe_
+_Bounds_ are commonly a direct child of _Stripe_
 
-By default, _Bounds_ have a maximum width of 1100px. There is a narrow variant of _Bounds_ that is only 840px
+By default, _Bounds_ have a maximum width of 1100px. There are a narrow variant of _Bounds_ that are only 840px
 
 **Bounds, in isolation**
 ![Bounds, in isolation](/assets/contentImages/layoutDocs/components/Bounds-isolated.png "Bounds, in isolation")
@@ -115,12 +114,11 @@ Sections contain double spacing at the top, and a single space at the bottom. Th
 
 _Flex_ and _FlexItem_ can be used for macro layout, like a main content area and a sidebar, or they can be used for laying out smaller elements, like an icon next and a text label.
 
-See the _Flex_ and _FlexItem_ Storybook stories in `mup-web-components` to preview all of the flexbox options that are controlled using props.
+See the _Flex_ and _FlexItem_ Storybook stories in [mup-web-components](https://meetup.github.io/meetup-web-components/) to preview all of the flexbox options that are controlled using props.
 
 _Flex_ and _FlexItem_ are an abstraction of the CSS flexible box (flexbox) layout module. The concepts behind flexbox are also used in Android and iOS development, and is what Facebook’s cross-platform layout engine, Yoga, is based on.
 
-The closest you can get to using flexbox-style layout in Sketch is using the Autolayout plugin:
-https://animaapp.github.io/
+The closest you can get to using flexbox-style layout in Sketch is using the [Autolayout plugin](https://animaapp.github.io/).
 
 **Flex with FlexItems being used to lay out a component**
 ![Flex with FlexItems being used to lay out a component](/assets/contentImages/layoutDocs/components/Flex_with_FlexItems-isolated.png "Flex with FlexItems being used to lay out a component")
@@ -158,13 +156,13 @@ https://animaapp.github.io/
 ---------------------------------------
 
 # Chunk
-[Chunk](https://meetup.github.io/meetup-web-components/?selectedKind=Chunk&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) is the smallest unit used to separate discreen "chunks" of content.
+[Chunk](https://meetup.github.io/meetup-web-components/?selectedKind=Chunk&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) is the smallest unit used to separate discreet "chunks" of content.
 
 While larger components like _Stripe_ and _Section_ divide larger collections of related content, _Chunk_ provides separation for smaller blocks of related content using whitespace.
 
 _Chunk_ is usually a child of _Section_. _Chunk_ rarely contains other _Chunks_, but it's possible that you need to separate content within a _Chunk_—for example: in a member list, each member row is a _Chunk_, the member's name is a _Chunk_, and the member's bio is a _Chunk_.
 
-_Chunk_ is not simply used for adding bottom space. _Chunk_ is a element used for visually grouping related content. If you need arbitrary spacing, see swarm-sasstools.
+_Chunk_ is not simply used for adding bottom space. _Chunk_ is a element used for visually grouping related content. If you need arbitrary spacing, see [swarm-sasstools](https://meetup.github.io/swarm-sasstools/).
 
 **Chunk, in isolation**
 ![Chunk, in isolation](/assets/contentImages/layoutDocs/components/Chunk-isolated.png "Chunk, in isolation")
@@ -200,5 +198,3 @@ Large              | 10            | 20        | 40
 **xxsmall** | **xsmall** | **small** | **medium** | **large** | **xlarge** | **xxlarge**
 ----------- | ---------- | --------- | ---------- | --------- | ---------- | -----------
 12          | 18         | 24        | 36         | 48        | 72         | 120
-
-

@@ -8,9 +8,17 @@ $cardOverlap: 15vh;
 }
 
 .__docs_text--displayHero {
-	font-size: calc(#{$font-size-display1} + 2vw);
+	font-size: calc(#{$font-size-display1} + 1vw);
 	line-height: $line-height-largeText;
 	margin-bottom: calc(#{$space} + .5vw);
+}
+
+.__docs_runningText--noHyphens p { //chained class for specificity :/
+	@include hyphens(none !important);
+}
+
+.__docs_lineHeight--default {
+	line-height: $line-height !important;
 }
 
 .__docs_overviewCards {
