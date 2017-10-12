@@ -52,7 +52,7 @@ class Nav extends React.PureComponent {
 						direction="column"
 						switchDirection="medium"
 					>
-						<FlexItem> { /* shrink */ }
+						<FlexItem>
 							<Flex align="center">
 								<FlexItem
 									shrink
@@ -69,16 +69,18 @@ class Nav extends React.PureComponent {
 										align="center"
 										rowReverse="medium"
 									>
-										<FlexItem>
-											<Chunk>
-												{ /*
-													:TODO:
-													Instead of hiding/showing with classes, hide/show using the HOC, withMatchMedia
-												*/ }
-												<h1 className="text--pageTitle display--none atMedium_display--block"><Link to="/">Swarm Design System</Link></h1>
-												<h1 className="text--pageTitle display--block atMedium_display--none"><Link to="/">SDS</Link></h1>
-											</Chunk>
-										</FlexItem>
+										{ !isLandingPage &&
+											<FlexItem>
+												<Chunk>
+													{ /*
+														:TODO:
+														Instead of hiding/showing with classes, hide/show using the HOC, withMatchMedia
+													*/ }
+													<h1 className="text--pageTitle display--none atMedium_display--block"><Link to="/">Swarm Design System</Link></h1>
+													<h1 className="text--pageTitle display--block atMedium_display--none"><Link to="/">SDS</Link></h1>
+												</Chunk>
+											</FlexItem>
+										}
 										<FlexItem
 											shrink
 											className="__docs_logoWrapper"

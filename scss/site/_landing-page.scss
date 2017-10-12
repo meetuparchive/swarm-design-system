@@ -58,28 +58,89 @@ $cardOverlap: 15vh;
 	}
 }
 
+.__docs_highlightSection {
+	position: relative;
+	z-index: 1;
+}
+
+$C_dimmingOverlay--dark: transparentize($C_black, .1);
+.__docs_bgOverlay {
+	background-color: $C_dimmingOverlay--dark;
+	bottom: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+//
+// Overlay transitions
+//
+.__docs_bgOverlay-appear,
+.__docs_bgOverlay-enter {
+	opacity: 0.01;
+}
+
+.__docs_bgOverlay-appear.__docs_bgOverlay-appear-active,
+.__docs_bgOverlay-enter.__docs_bgOverlay-enter-active {
+	opacity: 1;
+	transition: opacity $duration--medium $easing--enter;
+}
+
+.__docs_bgOverlay-exit {
+	opacity: 1;
+	transform: translateY(0px);
+}
+
+.__docs_bgOverlay-exit.__docs_bgOverlay-exit-active {
+	opacity: 0.01;
+	transition: opacity $duration--long $easing--exit;
+}
+
+//
+// Documentation section cards
+//
 .__docs_landingCardIllo {
 	background-color: $C_collectionBG;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	border-radius: $largeRadius $largeRadius 0 0;
+	border-radius: $defaultRadius $defaultRadius 0 0;
 	height: $block-3;
 	margin: -#{$space} -#{$space} 0 -#{$space};
 }
 
-.__docs_landingCardIllo--branding {
-	background-image: url('../static/assets/landingPgIllos/FPO_SDSlandingPageIllos-01.png');
+
+@keyframes float {
+	0% {
+		transform: translate(0px, 0px);
+	}
+
+	50% {
+		transform: translateY(5px);
+	}
+
+	100% {
+		transform: translateY(-5px);
+	}
+}
+
+.anim-float {
+	animation: float 3s infinite;
+	animation-direction: alternate;
+}
+
+.__docs_landingCardIllo--brand {
+	background-image: url('../static/assets/landingPgIllos/brand.jpg');
 }
 
 .__docs_landingCardIllo--content {
-	background-image: url('../static/assets/landingPgIllos/FPO_SDSlandingPageIllos-02.png');
+	background-image: url('../static/assets/landingPgIllos/content.jpg');
 }
 
 .__docs_landingCardIllo--design {
-	background-image: url('../static/assets/landingPgIllos/FPO_SDSlandingPageIllos-04.png');
+	background-image: url('../static/assets/landingPgIllos/design.jpg');
 }
 
-.__docs_landingCardIllo--components {
-	background-image: url('../static/assets/landingPgIllos/FPO_SDSlandingPageIllos-03.png');
+.__docs_landingCardIllo--web-components {
+	background-image: url('../static/assets/landingPgIllos/components.jpg');
 }
