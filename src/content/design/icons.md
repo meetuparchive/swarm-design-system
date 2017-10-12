@@ -3,13 +3,12 @@ layout: layout_subnav.hbs
 subLayout: icons
 collection: Design
 title: Icons
-order: 5
+order: 3
 ---
 
 # Icons
-Icons help us clearly communicate to users when text isn’t enough. Our icon set was designed to pair nicely with our typography, and comes in two weights. By default, our icons are displayed as the “Light” variant. When icons are displayed at the size m or above, the Bold weight is used to visually match the density the of Thin weight when icons are rendered at their more commonly used smaller sizes.
+Our icons are a light and airy with rounded corners to resemble the nature of our Swarm logo. Icons help us clearly communicate when text isn’t enough. Our icon set was designed to complement our typography, and comes in two weights.
 
-Engineers can the [swarm-icons](https://github.com/meetup/swarm-icons) package to build with the latest colors.
-Designers have access to these icons in the Sketch Swarm Design system, which can be downloaded through Abstract.
+Engineers can use the [Swarm icons package](https://github.com/meetup/swarm-icons) to build with the latest icons. Designers have access to these icons in our Sketch UI kit, which can be downloaded through Abstract.
 
-<iframe src="https://meetup.github.io/swarm-icons/" frameborder="0" scrolling="no" onload="resizeIframe(this)" class="__docs_iframe" style="min-height: 2200px;"></iframe>
+<iframe src="https://meetup.github.io/swarm-icons/" id="iconSample" frameborder="0" class="__docs_iframe" ></iframe>

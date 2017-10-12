@@ -2,7 +2,7 @@
 layout: layout_subnav.hbs
 collection: Design
 title: Animation
-order: 12
+order: 11
 ---
 
 # Animation
