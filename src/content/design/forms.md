@@ -59,10 +59,10 @@ Radio buttons allow the selection of a single option from a set. If multiple sel
 ### Best practices
 
 For a large number of items, use a [Select input](https://meetup.github.io/meetup-web-components/?selectedKind=SelectInput&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) instead
-![Use dropdown select input for many options](/assets/contentImages/dosAndDonts/forms/forms_noSwitchToggles.png "Use dropdown select input for many options")
+![Use dropdown select input for many options](/assets/contentImages/dosAndDonts/forms/forms_useSelectForMany.png "Use dropdown select input for many options")
 
 Don't use a [Radio input](https://meetup.github.io/meetup-web-components/?knob-checked=true&knob-className=&knob-label=This%20is%20a%20radio&knob-Direction=row&knob-Selected=one&selectedKind=RadioButtonGroup&selectedStory=Basic%20usage&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) for a single field. Radio buttons are for groups
-![Radios must be in groups](/assets/contentImages/dosAndDonts/forms/forms_noSwitchToggles.png "Radios must be in groups")
+![Radios must be in groups](/assets/contentImages/dosAndDonts/forms/forms_noSingleRadio.png "Radios must be in groups")
 
 If a user is allowed to select none of the options, provide an option for the user to select none. This is necessary because once a Radio button is toggled on, it cannot be toggled off without the user making a new selection.
 ![Provide a null option in radio groups when appropriate](/assets/contentImages/dosAndDonts/forms/forms_provideNullRadioOption.png "Provide a null option in radio groups when appropriate")
@@ -73,6 +73,9 @@ If a user is allowed to select none of the options, provide an option for the us
 Toggle switches are used to indicate whether whether something is enabled or disabled. Toggle switches are like checkboxes, except checkboxes are for making a selection between options, and the the toggle is for turning an option on and off.
 
 ### Best practices
+For selecting one or more out of a collection, use a set of [Checkboxes](https://meetup.github.io/meetup-web-components/?selectedKind=Checkbox&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) or [Radio inputs](https://meetup.github.io/meetup-web-components/?knob-checked=true&knob-className=&knob-label=This%20is%20a%20radio&knob-Direction=row&knob-Selected=one&selectedKind=RadioButtonGroup&selectedStory=Basic%20usage&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) instead
+![Use radio or checkbox for collections](/assets/contentImages/dosAndDonts/forms/forms_avoidToggles.png "Use radio or checkbox for collections")
+
 If a physical switch would work for the action, a toggle is okay to use.
 
 Use toggle switches with caution, they may be misleading. Native apps often saves the user's input from a toggle switch instantly, and most of our flows on the web don't save the a user's input until a form is submitted.
@@ -90,7 +93,7 @@ Select inputs allow the selection of a single option from a set, and are useful 
 If a default value doesn't make sense, use an empty placeholder option.
 ![Use a placeholder option for selects that can be null](/assets/contentImages/dosAndDonts/forms/forms_useEmptyPlaceholder.png "Use a placeholder option for selects that can be null")
 
-For small sets of options, consider using a set of [Radio inputs]() instead. It lets the user see more content at once
+For small sets of options, consider using a set of [Radio inputs](https://meetup.github.io/meetup-web-components/?knob-checked=true&knob-className=&knob-label=This%20is%20a%20radio&knob-Direction=row&knob-Selected=one&selectedKind=RadioButtonGroup&selectedStory=Basic%20usage&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel) instead. It lets the user see more content at once
 ![Use set of radio buttons for few options](/assets/contentImages/dosAndDonts/forms/forms_useRadiosForFew.png "Use set of radio buttons for few options")
 
 ---------------------------------------
