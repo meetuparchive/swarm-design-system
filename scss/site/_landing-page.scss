@@ -58,6 +58,47 @@ $cardOverlap: 15vh;
 	}
 }
 
+.__docs_highlightSection {
+	position: relative;
+	z-index: 1;
+}
+
+$C_dimmingOverlay--dark: transparentize($C_black, .1);
+.__docs_bgOverlay {
+	background-color: $C_dimmingOverlay--dark;
+	bottom: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+//
+// Overlay transitions
+//
+.__docs_bgOverlay-appear,
+.__docs_bgOverlay-enter {
+	opacity: 0.01;
+}
+
+.__docs_bgOverlay-appear.__docs_bgOverlay-appear-active,
+.__docs_bgOverlay-enter.__docs_bgOverlay-enter-active {
+	opacity: 1;
+	transition: opacity $duration--medium $easing--enter;
+}
+
+.__docs_bgOverlay-exit {
+	opacity: 1;
+	transform: translateY(0px);
+}
+
+.__docs_bgOverlay-exit.__docs_bgOverlay-exit-active {
+	opacity: 0.01;
+	transition: opacity $duration--long $easing--exit;
+}
+
+//
+// Documentation section cards
+//
 .__docs_landingCardIllo {
 	background-color: $C_collectionBG;
 	background-repeat: no-repeat;

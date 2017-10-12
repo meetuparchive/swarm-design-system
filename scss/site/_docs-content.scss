@@ -34,13 +34,15 @@
 	hr {
 		border-color: transparent;
 		margin: $space-double 0;
+		overflow: visible;
 		position: relative;
+		height: 1px;
 
 		&:after {
 			content: '';
 			position: absolute;
 			left: -500%;
-			background-color: rgba(0,0,0,.12);
+			background-color: $C_border;
 			height: 1px;
 			width: 1000%;
 			top: -1px;
