@@ -124,7 +124,7 @@ class IndexPage extends React.PureComponent {
 										<OverviewCard
 											category='Design'
 											blurb='Guidelines for product design at Meetup. Includes our design team’s processes and principles as well as visual design details'
-											link='/design'
+											link='/design/color'
 											linkText='Start designing'
 										/>,
 										<OverviewCard
@@ -136,7 +136,7 @@ class IndexPage extends React.PureComponent {
 										<OverviewCard
 											category='Content'
 											blurb='Guidelines on the tone of voice to personify the brand and personality of Meetup, while keeping the product easy to navigate and understand.'
-											link='/guidelines'
+											link='/content/basics'
 											linkText='Review guidelines'
 										/>,
 										<OverviewCard

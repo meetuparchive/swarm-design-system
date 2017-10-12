@@ -109,6 +109,26 @@ $C_dimmingOverlay--dark: transparentize($C_black, .1);
 	margin: -#{$space} -#{$space} 0 -#{$space};
 }
 
+
+@keyframes float {
+	0% {
+		transform: translate(0px, 0px);
+	}
+
+	50% {
+		transform: translateY(5px);
+	}
+
+	100% {
+		transform: translateY(-5px);
+	}
+}
+
+.anim-float {
+	animation: float 3s infinite;
+	animation-direction: alternate;
+}
+
 .__docs_landingCardIllo--brand {
 	background-image: url('../static/assets/landingPgIllos/brand.jpg');
 }
