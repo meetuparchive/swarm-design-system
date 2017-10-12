@@ -16,7 +16,7 @@ import Stripe from 'meetup-web-components/lib/layout/Stripe';
 const OverviewCard = (props) => (
 	<Card className="display--flex flex--column">
 		<div className="chunk">
-			<div className={`__docs_landingCardIllo __docs_landingCardIllo--${props.category} keepAspect keepAspect--2-1`}></div>
+			<div className={`__docs_landingCardIllo __docs_landingCardIllo--${props.category.replace(/\s+/g, '-').toLowerCase()} keepAspect keepAspect--2-1`}></div>
 		</div>
 		<div className="chunk">
 			<h3 className="text--big">{props.category}</h3>
@@ -124,7 +124,7 @@ class IndexPage extends React.PureComponent {
 										<OverviewCard
 											category='Design'
 											blurb='Guidelines for product design at Meetup. Includes our design team’s processes and principles as well as visual design details'
-											link='/design'
+											link='/design/color'
 											linkText='Start designing'
 										/>,
 										<OverviewCard
@@ -136,7 +136,7 @@ class IndexPage extends React.PureComponent {
 										<OverviewCard
 											category='Content'
 											blurb='Guidelines on the tone of voice to personify the brand and personality of Meetup, while keeping the product easy to navigate and understand.'
-											link='/guidelines'
+											link='/content/basics'
 											linkText='Review guidelines'
 										/>,
 										<OverviewCard
