@@ -2,9 +2,9 @@ const path = require('path');
 
 module.exports = {
 	siteMetadata: {
-		title: 'Gatsby Default Starter',
-		sampleData: 'sample day tuh'
+		title: 'Swarm Design System'
 	},
+	pathPrefix: '/swarm-design-system',
 	plugins: [
 		'gatsby-plugin-sass',
 		'gatsby-plugin-react-helmet',

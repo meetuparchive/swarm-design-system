@@ -60,12 +60,10 @@ class TemplateWrapper extends React.PureComponent {
 			return newObj;
 		}, Object.create(null));
 
-		console.log(docCategories);
-
 		return(
 			<div>
 				<Helmet
-					title="Gatsby Default Starter"
+					title="Swarm Design System"
 					meta={[
 						{ name: 'description', content: 'Guidelines and documentation about designing products at Meetup HQ' }
 					]}

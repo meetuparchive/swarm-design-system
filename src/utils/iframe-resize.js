@@ -3,7 +3,7 @@
 // this from complicating things, we provide this wrapper
 // which makes sure that it is loaded only once.
 
-if (!window.docsIFrameResizer) {
+if (window && !window.docsIFrameResizer) {
   window.docsIFrameResizer = require('iframe-resizer').iframeResizer;
 }
 

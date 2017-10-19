@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "classnames": "2.2.5",
-    "gatsby": "^1.9.17",
-    "gatsby-link": "^1.6.15",
+    "gatsby": "^1.9.74",
+    "gatsby-link": "^1.6.22",
     "gatsby-plugin-react-helmet": "^1.0.5",
     "gatsby-plugin-sass": "^1.0.12",
     "gatsby-source-filesystem": "^1.4.12",
@@ -27,11 +27,13 @@
   },
   "scripts": {
     "build": "gatsby build",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "develop": "gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "gh-pages": "^1.0.0",
     "prettier": "^1.6.1",
     "react-transition-group": "2.2.0"
   }
