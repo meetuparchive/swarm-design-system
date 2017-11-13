@@ -11,6 +11,9 @@
     "type": "MIT",
     "url": "https://github.com/meetup/swarm-design-system/blob/master/LICENSE"
   },
+  "peerDependencies": {
+    "swarm-animation": "^0.0.95"
+  },
   "dependencies": {
     "classnames": "2.2.5",
     "gatsby": "^1.9.17",
@@ -21,9 +24,9 @@
     "gatsby-transformer-remark": "^1.7.7",
     "html-react-parser": "^0.4.0",
     "iframe-resizer": "^3.5.14",
-    "meetup-web-components": "3.0.1238",
+    "meetup-web-components": "3.3.1649",
     "swarm-icons": "^1.3.129",
-    "swarm-sasstools": "^1.7.130"
+    "swarm-sasstools": "^2.0.294"
   },
   "scripts": {
     "build": "gatsby build",
@@ -32,6 +35,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "swarm-animation": "^0.0.95",
     "prettier": "^1.6.1",
     "react-transition-group": "2.2.0"
   }
