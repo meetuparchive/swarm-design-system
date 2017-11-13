@@ -60,8 +60,6 @@ class TemplateWrapper extends React.PureComponent {
 			return newObj;
 		}, Object.create(null));
 
-		console.log(docCategories);
-
 		return(
 			<div>
 				<Helmet

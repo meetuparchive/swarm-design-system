@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import Link, {withPrefix} from 'gatsby-link';
 
 import cx from 'classnames';
 
@@ -9,6 +9,8 @@ import FlexItem from 'meetup-web-components/lib/layout/FlexItem';
 import Section from 'meetup-web-components/lib/layout/Section';
 import Stripe from 'meetup-web-components/lib/layout/Stripe';
 import {Tabs, TabsTab} from 'meetup-web-components/lib/interactive/Tabs';
+
+import logo from '../../static/assets/swarmLogo.svg';
 
 class Nav extends React.PureComponent {
 	constructor(props) {
@@ -34,9 +36,10 @@ class Nav extends React.PureComponent {
 		} = this.props;
 
 		const currentPath = location.pathname;
-		const isLandingPage = currentPath === '/';
+		const isLandingPage = currentPath === withPrefix('') || currentPath === withPrefix('/');
+		const pathRegex = new RegExp(withPrefix('/'), 'g');
+		const cleanedCurrentPath = currentPath.replace(pathRegex ,'');
 		const topLevelCategories = Object.keys(categories).filter(Boolean).reverse();
-		console.log(topLevelCategories);
 
 		return (
 			<Stripe
@@ -86,7 +89,7 @@ class Nav extends React.PureComponent {
 											className="__docs_logoWrapper"
 										>
 											<Chunk><Link to="/">
-												<img src="/assets/swarmLogo.svg" alt="M" />
+												<img src={logo} alt="M" />
 											</Link></Chunk>
 										</FlexItem>
 									</Flex>
@@ -108,7 +111,7 @@ class Nav extends React.PureComponent {
 
 											return (
 												category.toUpperCase() !== 'RESOURCES' &&
-													<TabsTab isSelected={currentPath.toUpperCase().includes(category.toUpperCase())}><Link to={`${categoryLink}`}>{category}</Link></TabsTab>
+													<TabsTab isSelected={cleanedCurrentPath.toUpperCase().includes(category.toUpperCase())}><Link to={`${categoryLink}`}>{category}</Link></TabsTab>
 											);
 										})
 									}

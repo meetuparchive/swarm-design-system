@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import iFrameResize from '../utils/iframe-resize';
 
 class IFrameEmbed extends React.Component {
 
 	componentDidMount() {
+		// This has to happen after mount so GH Pages deployment doesn't fail
+		// because it doesn't have `window`
+		const iFrameResize = require('../utils/iframe-resize');
+
 		iFrameResize(
 			{
 				checkOrigin: false,

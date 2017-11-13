@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import Link, {withPrefix} from 'gatsby-link';
 
 import Parser from 'html-react-parser';
 
@@ -66,10 +66,19 @@ class DocsPage extends React.PureComponent {
 		const parserOptions = {
 			replace: (domNode) => {
 				if (domNode.name === 'iframe') {
+					const { src, id } = domNode.attribs;
 					return (
-						<IFrameEmbed id={domNode.attribs.id && domNode.attribs.id} src={domNode.attribs.src} />
+						<IFrameEmbed id={id && id} src={src} />
 					);
+				}
+				if (domNode.name === 'img') {
+					const { src, alt, title } = domNode.attribs;
+					const hasNoPathPrefix = withPrefix('') === '/';
+					const cleanedSrc = hasNoPathPrefix ? `${withPrefix('')}${src.substr(src.indexOf('/') + 1)}` : `${withPrefix('')}${src}`;
 
+					return (
+						<img src={cleanedSrc} alt={alt} title={title} />
+					);
 				}
 			}
 		};
