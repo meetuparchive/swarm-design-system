@@ -6,25 +6,34 @@ order: 0
 ---
 
 ## Github repos
-* meetup-web-components: [https://github.com/meetup/meetup-web-components/](https://github.com/meetup/meetup-web-components/)
-* swarm-icons: [https://github.com/meetup/swarm-icons/](https://github.com/meetup/swarm-icons/)
-* swarm-sasstools: [https://github.com/meetup/swarm-sasstools/](https://github.com/meetup/swarm-sasstools/)
-* swarm-constants: [https://github.com/meetup/swarm-constants/](https://github.com/meetup/swarm-constants/)
+**[meetup-web-components](https://github.com/meetup/meetup-web-components/)**<br />
+A collection of UI components that are intended to be used across all of our web apps
+
+**[swarm-icons](https://github.com/meetup/swarm-icons/)**<br />
+Icons to be used across Meetup's Android, iOS, and Web apps. Currently only in use in the web apps
+
+**[swarm-constants](https://github.com/meetup/swarm-constants/)**<br />
+Where our "[design tokens](https://medium.com/eightshapes-llc/tokens-in-design-systems-25dd82d58421)" are stored for use across Meetup's Android, iOS, and Web apps. Currently only in use in the web apps, and currently only stores colors
+
+**[swarm-sasstools](https://github.com/meetup/swarm-sasstools/)**<br />
+The SASS library used to style Meetup's UI components (meetup-web-components) and web apps. Provides a CSS reset, CSS helper classes, and SASS utilities
 
 ---------------------------------------
 
 ## Sketch UI Kit
-The Sketch UI Kit can be downloaded from Abstract. You can view an activity stream in [Abstract's web app](https://app.goabstract.com/organizations/30c1e774-d1af-4ecb-9fec-7ba940203098?projectId=fe53f5c0-55e0-11e7-90a1-638d6300638d), but you can only download the Sketch file through Abstract's desktop app after being invited to our Abstract account.
-If you aren't on Meetup's Abstract account, you can email [mikep@meetup.com](mailto:mikep@meetup.com), or contact the Design Systems team in our Slack channel: #design-systems
+[Link to Abstract project](https://share.goabstract.com/e1e2f321-fc7d-4db4-b8eb-4929b24a1a40)
+
+If you aren't on Meetup's Abstract account, you can email [mikep@meetup.com](mailto:mikep@meetup.com), or contact the Design Systems team through Meetup's Slack team in the **#design-systems** channel
 
 ---------------------------------------
 
 ## Brand assets
-Assets like logos and category photos, can be downloaded from the [Brand assets](../brand/brand-assets) page.
+Assets like logos and category photos, can be downloaded from the [Brand assets](../brand/brandassets) page.
 
 ---------------------------------------
 
-## Design systems we love
-[Salesforce's Lightning Design System](https://www.lightningdesignsystem.com/)
-[Material Design](https://material.io/)
-[Shopify's Polaris](https://polaris.shopify.com/)
+## Other design systems we love
+* [Atlassian Design Guidelines](https://atlassian.design/)
+* [Material Design](https://material.io/)
+* [Salesforce's Lightning Design System](https://www.lightningdesignsystem.com/)
+* [Shopify's Polaris](https://polaris.shopify.com/)
