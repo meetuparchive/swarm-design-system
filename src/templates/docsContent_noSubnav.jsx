@@ -1,5 +1,7 @@
 import React from 'react';
 
+import FeedbackSection from '../components/FeedbackSection';
+
 import Bounds from 'meetup-web-components/lib/layout/Bounds';
 import Card from 'meetup-web-components/lib/layout/Card';
 import Chunk from 'meetup-web-components/lib/layout/Chunk';
@@ -28,9 +30,12 @@ class DocsPage extends React.PureComponent {
 							<Card className='__docs_contentContainer __docs_contentContainer--carded'>
 								<Section>
 									<Bounds className='runningText __docs_bounds--runningText'>
-										<div className='contentContainer' dangerouslySetInnerHTML={{ __html: docsContent.html }} />
+										<Chunk>
+											<div className='contentContainer' dangerouslySetInnerHTML={{ __html: docsContent.html }} />
+										</Chunk>
 									</Bounds>
 								</Section>
+								<FeedbackSection />
 							</Card>
 						</Chunk>
 					</Section>
