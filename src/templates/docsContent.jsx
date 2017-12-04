@@ -5,6 +5,7 @@ import Parser from 'html-react-parser';
 
 import cx from 'classnames';
 import IFrameEmbed from '../components/IFrameEmbed';
+import FeedbackSection from '../components/FeedbackSection';
 
 import Bounds from 'meetup-web-components/lib/layout/Bounds';
 import Card from 'meetup-web-components/lib/layout/Card';
@@ -161,13 +162,19 @@ class DocsPage extends React.PureComponent {
 							>
 								<Chunk>
 									<Card className='__docs_contentContainer __docs_contentContainer--carded'>
-										<Section>
+										<Section
+											hasSeparator
+											className='border--none'
+										>
 											<Bounds className='runningText __docs_bounds--runningText'>
-												<div className='contentContainer'>
-													{ Parser(docsContent.html, parserOptions) }
-												</div>
+												<Chunk>
+													<div className='contentContainer'>
+														{ Parser(docsContent.html, parserOptions) }
+													</div>
+												</Chunk>
 											</Bounds>
 										</Section>
+										<FeedbackSection />
 									</Card>
 								</Chunk>
 							</Section>

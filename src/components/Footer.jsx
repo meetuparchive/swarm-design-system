@@ -27,7 +27,7 @@ const Footer = () => (
 					<InlineBlockList
 						items={[
 							<Chunk>
-								<a href='mailto:designsystems@meetup.com' className='link'>Submit feedback</a>
+								<a href='mailto:mikep@meetup.com' className='link'>Submit feedback</a>
 							</Chunk>,
 							<Chunk>
 								<Link to="/resources" className='link'>Design system resources</Link>
