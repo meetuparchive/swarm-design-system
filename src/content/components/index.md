@@ -12,9 +12,10 @@ order: 0
 | [AvatarMember](http://bit.ly/2fS1Y72)     | Represents a user by showing a thumbnail image of their profile picture               |
 | [Bounds](http://bit.ly/2uYUMZK)           | A layout component that restrains content to a comfortable width                      |
 | [Button](http://bit.ly/2w9LePi)           | Piece of UI used to trigger events                                                    |
+| [CalendarComponent](http://bit.ly/2CF3z6v) | A form input for picking a date                                        |
+| [Card](http://bit.ly/2oQMTqw)             | A component for containing content on a card                                         |
 | [Checkbox](http://bit.ly/2uYPrS3)         | A form input for toggling between `true` and `false`                                  |
 | [Chunk](http://bit.ly/2v8I9dV)            | A layout component that is used to separate discreen "chunks" of content.             |
-| [DateTimeInput](http://bit.ly/2vLjHCE)    | A form input for picking a date, or a date at a specific time                         |
 | [Dropdown](http://bit.ly/2w9NaaH)         | Provides a trigger to toggle a container to display of additional content             |
 | [Flex](http://bit.ly/2uZbpV6)             | Does the heavy lifting in our responsive layouts.                                     |
 | [FlexItem](http://bit.ly/2wpnOp2)         | The items that get layed out by the `Flex` component                                  |
@@ -35,5 +36,6 @@ order: 0
 | [TextInput](http://bit.ly/2fSJqDN)        | A form component to let users input a custom text value                               |
 | [Textarea](http://bit.ly/2wYuOqC)         | A form component to let users input a custom longform text value                      |
 | [TimeInput](http://bit.ly/2uPTEeQ)        | A form component to let users select a time                                           |
-| [Toast](#)                                | COMING SOON                                                                           |
+| [Toast](http://bit.ly/2D7Xj8v)            | A component for showing system messages to users                                       |
 | [TogglePill](http://bit.ly/2id1sS1)       | A form component to toggle a value between `true` and `false`                         |
+| [ToggleSwitch](http://bit.ly/2CHalJ3)     | A form component used to indicate whether whether something is enabled or disabled |
