@@ -35,13 +35,16 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 };
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
-	const { createPage } = boundActionCreators;
+	const { createPage, createRedirect } = boundActionCreators;
 
 	return new Promise((resolve, reject) => {
 		graphql(`{
 			allMarkdownRemark {
 				edges {
 					node {
+						frontmatter {
+							isLanding
+						}
 						fields {
 							slug
 							topLevelDir
@@ -56,6 +59,14 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 				const layoutPath = (
 					node.fields.slug.match(/^\/resources/) || node.fields.slug.match(/^\/components/)
 				) ? './src/templates/docsContent_noSubnav.jsx' : './src/templates/docsContent.jsx';
+
+				if(node.frontmatter.isLanding) {
+					createRedirect({
+						fromPath: `/${getSlugParents(node.fields.slug)[0]}`,
+						redirectInBrowser: true,
+						toPath: node.fields.slug,
+					})
+				}
 
 				createPage({
 					path: node.fields.slug,

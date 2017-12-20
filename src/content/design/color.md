@@ -1,10 +1,8 @@
 ---
 layout: layout_subnav.hbs
-subLayout: color
-collection: Design
 title: Color
-subSections: UI colors, UI background colors, Brand colors, Brand color combos
-order: 2
+order: 1
+isLanding: true
 ---
 
 # Colors
