@@ -106,8 +106,8 @@ class Nav extends React.PureComponent {
 							<Chunk>
 								<Tabs noBorder>
 									{
-										topLevelCategories.map((category, index) => {
-											const categoryLink = categories[category][''][0].node.fields.slug; // :TODO: fix this hack. All it does is link to the first page instead of creating a proper route for the top-level category
+										topLevelCategories.map((category) => {
+											const categoryLink = `/${category.toLowerCase()}`;
 
 											return (
 												category.toUpperCase() !== 'RESOURCES' &&
