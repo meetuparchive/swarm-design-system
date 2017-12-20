@@ -1,8 +1,8 @@
 ---
 layout: layout_subnav.hbs
 title: Overview
-collection: Brand
 order: 1
+isLanding: true
 ---
 
 # Brand guidelines

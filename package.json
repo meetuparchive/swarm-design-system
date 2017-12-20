@@ -37,8 +37,8 @@
   },
   "devDependencies": {
     "gh-pages": "^1.0.0",
-    "swarm-animation": "^0.0.95",
     "prettier": "^1.6.1",
-    "react-transition-group": "2.2.0"
+    "react-transition-group": "2.2.0",
+    "swarm-animation": "^0.0.95"
   }
 }

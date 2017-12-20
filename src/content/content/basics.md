@@ -1,8 +1,8 @@
 ---
 layout: layout_subnav.hbs
-collection: Content
 title: Basics
 order: 1
+isLanding: true
 ---
 
 # Basics
