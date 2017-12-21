@@ -1213,10 +1213,6 @@ base64-arraybuffer@0.1.5:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/base64-arraybuffer/-/base64-arraybuffer-0.1.5.tgz#73926771923b5a19747ad666aa5cd4bf9c6e9ce8"
 
-base64-image-loader@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/base64-image-loader/-/base64-image-loader-1.2.0.tgz#a957cb1cbc367a150f1c312caa9cb59d0b92550b"
-
 base64-js@^1.0.2:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.2.1.tgz#a91947da1f4a516ea38e5b4ec0ec3773675e0886"
@@ -4965,13 +4961,13 @@ media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
 
-meetup-web-components@3.3.1649:
-  version "3.3.1649"
-  resolved "https://registry.yarnpkg.com/meetup-web-components/-/meetup-web-components-3.3.1649.tgz#d4727199918d60c0bc4ace424d8aaee9421d0abf"
+meetup-web-components@3.3.1772:
+  version "3.3.1772"
+  resolved "https://registry.yarnpkg.com/meetup-web-components/-/meetup-web-components-3.3.1772.tgz#92b9d6a381eb7edaeab13d2e1a60fc3f395af58f"
   dependencies:
     autosize "3.0.21"
-    base64-image-loader "1.2.0"
     flatpickr "3.0.6"
+    react-portal "3.2.0"
     recompose "0.26.0"
 
 mem@^1.1.0:
@@ -6592,6 +6588,12 @@ react-hot-loader@^3.0.0-beta.6:
     react-proxy "^3.0.0-alpha.0"
     redbox-react "^1.3.6"
     source-map "^0.6.1"
+
+react-portal@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-portal/-/react-portal-3.2.0.tgz#4224e19b2b05d5cbe730a7ba0e34ec7585de0043"
+  dependencies:
+    prop-types "^15.5.8"
 
 react-proxy@^3.0.0-alpha.0:
   version "3.0.0-alpha.1"

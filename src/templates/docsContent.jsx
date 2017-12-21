@@ -7,6 +7,8 @@ import cx from 'classnames';
 import IFrameEmbed from '../components/IFrameEmbed';
 import FeedbackSection from '../components/FeedbackSection';
 
+import AccordionPanelGroup from 'meetup-web-components/lib/interactive/AccordionPanelGroup';
+import AccordionPanel from 'meetup-web-components/lib/interactive/AccordionPanel';
 import Bounds from 'meetup-web-components/lib/layout/Bounds';
 import Card from 'meetup-web-components/lib/layout/Card';
 import Chunk from 'meetup-web-components/lib/layout/Chunk';
@@ -127,9 +129,31 @@ class DocsPage extends React.PureComponent {
 				>
 
 					<FlexItem growFactor={1}>
+
+						{ /*
+							:TODO:
+							Hide with matchMedia instead?
+						*/ }
+						<Stripe className="display--block atMedium_display--none padding--top">
+							<Section className="flush--top">
+								<AccordionPanelGroup
+									accordionPanels={[
+										<AccordionPanel
+											label={`${pathContext.topLevelDir} > ${docsContent.frontmatter.title}`}
+											panelContent={
+												<div className="bordered">
+													<CategoryLinks category={docCategories[pathContext.topLevelDir]} />
+												</div>
+											}
+										/>
+									]}
+								/>
+							</Section>
+						</Stripe>
+
 						<Stripe
 							collection
-							className='__docs_height--full'
+							className='__docs_height--full display--none atMedium_display--block border--none'
 						>
 							<Section>
 								{
