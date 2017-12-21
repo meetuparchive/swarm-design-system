@@ -4,6 +4,7 @@ import Link, {withPrefix} from 'gatsby-link';
 import cx from 'classnames';
 
 import Chunk from 'meetup-web-components/lib/layout/Chunk';
+import Dropdown from 'meetup-web-components/lib/interactive/Dropdown';
 import Flex from 'meetup-web-components/lib/layout/Flex';
 import FlexItem from 'meetup-web-components/lib/layout/FlexItem';
 import Section from 'meetup-web-components/lib/layout/Section';
@@ -17,16 +18,14 @@ class Nav extends React.PureComponent {
 		super(props);
 
 		this.state = {
-			showNav: true
+			dropdownToggled: false
 		};
 
-		this.toggleNav = this.toggleNav.bind(this);
+		this.toggleDropdownNav = this.toggleDropdownNav.bind(this);
 	}
 
-	toggleNav() {
-		this.setState({
-			showNav: !this.state.showNav
-		});
+	toggleDropdownNav() {
+		this.setState(() => ({ dropdownToggled: !this.state.dropdownToggled }));
 	}
 
 	render() {
@@ -40,6 +39,33 @@ class Nav extends React.PureComponent {
 		const pathRegex = new RegExp(withPrefix('/'), 'g');
 		const cleanedCurrentPath = currentPath.replace(pathRegex ,'');
 		const topLevelCategories = Object.keys(categories).filter(Boolean).reverse();
+		const navDropdownTrigger = (
+			<div className="margin--right text--big">☰</div>
+		);
+		const navDropdownContent = (
+			<ul className="list padding--top">
+			{
+				topLevelCategories.map((category) => {
+					const categoryLink = `/${category.toLowerCase()}`;
+					const isSelected = cleanedCurrentPath.toUpperCase().includes(category.toUpperCase());
+
+					return (
+						category.toUpperCase() !== 'RESOURCES' &&
+							<li
+								className={cx(
+									'list-item padding--left padding--right',
+									{'text--bold': isSelected}
+								)}
+								onClick={this.toggleDropdownNav}
+							>
+								<Chunk>
+									<Link to={`${categoryLink}`}>{category}</Link>
+								</Chunk>
+							</li>
+					);
+				})}
+			</ul>
+		);
 
 		return (
 			<Stripe
@@ -47,7 +73,7 @@ class Nav extends React.PureComponent {
 				inverted={isLandingPage}
 			>
 
-				<Section className="border--none">
+				<Section hasSeparator className="border--none">
 					<Flex
 						wrap
 						align="center"
@@ -56,53 +82,50 @@ class Nav extends React.PureComponent {
 						switchDirection="medium"
 					>
 						<FlexItem>
-							<Flex align="center">
-								<FlexItem
-									shrink
-									className="display--block atMedium_display--none"
-								>
-									<Chunk
-										onClick={this.toggleNav}
+							<Chunk>
+								<Flex align="center">
+									<FlexItem
+										shrink
+										className="display--block atMedium_display--none"
 									>
-										☰
-									</Chunk>
-								</FlexItem>
-								<FlexItem className="flush--left">
-									<Flex
-										align="center"
-										rowReverse="medium"
-									>
-										{ !isLandingPage &&
-											<FlexItem>
-												<Chunk>
+										<Dropdown
+											noPortal
+											align="left"
+											isActive={this.state.dropdownToggled}
+											manualToggle={this.toggleDropdownNav}
+											trigger={navDropdownTrigger}
+											content={navDropdownContent}
+										/>
+									</FlexItem>
+									<FlexItem className="flush--left">
+										<Flex
+											align="center"
+											rowReverse="medium"
+										>
+											{ !isLandingPage &&
+												<FlexItem>
 													{ /*
 														:TODO:
-														Instead of hiding/showing with classes, hide/show using the HOC, withMatchMedia
+														Hide with matchMedia instead?
 													*/ }
 													<h1 className="text--pageTitle display--none atMedium_display--block"><Link to="/">Swarm Design System</Link></h1>
 													<h1 className="text--pageTitle display--block atMedium_display--none"><Link to="/">SDS</Link></h1>
-												</Chunk>
+												</FlexItem>
+											}
+											<FlexItem
+												shrink
+												className="__docs_logoWrapper"
+											>
+												<Link to="/">
+													<img src={logo} alt="Meetup logo" className="media--l" />
+												</Link>
 											</FlexItem>
-										}
-										<FlexItem
-											shrink
-											className="__docs_logoWrapper"
-										>
-											<Chunk><Link to="/">
-												<img src={logo} alt="M" />
-											</Link></Chunk>
-										</FlexItem>
-									</Flex>
-								</FlexItem>
-							</Flex>
+										</Flex>
+									</FlexItem>
+								</Flex>
+							</Chunk>
 						</FlexItem>
-						<FlexItem
-							shrink
-							className={cx(
-								'flush--left span--100 atMedium_width--auto atMedium_display--block',
-								{['display--none']: this.state.showNav}
-							)}
-						>
+						<FlexItem shrink className="flush--left span--100 atMedium_width--auto display--none atMedium_display--block">
 							<Chunk>
 								<Tabs noBorder>
 									{

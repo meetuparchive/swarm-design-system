@@ -24,7 +24,8 @@
     "gatsby-transformer-remark": "^1.7.7",
     "html-react-parser": "^0.4.0",
     "iframe-resizer": "^3.5.14",
-    "meetup-web-components": "3.3.1649",
+    "meetup-web-components": "3.3.1772",
+    "raw-loader": "^0.5.1",
     "swarm-icons": "^1.3.129",
     "swarm-sasstools": "^2.0.294"
   },

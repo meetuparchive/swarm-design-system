@@ -11,6 +11,9 @@ import Footer from '../components/Footer';
 import '../../static/assets/graphik.css';
 import '../../scss/main.scss';
 
+const iconSpriteStyle = { display: 'none' };
+const iconSprite = require('raw-loader!swarm-icons/dist/sprite/sprite.inc');
+
 class TemplateWrapper extends React.PureComponent {
 	constructor(props) {
 		super(props);
@@ -62,6 +65,7 @@ class TemplateWrapper extends React.PureComponent {
 
 		return(
 			<div>
+				<div style={iconSpriteStyle} dangerouslySetInnerHTML={{__html: iconSprite}} />
 				<Helmet
 					title="Swarm Design System"
 					meta={[
