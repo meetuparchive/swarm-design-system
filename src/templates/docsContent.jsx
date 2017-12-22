@@ -94,6 +94,7 @@ class DocsPage extends React.PureComponent {
 							const linkList = props.category[category].map((link, i) => {
 								return(
 									<li
+										key={i}
 										className={cx(
 											{['text--bold']: pathContext.slug == link.node.fields.slug}
 										)}
@@ -106,7 +107,7 @@ class DocsPage extends React.PureComponent {
 							});
 
 							return(
-								<li>
+								<li key={i}>
 									{category &&
 										<h3 className="text--bold text--secondary margin--bottom margin--top">{category}</h3>
 									}
@@ -157,10 +158,10 @@ class DocsPage extends React.PureComponent {
 						>
 							<Section>
 								{
-									Object.keys(docCategories).map((category, index) => {
+									Object.keys(docCategories).map((category, i) => {
 										return(
 											category == pathContext.topLevelDir &&
-												<div>
+												<div key={i}>
 													<Chunk>
 														<h3 className="text--sectionTitle">{category}</h3>
 													</Chunk>
