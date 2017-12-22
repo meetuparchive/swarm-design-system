@@ -1,5 +1,4 @@
 ---
-layout: layout_subnav.hbs
 collection: Content
 title: Punctuation
 order: 3

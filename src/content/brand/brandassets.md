@@ -1,8 +1,7 @@
 ---
-layout: layout_subnav.hbs
 title: Brand assets
 collection: Brand
-order: 5
+order: 4
 ---
 
 [//]: # (This content calls for a unique layout, so most of the content is written in HTML instead of Markdown.)

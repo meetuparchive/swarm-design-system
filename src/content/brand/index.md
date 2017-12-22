@@ -1,5 +1,4 @@
 ---
-layout: layout_subnav.hbs
 title: Overview
 order: 1
 isLanding: true

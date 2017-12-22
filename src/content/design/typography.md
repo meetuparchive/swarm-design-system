@@ -1,9 +1,7 @@
 ---
-layout: layout_subnav.hbs
-subLayout: typography
 collection: Design
 title: Typography
-order: 3
+order: 4
 ---
 
 # Typography
