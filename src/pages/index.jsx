@@ -14,7 +14,7 @@ import Section from 'meetup-web-components/lib/layout/Section';
 import Stripe from 'meetup-web-components/lib/layout/Stripe';
 
 const OverviewCard = (props) => (
-	<Card className="display--flex flex--column">
+	<Card hasShadow className={cx("display--flex flex--column __docs_overviewCards-card", props.className)}>
 		<div className="chunk">
 			<div className={`__docs_landingCardIllo __docs_landingCardIllo--${props.category.replace(/\s+/g, '-').toLowerCase()} keepAspect keepAspect--2-1`}></div>
 		</div>
@@ -126,24 +126,28 @@ class IndexPage extends React.PureComponent {
 											blurb='Guidelines for product design at Meetup. Includes our design team’s processes and principles as well as visual design details'
 											link='/design/color'
 											linkText='Start designing'
+											className={cx({'__docs_overviewCards-card--float': this.state.showOverlay})}
 										/>,
 										<OverviewCard
 											category='Brand'
 											blurb='Information about the Meetup brand including our mission, voice and tone, and brand assets.'
 											link='/brand'
 											linkText='Learn more'
+											className={cx({'__docs_overviewCards-card--float': this.state.showOverlay})}
 										/>,
 										<OverviewCard
 											category='Content'
 											blurb='Guidelines on the tone of voice to personify the brand and personality of Meetup, while keeping the product easy to navigate and understand.'
 											link='/content/basics'
 											linkText='Review guidelines'
+											className={cx({'__docs_overviewCards-card--float': this.state.showOverlay})}
 										/>,
 										<OverviewCard
 											category='Web Components'
 											blurb='A set of UI components ready for use by designers and engineers to quickly ship new products and features.'
 											link='/components'
 											linkText='Get components'
+											className={cx({'__docs_overviewCards-card--float': this.state.showOverlay})}
 										/>,
 									]}
 									className='__docs_overviewCards'

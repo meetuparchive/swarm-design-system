@@ -23,11 +23,20 @@ $cardOverlap: 15vh;
 
 .__docs_overviewCards {
 	margin-top: -#{$cardOverlap};
+}
 
-	.card {
-		@extend %shadow;
-		border-radius: $largeRadius;
-		border-width: 0;
+.__docs_overviewCards-card--float {
+	animation-name: floating;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+@for $i from 1 through 4 {
+	.gridList-item:nth-child(#{$i}) {
+		.__docs_overviewCards-card {
+			animation-delay: (500ms + 300ms * $i) * -1;
+		}
 	}
 }
 
@@ -143,4 +152,10 @@ $C_dimmingOverlay--dark: transparentize($C_black, .1);
 
 .__docs_landingCardIllo--web-components {
 	background-image: url('../static/assets/landingPgIllos/components.jpg');
+}
+
+@keyframes floating {
+	from { transform: translate(0,  0px); }
+	65%  { transform: translate(0, $space-half); }
+	to   { transform: translate(0, 0px); }
 }
