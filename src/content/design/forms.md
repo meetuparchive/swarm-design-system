@@ -2,7 +2,7 @@
 layout: layout_subnav.hbs
 collection: Design
 title: Forms
-order: 10
+order: 6
 ---
 
 # Forms

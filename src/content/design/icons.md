@@ -1,6 +1,4 @@
 ---
-layout: layout_subnav.hbs
-subLayout: icons
 collection: Design
 title: Icons
 order: 3
