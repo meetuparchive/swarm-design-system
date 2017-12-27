@@ -1,11 +1,7 @@
 import React from 'react';
 import Link, {withPrefix} from 'gatsby-link';
-
-import Parser from 'html-react-parser';
-
 import cx from 'classnames';
-import IFrameEmbed from '../components/IFrameEmbed';
-import FeedbackSection from '../components/FeedbackSection';
+import Parser from 'html-react-parser';
 
 import AccordionPanelGroup from 'meetup-web-components/lib/interactive/AccordionPanelGroup';
 import AccordionPanel from 'meetup-web-components/lib/interactive/AccordionPanel';
@@ -17,28 +13,11 @@ import FlexItem from 'meetup-web-components/lib/layout/FlexItem';
 import Section from 'meetup-web-components/lib/layout/Section';
 import Stripe from 'meetup-web-components/lib/layout/Stripe';
 
+import IFrameEmbed from '../components/IFrameEmbed';
+import FeedbackSection from '../components/FeedbackSection';
+import parseCategoryData from '../utils/parseCategoryData.js';
+
 class DocsPage extends React.PureComponent {
-	constructor(props) {
-		super(props);
-
-		this.getSubtopicLinks = this.getSubtopicLinks.bind(this);
-	}
-
-	/**
-	 * @returns {Object} an object that describes the content of the category
-	 * @param {Object} category - the top-level category to get subtopic links for
-	 *
-	 */
-	getSubtopicLinks(category) {
-		const subtopicLinks = category.reduce((acc, curr) => {
-			acc[curr.node.fields.subDir] = acc[curr.node.fields.subDir] || [];
-			acc[curr.node.fields.subDir].push(curr);
-
-			return acc;
-		}, Object.create(null));
-
-		return subtopicLinks;
-	}
 
 	render() {
 		const {
@@ -47,24 +26,7 @@ class DocsPage extends React.PureComponent {
 		} = this.props;
 
 		const docsContent = data.markdownRemark;
-		const docsArr = data.allMarkdownRemark.edges;
-		const docCategories = docsArr.reduce((acc, curr) => {
-			let newObj;
-
-			docsArr.reduce((acc, curr) => {
-				acc[curr.node.fields.topLevelDir] = acc[curr.node.fields.topLevelDir] || [];
-				acc[curr.node.fields.topLevelDir].push(curr);
-
-				newObj = acc;
-				return newObj;
-			}, Object.create(null));
-
-			Object.keys(newObj).forEach((category, index) => {
-				newObj[category] = this.getSubtopicLinks(newObj[category]);
-			});
-
-			return newObj;
-		}, Object.create(null));
+		const docCategories = parseCategoryData(data.allMarkdownRemark.edges);
 
 		const parserOptions = {
 			replace: (domNode) => {
@@ -230,7 +192,6 @@ export const query = graphql`
 					fields {
 						slug
 						topLevelDir
-						subDir
 					}
 				}
 			}
