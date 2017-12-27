@@ -1,7 +1,8 @@
 ---
+layout: layout_subnav.hbs
 title: Brand voice
 collection: Brand
-order: 3
+order: 4
 ---
 
 # Brand voice

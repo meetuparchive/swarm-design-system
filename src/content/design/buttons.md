@@ -1,7 +1,9 @@
 ---
+layout: layout_subnav.hbs
+subLayout: color
 collection: Design
 title: Buttons
-order: 2
+order: 3
 ---
 
 # Buttons

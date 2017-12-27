@@ -1,4 +1,5 @@
 ---
+layout: layout_subnav.hbs
 collection: Content
 title: Spelling and glossary of terms
 order: 4

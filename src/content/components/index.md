@@ -1,4 +1,5 @@
 ---
+layout: layout_noSubnav.hbs
 collection: Components
 title: Components
 order: 0

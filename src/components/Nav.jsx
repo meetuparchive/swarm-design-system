@@ -45,14 +45,13 @@ class Nav extends React.PureComponent {
 		const navDropdownContent = (
 			<ul className="list padding--top">
 			{
-				topLevelCategories.map((category, i) => {
+				topLevelCategories.map((category) => {
 					const categoryLink = `/${category.toLowerCase()}`;
 					const isSelected = cleanedCurrentPath.toUpperCase().includes(category.toUpperCase());
 
 					return (
 						category.toUpperCase() !== 'RESOURCES' &&
 							<li
-								key={i}
 								className={cx(
 									'list-item padding--left padding--right',
 									{'text--bold': isSelected}
@@ -130,12 +129,12 @@ class Nav extends React.PureComponent {
 							<Chunk>
 								<Tabs noBorder>
 									{
-										topLevelCategories.map((category, i) => {
+										topLevelCategories.map((category) => {
 											const categoryLink = `/${category.toLowerCase()}`;
 
 											return (
 												category.toUpperCase() !== 'RESOURCES' &&
-													<TabsTab key={i} isSelected={cleanedCurrentPath.toUpperCase().includes(category.toUpperCase())}><Link to={`${categoryLink}`}>{category}</Link></TabsTab>
+													<TabsTab isSelected={cleanedCurrentPath.toUpperCase().includes(category.toUpperCase())}><Link to={`${categoryLink}`}>{category}</Link></TabsTab>
 											);
 										})
 									}
