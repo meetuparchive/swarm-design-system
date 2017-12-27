@@ -1,7 +1,8 @@
 ---
+layout: layout_subnav.hbs
 collection: Content
 title: Time and date
-order: 5
+order: 4
 ---
 
 ### Time

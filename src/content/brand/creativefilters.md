@@ -1,7 +1,8 @@
 ---
+layout: layout_subnav.hbs
 title: Creative filters
 collection: Brand
-order: 2
+order: 3
 ---
 
 # Creative filters

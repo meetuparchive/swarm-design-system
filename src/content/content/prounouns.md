@@ -1,7 +1,8 @@
 ---
+layout: layout_subnav.hbs
 collection: Content
 title: Pronouns
-order: 6
+order: 5
 ---
 
 # Pronouns

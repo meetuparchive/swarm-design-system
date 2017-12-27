@@ -1,4 +1,5 @@
 ---
+layout: layout_subnav.hbs
 title: Color
 order: 1
 isLanding: true

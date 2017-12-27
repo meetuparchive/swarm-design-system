@@ -1,7 +1,8 @@
 ---
+layout: layout_subnav.hbs
 collection: Content
 title: Social media
-order: 6
+order: 9
 ---
 
 # Social media

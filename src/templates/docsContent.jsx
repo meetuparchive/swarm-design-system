@@ -1,7 +1,11 @@
 import React from 'react';
 import Link, {withPrefix} from 'gatsby-link';
-import cx from 'classnames';
+
 import Parser from 'html-react-parser';
+
+import cx from 'classnames';
+import IFrameEmbed from '../components/IFrameEmbed';
+import FeedbackSection from '../components/FeedbackSection';
 
 import AccordionPanelGroup from 'meetup-web-components/lib/interactive/AccordionPanelGroup';
 import AccordionPanel from 'meetup-web-components/lib/interactive/AccordionPanel';
@@ -13,11 +17,28 @@ import FlexItem from 'meetup-web-components/lib/layout/FlexItem';
 import Section from 'meetup-web-components/lib/layout/Section';
 import Stripe from 'meetup-web-components/lib/layout/Stripe';
 
-import IFrameEmbed from '../components/IFrameEmbed';
-import FeedbackSection from '../components/FeedbackSection';
-import parseCategoryData from '../utils/parseCategoryData.js';
-
 class DocsPage extends React.PureComponent {
+	constructor(props) {
+		super(props);
+
+		this.getSubtopicLinks = this.getSubtopicLinks.bind(this);
+	}
+
+	/**
+	 * @returns {Object} an object that describes the content of the category
+	 * @param {Object} category - the top-level category to get subtopic links for
+	 *
+	 */
+	getSubtopicLinks(category) {
+		const subtopicLinks = category.reduce((acc, curr) => {
+			acc[curr.node.fields.subDir] = acc[curr.node.fields.subDir] || [];
+			acc[curr.node.fields.subDir].push(curr);
+
+			return acc;
+		}, Object.create(null));
+
+		return subtopicLinks;
+	}
 
 	render() {
 		const {
@@ -26,7 +47,24 @@ class DocsPage extends React.PureComponent {
 		} = this.props;
 
 		const docsContent = data.markdownRemark;
-		const docCategories = parseCategoryData(data.allMarkdownRemark.edges);
+		const docsArr = data.allMarkdownRemark.edges;
+		const docCategories = docsArr.reduce((acc, curr) => {
+			let newObj;
+
+			docsArr.reduce((acc, curr) => {
+				acc[curr.node.fields.topLevelDir] = acc[curr.node.fields.topLevelDir] || [];
+				acc[curr.node.fields.topLevelDir].push(curr);
+
+				newObj = acc;
+				return newObj;
+			}, Object.create(null));
+
+			Object.keys(newObj).forEach((category, index) => {
+				newObj[category] = this.getSubtopicLinks(newObj[category]);
+			});
+
+			return newObj;
+		}, Object.create(null));
 
 		const parserOptions = {
 			replace: (domNode) => {
@@ -56,7 +94,6 @@ class DocsPage extends React.PureComponent {
 							const linkList = props.category[category].map((link, i) => {
 								return(
 									<li
-										key={i}
 										className={cx(
 											{['text--bold']: pathContext.slug == link.node.fields.slug}
 										)}
@@ -69,7 +106,7 @@ class DocsPage extends React.PureComponent {
 							});
 
 							return(
-								<li key={i}>
+								<li>
 									{category &&
 										<h3 className="text--bold text--secondary margin--bottom margin--top">{category}</h3>
 									}
@@ -120,10 +157,10 @@ class DocsPage extends React.PureComponent {
 						>
 							<Section>
 								{
-									Object.keys(docCategories).map((category, i) => {
+									Object.keys(docCategories).map((category, index) => {
 										return(
 											category == pathContext.topLevelDir &&
-												<div key={i}>
+												<div>
 													<Chunk>
 														<h3 className="text--sectionTitle">{category}</h3>
 													</Chunk>
@@ -192,6 +229,7 @@ export const query = graphql`
 					fields {
 						slug
 						topLevelDir
+						subDir
 					}
 				}
 			}
