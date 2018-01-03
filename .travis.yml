@@ -17,7 +17,7 @@ env:
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_9064aff2eda1_key -iv $encrypted_9064aff2eda1_iv -in '.travis/github_deploy_key.enc' -out github_deploy_key -d
-  - echo "//registry.npm.js.org/:_authToken=\${NPM_TOKEN}" > .npmrc
+  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
 
 before_script:
   - git diff --exit-code
