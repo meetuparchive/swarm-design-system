@@ -50,6 +50,6 @@ deploy:
    skip_cleanup: true
    github_token: $GITHUB_TOKEN
    local_dir: $TRAVIS_BUILD_DIR/public
-   on:
-      branch: master
+#   on:
+#      branch: master
 
