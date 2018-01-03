@@ -21,7 +21,6 @@ before_install:
 
 before_script:
   - git diff --exit-code
-  - yarn check
 
 after_success:
   - npm run coveralls
