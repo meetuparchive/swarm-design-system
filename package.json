@@ -15,6 +15,7 @@
     "swarm-animation": "^0.0.95"
   },
   "dependencies": {
+    "@alrra/travis-scripts": "^3.0.1",
     "classnames": "2.2.5",
     "gatsby": "^1.9.149",
     "gatsby-link": "^1.6.22",
