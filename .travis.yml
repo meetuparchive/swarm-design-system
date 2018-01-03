@@ -1,53 +1,46 @@
 sudo: false
 language: node_js
-
 node_js:
-	- "8.9.1"
+  - "8.9.1"
 cache:
-	yarn: true
-	directories: node_modules
+  yarn: true
+  directories:
+    - node_modules
 
 branches:
-	only: master
+  only: master
 
 env:
-	global:
-		- CI_BUILD_NUMBER=$TRAVIS_BUILD_NUMBER
+  global:
+    - CI_BUILD_NUMBER=$TRAVIS_BUILD_NUMBER
 
 before_install:
-	- openssl aes-256-cbc -K $encrypted_9064aff2eda1_key -iv $encrypted_9064aff2eda1_iv -in '.travis/github_deploy_key.enc' -out github_deploy_key -d
-	- echo "//registry.npm.js.org/:_authToken=\${NPM_TOKEN}" > .npmrc
+  - openssl aes-256-cbc -K $encrypted_9064aff2eda1_key -iv $encrypted_9064aff2eda1_iv -in '.travis/github_deploy_key.enc' -out github_deploy_key -d
+  - echo "//registry.npm.js.org/:_authToken=\${NPM_TOKEN}" > .npmrc
 
 before_script:
-	- git diff --exit-code
-	- yarn check
+  - git diff --exit-code
+  - yarn check
 
 after_success:
-	- git config --global user.email "build@travis-ci.com"
-	- git config --global user.name "Travis CI"
-	- >
-		[ "${TRAVIS_BRANCH}" = "master" ] && [ "${TRAVIS_PULL_REQUEST}" = "false" ] &&
-		export GIT_TAG=$(make version) ||
-		export GIT_TAG=$(make version)-beta
-	- >
-		[ "${TRAVIS_BRANCH}" = "master" ] && [ "${TRAVIS_PULL_REQUEST}" = "false" ] &&
-		export NPM_TAG=latest ||
-		export NPM_TAG=beta
-		- echo "GIT_TAG=$GIT_TAG"
-		- echo "NPM_TAG=$NPM_TAG"
-	- >
-		[ "${TRAVIS_BRANCH}" != "master" ] &&
-		echo "skipping versioning" ||
-		yarn deploy &&
-		npm version $GIT_TAG -m "Version $GIT_TAG built by Travis CI - https://travis-ci.com/$TRAVIS_REPO_SLUG/builds/$TRAVIS_JOB_ID" &&
-		git push --tags git@github.com:$TRAVIS_REPO_SLUG.git &&
-		npm publish --tag $NPM_TAG
-
-#deploy:
-	#provider: pages
-	#skip_cleanup: true
-	#github_token: $GITHUB_TOKEN
-	## TODO: set build dir
-	#local_dir: $GATSBY_STATIC_DIR
-	#on:
-		#branch: master
+  - npm run coveralls
+  - git config --global user.email "builds@travis-ci.com"
+  - git config --global user.name "Travis CI"
+  - $(yarn bin)/set-up-ssh --key "$encrypted_9064aff2eda1_key" --iv "$encrypted_9064aff2eda1_iv" --path-encrypted-key ".travis/github_deploy_key.enc"
+  - >
+    [ "${TRAVIS_BRANCH}" = "master" ] && [ "${TRAVIS_PULL_REQUEST}" = "false" ] &&
+    export GIT_TAG=$(make version) ||
+    export GIT_TAG=$(make version)-beta
+  - >
+    [ "${TRAVIS_BRANCH}" = "master" ] && [ "${TRAVIS_PULL_REQUEST}" = "false" ] &&
+    export NPM_TAG=latest ||
+    export NPM_TAG=beta
+  - echo "GIT_TAG=$GIT_TAG"
+  - echo "NPM_TAG=$NPM_TAG"
+  - >
+    [ "${TRAVIS_BRANCH}" != "master" ] &&
+    echo "skipping versioning" ||
+    yarn run build &&
+    npm version $GIT_TAG -m "Version $GIT_TAG built by Travis CI - https://travis-ci.com/$TRAVIS_REPO_SLUG/builds/$TRAVIS_JOB_ID" &&
+    git push --tags git@github.com:$TRAVIS_REPO_SLUG.git &&
+    npm publish --tag $NPM_TAG
