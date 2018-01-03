@@ -21,3 +21,4 @@ see [this guide](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatshee
 | ---------------------- | ------------------------------------------------- |
 | `yarn run build`       | Gatsby will perform an optimized production build for your site generating static HTML and per-route JavaScript code bundles.  |
 | `yarn run develop`     | Gatsby will start a hot-reloading development environment accessible at localhost:8000                                     |
+
