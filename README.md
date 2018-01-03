@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/meetup/swarm-design-system.svg?branch=correct_brandasset_img_paths)](https://travis-ci.org/meetup/swarm-design-system)
-
+[![Build Status](https://travis-ci.org/meetup/swarm-design-system.svg?branch=master)](https://travis-ci.org/meetup/swarm-design-system)
 
 Swarm Design System
 --------------------
