@@ -184,16 +184,10 @@ _Chunk_ is not simply used for adding bottom space. _Chunk_ is a element used fo
 
 # Spacing
 
-**Viewport width** | **SpaceHalf** | **Space** | **SpaceDouble**
------------------- | ------------- | --------- | ---------------
-Small              | 8             | 16        | 32
-Medium             | 9             | 18        | 36
-Large              | 10            | 20        | 40
+<iframe src="https://meetup.github.io/swarm-sasstools/examples/spacing.html" id="typeSpec" frameborder="0" class="__docs_iframe"></iframe>
 
 ---------------------------------------
 
 # Media sizes
 
-**xxsmall** | **xsmall** | **small** | **medium** | **large** | **xlarge** | **xxlarge**
------------ | ---------- | --------- | ---------- | --------- | ---------- | -----------
-12          | 18         | 24        | 36         | 48        | 72         | 120
+<iframe src="https://meetup.github.io/swarm-sasstools/examples/mediaSizes.html" id="typeSpec" frameborder="0" class="__docs_iframe"></iframe>
