@@ -56,9 +56,18 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 		}`
 	).then(result => {
 			result.data.allMarkdownRemark.edges.map(({ node }) => {
-				const layoutPath = (
-					node.fields.slug.match(/^\/resources/) || node.fields.slug.match(/^\/components/)
-				) ? './src/templates/docsContent_noSubnav.jsx' : './src/templates/docsContent.jsx';
+
+				// TODO: this could be built better/smarter by getting
+				//		 template overrides from frontmatter
+				const layoutPath = slug => {
+					if (slug.match(/^\/resources/)) {
+						return './src/templates/docsContent_noSubnav.jsx';
+					} else if (slug.match(/^\/components/)) {
+						return './src/templates/docsContent_noCard.jsx';
+					} else {
+						return './src/templates/docsContent.jsx';
+					}
+				};
 
 				if(node.frontmatter.isLanding) {
 					createRedirect({
@@ -70,9 +79,10 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
 				createPage({
 					path: node.fields.slug,
-					component: path.resolve(layoutPath),
+					component: path.resolve(layoutPath(node.fields.slug)),
 					context: {
-						// Data passed to context is available in page queries as GraphQL variables.
+						// Data passed to context is available in page queries
+						// as GraphQL variables.
 						slug: node.fields.slug,
 						topLevelDir: node.fields.topLevelDir,
 						subDir: node.fields.subDir,

@@ -28,6 +28,14 @@ body {
 	height: 100%;
 }
 
+.__docs_height--full {
+	height: 100%;
+}
+
+.__docs_height--fullVH {
+	height: 100vh;
+}
+
 ._docs__atMedium_span--auto {
 	@include atMediaUp(medium) {
 		width: auto !important;
