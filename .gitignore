@@ -2,6 +2,7 @@
 .swp
 .*.swp
 *.log
+.npmrc
 build/
 npm_modules/
 node_modules/
