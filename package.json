@@ -38,7 +38,7 @@
     "test": "echo 'Error: no test specified'"
   },
   "devDependencies": {
-    "gh-pages": "^1.0.0",
+    "gh-pages": "1.0.0",
     "prettier": "^1.6.1",
     "react-transition-group": "2.2.0",
     "swarm-animation": "^0.0.95"

@@ -47,9 +47,9 @@ after_success:
 
 deploy:
    provider: pages
-   skip_cleanup: false
+   skip_cleanup: true
    github_token: $GITHUB_TOKEN
-   local_dir: public/
+   local_dir: $TRAVS_BUILD_DIR/public
    on:
       branch: master
 
