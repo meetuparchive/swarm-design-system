@@ -26,6 +26,7 @@ class IFrameEmbed extends React.Component {
 					src={this.props.src}
 					id={this.props.id}
 					width="100%"
+					className={this.props.className}
 					frameBorder={0}>
 				></iframe>
 			</div>

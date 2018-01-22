@@ -116,6 +116,7 @@
 	border: none;
 	display: block;
 	margin-left: -#{$space};
+	margin-right: -#{$space};
 	outline: none;
 	width: calc(100% + #{$space*2});
 }

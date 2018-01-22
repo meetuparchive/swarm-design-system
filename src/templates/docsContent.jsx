@@ -32,7 +32,7 @@ class DocsPage extends React.PureComponent {
 				if (domNode.name === 'iframe') {
 					const { src, id } = domNode.attribs;
 					return (
-						<IFrameEmbed id={id && id} src={src} />
+						<IFrameEmbed id={id && id} src={src} className={domNode.attribs.class} />
 					);
 				}
 				if (domNode.name === 'img') {
