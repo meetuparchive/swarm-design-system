@@ -9,12 +9,7 @@
 }
 
 @include atMediaUp(medium) {
-	// ._docs_accessibilityInfo {
-	// 	grid-template-columns: repeat(auto-fill, 1fr);
-	// }
-
 	.__docs_accessibilityInfo-testColor {
-		// grid-column: span 3;
 
 		&:nth-child(-n+4){
 			grid-row: 1;
