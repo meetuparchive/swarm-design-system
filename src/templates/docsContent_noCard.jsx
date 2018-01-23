@@ -15,7 +15,7 @@ class DocsPage extends React.PureComponent {
 				collection
 				className='__docs_height--full __docs_height--fullVH display--flex __docs_fullVHIframeContainer'
 			>
-				<div className='contentContainer' dangerouslySetInnerHTML={{ __html: docsContent.html }} />
+				<div className='contentContainer span--100' dangerouslySetInnerHTML={{ __html: docsContent.html }} />
 			</Stripe>
 		);
 	}
