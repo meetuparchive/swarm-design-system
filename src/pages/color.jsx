@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import iframeResizer from 'iframe-resizer'; // iframe does not resize if this is not imported here
 
-import ColorListing from '../components/ColorListing';
+import ColorListing from '../components/color/ColorListing';
 import colorData from '../utils/colorData'; // import from swarm-constants once branch merges
 
 import '../../static/assets/graphik.css';

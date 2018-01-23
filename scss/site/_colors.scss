@@ -1,3 +1,46 @@
 .__docs_colorLabel {
 	min-width: $block-2;
 }
+
+._docs_accessibilityInfo {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	grid-gap: $space;
+}
+
+@include atMediaUp(medium) {
+	// ._docs_accessibilityInfo {
+	// 	grid-template-columns: repeat(auto-fill, 1fr);
+	// }
+
+	.__docs_accessibilityInfo-testColor {
+		// grid-column: span 3;
+
+		&:nth-child(-n+4){
+			grid-row: 1;
+		}
+
+		&:nth-child(n+5):nth-child(-n+7){
+			grid-row: 2;
+		}
+
+		&:nth-child(n+8):nth-child(-n+11){
+			grid-row: 3;
+		}
+	}
+}
+
+.__docs_colorContrastBadge {
+	background: $C_black;
+	border: 1px solid $C_borderDarkInverted;
+	border-radius: $defaultRadius;
+	padding: $space-quarter $space-half;
+
+	&::first-letter {
+		font-size: $font-size-tiny;
+	}
+}
+
+.__docs_colorContrastBadge--failed {
+	color: $C_textTertiaryInverted;
+}
