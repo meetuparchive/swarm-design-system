@@ -5,7 +5,7 @@ import { readability } from 'tinycolor2';
 import Flex from 'meetup-web-components/lib/layout/Flex';
 import FlexItem from 'meetup-web-components/lib/layout/FlexItem';
 
-import colorData from '../../utils/colorData';
+import colorAttributes from 'swarm-constants/dist/js/colorAttributes';
 
 const rgba2rgb = (RGB_background, RGBA_colorArr) => {
 	const alpha = RGBA_colorArr[3];
@@ -39,7 +39,7 @@ const ContrastBadge = props => {
 };
 
 const AccessibilityInfo = props => {
-	const testColors = colorData.filter(color => (
+	const testColors = colorAttributes.filter(color => (
 		color.name == 'primary' ||
 		color.name == 'secondary' ||
 		color.name == 'tertiary' ||

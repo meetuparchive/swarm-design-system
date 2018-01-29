@@ -8139,6 +8139,14 @@ swarm-constants@1.2.44:
     gh-pages "^1.0.0"
     mkdirp "^0.5.1"
 
+swarm-constants@1.2.55-beta:
+  version "1.2.55-beta"
+  resolved "https://registry.yarnpkg.com/swarm-constants/-/swarm-constants-1.2.55-beta.tgz#ab02a4d8cc303813fab6ec14c81c8b7c15ae10f4"
+  dependencies:
+    "@alrra/travis-scripts" "^3.0.1"
+    gh-pages "^1.0.0"
+    mkdirp "^0.5.1"
+
 swarm-icons@^1.3.129:
   version "1.3.259"
   resolved "https://registry.yarnpkg.com/swarm-icons/-/swarm-icons-1.3.259.tgz#55abeb077e22e5d4b669c1e6767ec7cabaa29a45"

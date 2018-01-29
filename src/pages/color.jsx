@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import iframeResizer from 'iframe-resizer'; // iframe does not resize if this is not imported here
 
 import ColorListing from '../components/color/ColorListing';
-import colorData from '../utils/colorData'; // import from swarm-constants once branch merges
+import colorAttributes from 'swarm-constants/dist/js/colorAttributes';
 
 import '../../static/assets/graphik.css';
 import '../../scss/main.scss';
@@ -17,7 +17,7 @@ const ColorPage = (location) => {
 					{ name: 'description', content: 'A dynamically generated list of colors used by Meetup\'s design team' }
 				]}
 			/>
-			<ColorListing colors={colorData} />
+			<ColorListing colors={colorAttributes} />
 		</div>
 	);
 };
