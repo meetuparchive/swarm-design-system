@@ -17,7 +17,7 @@ const ColorPage = (location) => {
 					{ name: 'description', content: 'A dynamically generated list of colors used by Meetup\'s design team' }
 				]}
 			/>
-			<ColorListing colors={colorAttributes} />
+			<ColorListing />
 		</div>
 	);
 };

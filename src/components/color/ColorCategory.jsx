@@ -2,6 +2,7 @@ import React from 'react';
 import cx from 'classnames';
 import tinycolor2 from 'tinycolor2';
 
+import Bounds from 'meetup-web-components/lib/layout/Bounds';
 import Button from 'meetup-web-components/lib/forms/Button';
 import Chunk from 'meetup-web-components/lib/layout/Chunk';
 import Flex from 'meetup-web-components/lib/layout/Flex';
@@ -49,38 +50,41 @@ class ColorCategory extends React.PureComponent {
 						return(
 							<Stripe
 								style={{backgroundColor: rgba}}
+								key={`color-${js}`}
 								className={cx({
 									inverted: isInverted(originalValue)
 								})}>
-								<Section hasSeparator className='border--none'>
-									<Flex align="bottom" justify="spaceBetween">
-										<FlexItem shrink>
-											<ColorInfo name="RGBA" value={rgba} />
-											<ColorInfo name="HEX" value={hex} />
-											<ColorInfo name="SASS" value={sass} />
-											<ColorInfo name="JS" value={js} />
-											<ColorInfo name="Android" value={android} />
-										</FlexItem>
-										<FlexItem shrink>
-											<Chunk>
-												<Button
-													neutral
-													onClick={this.toggleContrastInfo}
-												>
-													{`${this.state.showContrastInfo ? 'Hide' : 'Show'} color contrast info`}
-												</Button>
-											</Chunk>
-										</FlexItem>
-									</Flex>
-								</Section>
-
-								{ this.state.showContrastInfo &&
-									<Section className="border--top">
-										<Chunk>
-											<AccessibilityInfo baseColor={originalValue} />
-										</Chunk>
+								<Bounds className="__docs_bounds--runningText">
+									<Section hasSeparator className="border--none flush--left flush--right">
+										<Flex align="bottom" justify="spaceBetween">
+											<FlexItem shrink>
+												<ColorInfo name="RGBA" value={rgba} />
+												<ColorInfo name="HEX" value={hex} />
+												<ColorInfo name="SASS" value={sass} />
+												<ColorInfo name="JS" value={js} />
+												<ColorInfo name="Android" value={android} />
+											</FlexItem>
+											<FlexItem shrink>
+												<Chunk>
+													<Button
+														neutral
+														onClick={this.toggleContrastInfo}
+													>
+														{`${this.state.showContrastInfo ? 'Hide' : 'Show'} color contrast info`}
+													</Button>
+												</Chunk>
+											</FlexItem>
+										</Flex>
 									</Section>
-								}
+
+									{ this.state.showContrastInfo &&
+										<Section className="border--top flush--left flush--right">
+											<Chunk>
+												<AccessibilityInfo baseColor={originalValue} />
+											</Chunk>
+										</Section>
+									}
+								</Bounds>
 							</Stripe>
 						);
 					})

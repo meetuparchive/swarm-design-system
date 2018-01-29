@@ -19,6 +19,11 @@
 	transform: translateX(calc(100% + #{$space-half}));
 }
 
+.__docs_colorListingContainer {
+	margin-left: -#{$space};
+	margin-right: -#{$space};
+}
+
 @include atMediaUp(medium) {
 	.__docs_accessibilityInfo-testColor {
 
