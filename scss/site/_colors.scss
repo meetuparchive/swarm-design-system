@@ -8,6 +8,17 @@
 	grid-gap: $space;
 }
 
+.__docs_colorValue {
+	position: relative;
+}
+
+.__docs_colorCopyNotif {
+	position: absolute;
+	right: 0;
+	top: 0;
+	transform: translateX(calc(100% + #{$space-half}));
+}
+
 @include atMediaUp(medium) {
 	.__docs_accessibilityInfo-testColor {
 

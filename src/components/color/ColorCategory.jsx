@@ -62,12 +62,14 @@ class ColorCategory extends React.PureComponent {
 											<ColorInfo name="Android" value={android} />
 										</FlexItem>
 										<FlexItem shrink>
-											<Button
-												neutral
-												onClick={this.toggleContrastInfo}
-											>
-												{`${this.state.showContrastInfo ? 'Hide' : 'Show'} color contrast info`}
-											</Button>
+											<Chunk>
+												<Button
+													neutral
+													onClick={this.toggleContrastInfo}
+												>
+													{`${this.state.showContrastInfo ? 'Hide' : 'Show'} color contrast info`}
+												</Button>
+											</Chunk>
 										</FlexItem>
 									</Flex>
 								</Section>

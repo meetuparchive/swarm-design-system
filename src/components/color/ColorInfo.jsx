@@ -36,10 +36,12 @@ class ColorInfo extends React.PureComponent {
 			>
 				<Flex>
 					<FlexItem shrink className="__docs_colorLabel text--secondary text--bold">{name}:</FlexItem>
-					<FlexItem shrink>{value}</FlexItem>
-					{this.state.isCopied &&
-						<FlexItem className="text--hint">Copied to clipboard</FlexItem>
-					}
+					<FlexItem shrink className="__docs_colorValue">
+						{value}
+						{this.state.isCopied &&
+							<div className="text--hint __docs_colorCopyNotif wrap--singleLine">Copied to clipboard</div>
+						}
+					</FlexItem>
 				</Flex>
 			</CopyToClipboard>
 		);
