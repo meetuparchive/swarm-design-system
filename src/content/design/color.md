@@ -2,8 +2,7 @@
 title: Color
 order: 1
 isLanding: true
-supportContent: colorListing
-layyoutt: colorListing
+supportingContent: colorListing
 ---
 
 # Colors

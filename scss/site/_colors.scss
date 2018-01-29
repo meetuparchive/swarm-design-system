@@ -20,8 +20,8 @@
 }
 
 .__docs_colorListingContainer {
-	margin-left: -#{$space};
-	margin-right: -#{$space};
+	margin-left: calc(var(--responsiveSpace)*-1);
+	margin-right: calc(var(--responsiveSpace)*-1);
 }
 
 @include atMediaUp(medium) {

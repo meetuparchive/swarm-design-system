@@ -5,6 +5,7 @@ import Parser from 'html-react-parser';
 import cx from 'classnames';
 import IFrameEmbed from '../components/IFrameEmbed';
 import FeedbackSection from '../components/FeedbackSection';
+import SupportingContent from '../components/SupportingContent';
 import parseCategoryData from '../utils/parseCategoryData.js';
 
 import AccordionPanelGroup from 'meetup-web-components/lib/interactive/AccordionPanelGroup';
@@ -17,8 +18,6 @@ import FlexItem from 'meetup-web-components/lib/layout/FlexItem';
 import Section from 'meetup-web-components/lib/layout/Section';
 import Stripe from 'meetup-web-components/lib/layout/Stripe';
 
-import ColorListing from '../components/color/ColorListing';
-
 class DocsPage extends React.PureComponent {
 	render() {
 		const {
@@ -28,8 +27,7 @@ class DocsPage extends React.PureComponent {
 
 		const docsContent = data.markdownRemark;
 		const docCategories = parseCategoryData(data.allMarkdownRemark.edges);
-		const supportContent = data.markdownRemark.frontmatter.supportContent;
-		console.log(data.markdownRemark.frontmatter);
+		const supportingContent = data.markdownRemark.frontmatter.supportingContent;
 
 		const parserOptions = {
 			replace: (domNode) => {
@@ -164,9 +162,9 @@ class DocsPage extends React.PureComponent {
 												</Chunk>
 											</Bounds>
 										</Section>
-										{supportContent === 'colorListing' &&
-											<ColorListing />
-										}
+
+										<SupportingContent supportingContent={supportingContent} />
+
 										<FeedbackSection />
 									</Card>
 								</Chunk>
@@ -187,7 +185,7 @@ export const query = graphql`
 			html
 			frontmatter {
 				title
-				supportContent
+				supportingContent
 			}
 		}
 		allMarkdownRemark(sort: { fields: [frontmatter___order], order: ASC }) {
@@ -195,7 +193,7 @@ export const query = graphql`
 				node {
 					frontmatter {
 						title
-						supportContent
+						supportingContent
 					}
 					fields {
 						slug
