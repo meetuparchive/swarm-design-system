@@ -5,6 +5,7 @@ import Parser from 'html-react-parser';
 import cx from 'classnames';
 import IFrameEmbed from '../components/IFrameEmbed';
 import FeedbackSection from '../components/FeedbackSection';
+import SupportingContent from '../components/SupportingContent';
 import parseCategoryData from '../utils/parseCategoryData.js';
 
 import AccordionPanelGroup from 'meetup-web-components/lib/interactive/AccordionPanelGroup';
@@ -26,13 +27,14 @@ class DocsPage extends React.PureComponent {
 
 		const docsContent = data.markdownRemark;
 		const docCategories = parseCategoryData(data.allMarkdownRemark.edges);
+		const supportingContent = data.markdownRemark.frontmatter.supportingContent;
 
 		const parserOptions = {
 			replace: (domNode) => {
 				if (domNode.name === 'iframe') {
 					const { src, id } = domNode.attribs;
 					return (
-						<IFrameEmbed id={id && id} src={src} />
+						<IFrameEmbed id={id && id} src={src} className={domNode.attribs.class} />
 					);
 				}
 				if (domNode.name === 'img') {
@@ -160,6 +162,9 @@ class DocsPage extends React.PureComponent {
 												</Chunk>
 											</Bounds>
 										</Section>
+
+										<SupportingContent supportingContent={supportingContent} />
+
 										<FeedbackSection />
 									</Card>
 								</Chunk>
@@ -180,6 +185,7 @@ export const query = graphql`
 			html
 			frontmatter {
 				title
+				supportingContent
 			}
 		}
 		allMarkdownRemark(sort: { fields: [frontmatter___order], order: ASC }) {
@@ -187,6 +193,7 @@ export const query = graphql`
 				node {
 					frontmatter {
 						title
+						supportingContent
 					}
 					fields {
 						slug

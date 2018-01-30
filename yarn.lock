@@ -1988,6 +1988,12 @@ copy-descriptor@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
 
+copy-to-clipboard@^3:
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/copy-to-clipboard/-/copy-to-clipboard-3.0.8.tgz#f4e82f4a8830dce4666b7eb8ded0c9bcc313aba9"
+  dependencies:
+    toggle-selection "^1.0.3"
+
 copyfiles@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/copyfiles/-/copyfiles-1.2.0.tgz#a8da3ac41aa2220ae29bd3c58b6984294f2c593c"
@@ -3034,9 +3040,9 @@ flat@^2.0.1:
   dependencies:
     is-buffer "~1.1.2"
 
-flatpickr@3.0.6:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-3.0.6.tgz#81540f1a0f010fa3b96d929943b6396bbb25b1b6"
+flatpickr@^4.0.5:
+  version "4.2.4"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.2.4.tgz#abd6dedd0fa41e2118acb96a22f49819ba2d0157"
 
 flatten@^1.0.2:
   version "1.0.2"
@@ -5051,12 +5057,13 @@ media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
 
-meetup-web-components@3.3.1772:
-  version "3.3.1772"
-  resolved "https://registry.yarnpkg.com/meetup-web-components/-/meetup-web-components-3.3.1772.tgz#92b9d6a381eb7edaeab13d2e1a60fc3f395af58f"
+meetup-web-components@4.5.1823:
+  version "4.5.1823"
+  resolved "https://registry.yarnpkg.com/meetup-web-components/-/meetup-web-components-4.5.1823.tgz#358196e01fd361d5c318bb6d975bc35ac758cedd"
   dependencies:
     autosize "3.0.21"
-    flatpickr "3.0.6"
+    raf-schd "2.1.0"
+    react-flatpickr "3.6.3"
     react-portal "3.2.0"
     recompose "0.26.0"
 
@@ -6624,6 +6631,10 @@ querystringify@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-1.0.0.tgz#6286242112c5b712fa654e526652bf6a13ff05cb"
 
+raf-schd@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/raf-schd/-/raf-schd-2.1.0.tgz#64d645723380ec25cc1714e909b953ef1cf254bf"
+
 randomatic@^1.1.3:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/randomatic/-/randomatic-1.1.7.tgz#c7abe9cc8b87c0baa876b19fde83fd464797e38c"
@@ -6662,6 +6673,13 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     ini "~1.3.0"
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
+
+react-copy-to-clipboard@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/react-copy-to-clipboard/-/react-copy-to-clipboard-5.0.1.tgz#8eae107bb400be73132ed3b6a7b4fb156090208e"
+  dependencies:
+    copy-to-clipboard "^3"
+    prop-types "^15.5.8"
 
 react-deep-force-update@^2.1.1:
   version "2.1.1"
@@ -6710,6 +6728,13 @@ react-dom@^15.6.0:
 react-error-overlay@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
+
+react-flatpickr@3.6.3:
+  version "3.6.3"
+  resolved "https://registry.yarnpkg.com/react-flatpickr/-/react-flatpickr-3.6.3.tgz#a4d5ab83b2159192f3c68981e86e721bd67d562a"
+  dependencies:
+    flatpickr "^4.0.5"
+    prop-types "^15.5.10"
 
 react-helmet@^5.1.3:
   version "5.2.0"
@@ -8126,6 +8151,14 @@ swarm-constants@1.2.44:
     gh-pages "^1.0.0"
     mkdirp "^0.5.1"
 
+swarm-constants@^1.0.0:
+  version "1.2.58"
+  resolved "https://registry.yarnpkg.com/swarm-constants/-/swarm-constants-1.2.58.tgz#aaacbe252b65bcc0e27dbf8bdbd19d8b56519b34"
+  dependencies:
+    "@alrra/travis-scripts" "^3.0.1"
+    gh-pages "^1.0.0"
+    mkdirp "^0.5.1"
+
 swarm-icons@^1.3.129:
   version "1.3.259"
   resolved "https://registry.yarnpkg.com/swarm-icons/-/swarm-icons-1.3.259.tgz#55abeb077e22e5d4b669c1e6767ec7cabaa29a45"
@@ -8133,9 +8166,9 @@ swarm-icons@^1.3.129:
     mustache "^2.3.0"
     xml2js "^0.4.17"
 
-swarm-sasstools@^2.0.294:
-  version "2.0.294"
-  resolved "https://registry.yarnpkg.com/swarm-sasstools/-/swarm-sasstools-2.0.294.tgz#c7074eaea1c2ff9e581bb22674396c91e310d2a6"
+swarm-sasstools@^3.0.317:
+  version "3.0.317"
+  resolved "https://registry.yarnpkg.com/swarm-sasstools/-/swarm-sasstools-3.0.317.tgz#e77996899f740cbff2d37ed097ca85c1ede431a3"
   dependencies:
     bourbon "4.2.3"
     sass-rem "^1.2.4"
@@ -8259,6 +8292,10 @@ timers-browserify@^2.0.2:
   dependencies:
     setimmediate "^1.0.4"
 
+tinycolor2@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/tinycolor2/-/tinycolor2-1.4.1.tgz#f4fad333447bc0b07d4dc8e9209d8f39a8ac77e8"
+
 tmp@^0.0.33:
   version "0.0.33"
   resolved "https://registry.yarnpkg.com/tmp/-/tmp-0.0.33.tgz#6d34335889768d21b2bcda0aa277ced3b1bfadf9"
@@ -8301,6 +8338,10 @@ to-regex@^3.0.1:
     define-property "^0.2.5"
     extend-shallow "^2.0.1"
     regex-not "^1.0.0"
+
+toggle-selection@^1.0.3:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/toggle-selection/-/toggle-selection-1.0.6.tgz#6e45b1263f2017fa0acc7d89d78b15b8bf77da32"
 
 toml@^2.3.2:
   version "2.3.3"
