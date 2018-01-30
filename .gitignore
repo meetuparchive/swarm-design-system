@@ -2,8 +2,10 @@
 .swp
 .*.swp
 *.log
+.npmrc
 build/
 npm_modules/
 node_modules/
 .cache/
 public/
+github_deploy_key
