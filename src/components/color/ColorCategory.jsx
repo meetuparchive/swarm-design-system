@@ -45,7 +45,7 @@ class ColorCategory extends React.PureComponent {
 					category.map((colorData, i) => {
 						const { rgba, hex } = colorData.colorValues;
 						const { android, sass, js } = colorData.colorVarNames;
-						const { originalValue } = colorData;
+						const { originalValue, name } = colorData;
 
 						return(
 							<Stripe
@@ -56,6 +56,7 @@ class ColorCategory extends React.PureComponent {
 								})}>
 								<Bounds className="__docs_bounds--runningText">
 									<Section hasSeparator className="border--none flush--left flush--right">
+										<Chunk><h3 className="text--big">{name}</h3></Chunk>
 										<Flex align="bottom" justify="spaceBetween">
 											<FlexItem shrink>
 												<ColorInfo name="RGBA" value={rgba} />
