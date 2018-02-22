@@ -1,6 +1,6 @@
 ---
 collection: Components
-title: Components
+title: meetup-web-components
 order: 0
 ---
 
