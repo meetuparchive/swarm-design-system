@@ -44,7 +44,7 @@ class ColorCategory extends React.PureComponent {
 				{
 					category.map((colorData, i) => {
 						const { rgba, hex } = colorData.colorValues;
-						const { android, sass, js } = colorData.colorVarNames;
+						const { android, sass, js, customProperty } = colorData.colorVarNames;
 						const { originalValue, name } = colorData;
 
 						return(
@@ -62,6 +62,7 @@ class ColorCategory extends React.PureComponent {
 												<ColorInfo name="RGBA" value={rgba} />
 												<ColorInfo name="HEX" value={hex} />
 												<ColorInfo name="SASS" value={sass} />
+												<ColorInfo name="CSS" value={customProperty} />
 												<ColorInfo name="JS" value={js} />
 												<ColorInfo name="Android" value={android} />
 											</FlexItem>
