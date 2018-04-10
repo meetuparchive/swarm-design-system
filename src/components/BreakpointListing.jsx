@@ -27,10 +27,6 @@ const BreakpointListing = () => {
 							</thead>
 							<tbody>
 								<tr>
-									<td className="text--bold">Default</td>
-									<td>{`${breakpoint.m.value} or smaller`}</td>
-								</tr>
-								<tr>
 									<td className="text--bold">Medium</td>
 									<td>{`${breakpoint.m.value} or larger`}</td>
 								</tr>
