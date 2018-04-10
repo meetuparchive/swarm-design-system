@@ -9,6 +9,8 @@ const SupportingContent = (props) => {
 			return <ColorListing />;
 		case 'breakpointListing':
 			return <BreakpontListing />;
+		default:
+			return null;
 	}
 };
 

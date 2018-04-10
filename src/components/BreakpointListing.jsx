@@ -1,40 +1,46 @@
 import React from 'react';
 
+import breakpointData from 'swarm-constants/properties/layout/breakpoints.json';
+
 import Bounds from 'meetup-web-components/lib/layout/Bounds';
 import Card from 'meetup-web-components/lib/layout/Card';
 import Chunk from 'meetup-web-components/lib/layout/Chunk';
 import Section from 'meetup-web-components/lib/layout/Section';
 
 const BreakpointListing = () => {
+	const { breakpoint } = breakpointData.layout;
+
 	return(
 		<Bounds className="__docs_bounds--runningText">
 			<Section hasSeparator className="border--none flush--left flush--right flush--top">
 				<Chunk>
 					<Card
 						initialHeight
-						className="flush--left flush--right"
+						className="flush--all"
 					>
-						<table className="span--100">
+						<table className="span--100 flush--bottom">
+							<thead>
+								<tr>
+									<th>Breakpoint</th>
+									<th>Viewpoort width range</th>
+								</tr>
+							</thead>
 							<tbody>
 								<tr>
-									<td className="text--bold">default</td>
-									<td>{'< 440px'}</td>
+									<td className="text--bold">Default</td>
+									<td>{`${breakpoint.m.value} or smaller`}</td>
 								</tr>
 								<tr>
-									<td className="text--bold">small</td>
-									<td>{'> 440px'}</td>
+									<td className="text--bold">Medium</td>
+									<td>{`${breakpoint.m.value}–${breakpoint.l.value}`}</td>
 								</tr>
 								<tr>
-									<td className="text--bold">medium</td>
-									<td>{'> 640px'}</td>
+									<td className="text--bold">Large</td>
+									<td>{`${breakpoint.l.value}–${breakpoint.xl.value}`}</td>
 								</tr>
 								<tr>
-									<td className="text--bold">large</td>
-									<td>{'> 840px'}</td>
-								</tr>
-								<tr>
-									<td className="text--bold">huge</td>
-									<td>{'> 1024px'}</td>
+									<td className="text--bold">Huge</td>
+									<td>{`${breakpoint.xl.value} or larger`}</td>
 								</tr>
 							</tbody>
 						</table>
