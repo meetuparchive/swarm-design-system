@@ -32,11 +32,11 @@ const BreakpointListing = () => {
 								</tr>
 								<tr>
 									<td className="text--bold">Medium</td>
-									<td>{`${breakpoint.m.value}–${breakpoint.l.value}`}</td>
+									<td>{`${breakpoint.m.value} or larger`}</td>
 								</tr>
 								<tr>
 									<td className="text--bold">Large</td>
-									<td>{`${breakpoint.l.value}–${breakpoint.xl.value}`}</td>
+									<td>{`${breakpoint.l.value} or larger`}</td>
 								</tr>
 								<tr>
 									<td className="text--bold">Huge</td>
