@@ -15,7 +15,7 @@ order: 4
 	<div class="flex-item gridList-item">
 		<div class="__docs_brandAssetCard card">
 			<div class="__docs_brandAssetThumb display--flex padding--all">
-				<img src="../..//assets/contentImages/brandAssets/scriptLogo_red.svg" alt="Script logo in red" class="valign--middle" />
+				<img src="/assets/contentImages/brandAssets/scriptLogo_red.svg" alt="Script logo in red" class="valign--middle" />
 			</div>
 			<div class="chunk">
 				<div class="margin--bottom">
