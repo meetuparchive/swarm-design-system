@@ -106,8 +106,8 @@
 		max-width: 100%;
 		@include atMediaUp(huge) {
 			margin-left: -#{$space-double};
+			margin-right: -#{$space-double};
 			max-width: calc(100% + #{$space-double*2});
-			width: 100%;
 		}
 	}
 }
