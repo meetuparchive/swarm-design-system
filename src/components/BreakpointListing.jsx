@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import breakpointData from "swarm-constants/properties/layout/breakpoints.json";
+import breakpointData from 'swarm-constants/properties/layout/breakpoints.json';
 
-import Bounds from "meetup-web-components/lib/layout/Bounds";
-import Card from "meetup-web-components/lib/layout/Card";
-import Chunk from "meetup-web-components/lib/layout/Chunk";
-import Section from "meetup-web-components/lib/layout/Section";
+import Bounds from 'meetup-web-components/lib/layout/Bounds';
+import Card from 'meetup-web-components/lib/layout/Card';
+import Chunk from 'meetup-web-components/lib/layout/Chunk';
+import Section from 'meetup-web-components/lib/layout/Section';
 
 const BreakpointListing = () => {
 	const { breakpoint } = breakpointData.layout;

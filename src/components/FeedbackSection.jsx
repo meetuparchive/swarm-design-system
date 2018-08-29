@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import Bounds from "meetup-web-components/lib/layout/Bounds";
+import Bounds from 'meetup-web-components/lib/layout/Bounds';
 
 const FeedbackSection = () => (
 	<div className="__docs_giveFeedback padding--all flush--bottom">
