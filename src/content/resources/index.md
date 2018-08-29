@@ -22,7 +22,7 @@ The SASS library used to style Meetup's UI components (meetup-web-components) an
 ## Sketch UI Kit
 The UI kit is a project in Abstract called "swarm-design-system".
 
-If you aren't on Meetup's Abstract account, you can email [mikep@meetup.com](mailto:mikep@meetup.com), or contact the Design Systems team through Meetup's Slack team in the **#design-systems** channel
+If you aren't on Meetup's Abstract account, you can email [mikep@meetup.com](mailto:mikep@meetup.com), or contact the Design Systems team through Meetup's Slack team in the **#web-platform-ask** channel
 
 ---------------------------------------
 
