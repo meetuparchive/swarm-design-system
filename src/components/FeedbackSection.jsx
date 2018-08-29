@@ -12,7 +12,7 @@ const FeedbackSection = () => (
 			</p>
 			<ul>
 				<li>
-					open a PR in the{" "}
+					open a PR in the
 					<a
 						href="https://github.com/meetup/swarm-design-system"
 						title="Swarm Design System"
@@ -22,7 +22,7 @@ const FeedbackSection = () => (
 				</li>
 				<li>file a ticket in JIRA</li>
 				<li>
-					send us a message in the <strong>#web-platform-ask</strong>{" "}
+					send us a message in the <strong>#web-platform-ask</strong>
 					Slack channel in Meetup's Slack team
 				</li>
 			</ul>
