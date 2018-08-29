@@ -5,8 +5,8 @@ import Bounds from 'meetup-web-components/lib/layout/Bounds';
 const FeedbackSection = () => (
 	<div className="__docs_giveFeedback padding--all flush--bottom">
 		<Bounds className="runningText __docs_bounds--runningText">
-			<h3 className="text--sectionTitle">Give feedback</h3>
-			<p className="flush--bottom">
+			<h3 className='text--sectionTitle'>Give feedback</h3>
+			<p className='flush--bottom'>
 				If this page is missing something or if you'd like to make an
 				edit, you can:
 			</p>
