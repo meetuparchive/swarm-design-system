@@ -10,19 +10,19 @@ import Section from 'meetup-web-components/lib/layout/Section';
 const BreakpointListing = () => {
 	const { breakpoint } = breakpointData.layout;
 
-	return(
+	return (
 		<Bounds className="__docs_bounds--runningText">
-			<Section hasSeparator className="border--none flush--left flush--right flush--top">
+			<Section
+				hasSeparator
+				className="border--none flush--left flush--right flush--top"
+			>
 				<Chunk>
-					<Card
-						initialHeight
-						className="flush--all"
-					>
+					<Card initialHeight className="flush--all">
 						<table className="span--100 flush--bottom">
 							<thead>
 								<tr>
 									<th>Breakpoint</th>
-									<th>Viewpoort width range</th>
+									<th>Viewport width range</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -36,7 +36,8 @@ const BreakpointListing = () => {
 								</tr>
 								<tr>
 									<td className="text--bold">Huge</td>
-									<td>{`${breakpoint.xl.value} or larger`}</td>
+									<td>{`${breakpoint.xl
+										.value} or larger`}</td>
 								</tr>
 							</tbody>
 						</table>
