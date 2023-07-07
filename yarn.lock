@@ -4476,8 +4476,8 @@ joi@9.0.0-0:
     topo "2.x.x"
 
 jquery@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.7.0.tgz#fe2c01a05da500709006d8790fe21c8a39d75612"
 
 js-base64@^2.1.8, js-base64@^2.1.9:
   version "2.3.2"
